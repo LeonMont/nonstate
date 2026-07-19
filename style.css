@@ -1231,3 +1231,235 @@ nav.main-nav {
     gap: 40px;
   }
 }
+
+/* ==========================================================================
+   8. ESTILOS RESPONSIVE (MEDIA QUERIES) - ESTRUCTURA DEFINITIVA
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   [Breakpoint 1]: Pantallas Medianas / Tablets en Horizontal (Max 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  header.main-header,
+  .hero-banner,
+  .featured-grid,
+  .wide-banner,
+  .section-title-container,
+  .recent-section-grid,
+  .footer-container {
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* Ajuste de la grilla principal a dos columnas equilibradas */
+  .featured-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+  }
+  
+  .grid-card.project-vestigio {
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* El bloque inferior pasa a una sola columna para dar aire */
+  .recent-section-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .shoutbox-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   [Breakpoint 2]: Tablets en Vertical (Max 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  header.main-header {
+    margin: 30px auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  nav.main-nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Hero Banner se vuelve vertical */
+  .hero-banner {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+    padding: 40px 24px;
+  }
+
+  .hero-content h2 {
+    font-size: 3.8rem;
+    padding-left: 0;
+  }
+
+  .hero-content p {
+    font-size: 1.3rem;
+    padding-left: 0;
+  }
+
+  /* Control del tamaño del sello en pantallas medianas/pequeñas */
+  .circle-graphic .sello,
+  .circle-graphico .sello {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Grilla de tarjetas a una sola columna */
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-card {
+    padding: 40px;
+    min-height: 320px;
+  }
+
+  /* Corrección del hover en móviles (activación por toque) */
+  .project-overlay {
+    padding: 30px;
+  }
+
+  .overlay-title { font-size: 3.2rem; }
+  .post-titleblack { font-size: 4rem; }
+
+  /* Banner ancho dinámico para evitar que el texto desborde */
+  .wide-banner {
+    height: auto;
+    min-height: 280px;
+    padding: 40px 24px;
+  }
+
+  .wide-banner h2 {
+    font-size: 3.4rem;
+  }
+
+  .wide-banner p {
+    padding-right: 0;
+    font-size: 1.2rem;
+  }
+
+  /* Listado de posts secundarios vertical */
+  .post-item {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 20px;
+  }
+
+  .post-item-image {
+    width: 100% !important;
+    height: 200px;
+  }
+
+  .post-item-content {
+    padding: 0 20px;
+  }
+
+  .post-item-title {
+    font-size: 2rem;
+  }
+
+  /* Shoutbox a una columna */
+  .shoutbox-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer en formato vertical */
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer-brand-nav {
+    align-items: center;
+  }
+
+  .footer-links-grid {
+    justify-items: center;
+    gap: 30px;
+  }
+
+  .footer-column ul {
+    align-items: center;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   [Breakpoint 3]: Smartphones / Pantallas Pequeñas (Max 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  header.main-header,
+  .hero-banner,
+  .wide-banner,
+  .footer-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Contención del buscador para que no rompa el header */
+  .search-input {
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 8px 10px;
+  }
+
+  nav.main-nav {
+    gap: 10px;
+  }
+
+  .menu-btn, .language-selector {
+    font-size: 1.4rem;
+    padding: 8px 20px;
+  }
+
+  .hero-content h2 {
+    font-size: 3rem;
+  }
+
+  .post-title {
+    font-size: 2.4rem;
+  }
+
+  .overlay-title {
+    font-size: 2.8rem;
+  }
+
+  .featured-recent-title {
+    font-size: 2.4rem;
+  }
+
+  .featured-recent-body {
+    padding: 25px 20px;
+  }
+
+  /* Footer links apilados */
+  .footer-links-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
