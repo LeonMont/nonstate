@@ -122,22 +122,61 @@ nav.main-nav {
 
 .menu-btn {
   background-color: var(--bg-secondary);
+  color: var(
+    --text-primary
+  ); /* Asegura que el texto use tu color oscuro por defecto */
   border: none;
-  padding: 8px 30px;
+  padding: 10px 30px 8px 30px;
+  font-family: inherit; /* CLAVE: Hereda tu fuente geométrica en lugar de la del sistema */
   font-weight: 600;
   border-radius: 0px 6px 0px 0px;
   font-size: 1.6rem;
   cursor: pointer;
+
+  /* CLAVE: Transición suave para que el cambio de color no sea un golpe seco */
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ==========================================================================
+   EFECTO INTERACTIVO (HOVER)
+   ========================================================================== */
+.menu-btn:hover {
+  background-color: #000000; /* Pasa a negro pleno */
+  color: #ffffff; /* El texto se invierte a blanco puro */
 }
 
 .language-selector {
   font-size: 1.6rem;
   font-weight: 500;
   padding: 0px 30px;
+  cursor: pointer; /* Hace notar que es un elemento cliqueable */
+
+  /* SOLUCIÓN: Alinea el triángulo y el texto en la misma línea */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* Controla la separación exacta entre el triángulo y la palabra "Español" */
 }
 
 .language-selector span {
   font-weight: 700;
+}
+
+/* ==========================================================================
+   TRIÁNGULO INTEGRADO
+   ========================================================================== */
+.language-selector::before {
+  content: "";
+  display: inline-block;
+
+  /* Dibujo del triángulo mediante bordes limpios */
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid currentColor; /* Usa automáticamente el color actual de tu texto */
+  transition: transform 0.3s ease;
 }
 
 /* ==========================================================================
@@ -559,15 +598,17 @@ nav.main-nav {
   padding: 60px;
 }
 
+/* El enlace invisible que cubre TODO el banner se queda al frente de todo */
 .wide-banner .banner-link {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 3;
+  z-index: 4; /* Subió a 4 para estar por encima de la imagen hover */
 }
 
+/* Base compartida para ambas imágenes de fondo */
 .wide-banner .banner-img {
   position: absolute;
   top: 0;
@@ -575,22 +616,41 @@ nav.main-nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
   filter: brightness(0.55);
   transition:
     transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
-    filter 0.6s ease;
+    filter 0.6s ease,
+    opacity 0.5s ease; /* Añadida transición de opacidad */
 }
 
+/* --- LOGICA MULTICAPA --- */
+
+/* Imagen 1 (Por defecto) */
+.wide-banner .banner-img:first-of-type {
+  z-index: 1;
+  opacity: 1;
+}
+
+/* Imagen 2 (La que aparece en hover) */
+.wide-banner .banner-img.hover-img {
+  z-index: 0;
+  opacity: 0;
+}
+
+/* Textos fijos por encima del fondo */
 .wide-banner h2,
 .wide-banner p {
   position: relative;
-  z-index: 2;
+  z-index: 3; /* Se mantiene seguro entre el fondo y el link invisible */
   pointer-events: none;
 }
 
 .wide-banner p {
   padding-right: 60px;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  max-width: 650px;
+  color: #dddddd;
 }
 
 .wide-banner h2 {
@@ -604,14 +664,21 @@ nav.main-nav {
   font-weight: 600;
 }
 
-.wide-banner p {
-  font-size: 1.3rem;
-  line-height: 1.4;
-  max-width: 650px;
-  color: #dddddd;
+/* ==========================================================================
+   EFECTO HOVER ACTUALIZADO
+   ========================================================================== */
+
+/* 1. Hacemos que la primera imagen se desvanezca */
+.wide-banner:hover .banner-img:first-of-type {
+  opacity: 0;
+  transform: scale(1.02);
+  filter: brightness(0.4);
 }
 
-.wide-banner:hover .banner-img {
+/* 2. Revelamos la segunda imagen con los mismos filtros que te gustan */
+.wide-banner:hover .banner-img.hover-img {
+  opacity: 1;
+  z-index: 2; /* Sube momentáneamente para tapar el fondo */
   transform: scale(1.02);
   filter: brightness(0.4);
 }
@@ -668,6 +735,7 @@ nav.main-nav {
   flex-direction: column;
 }
 
+/* El contenedor mantiene su tamaño rígido de 380px */
 .featured-recent-image-wrapper {
   position: relative;
   width: 100%;
@@ -675,17 +743,34 @@ nav.main-nav {
   overflow: hidden;
 }
 
+/* Base compartida para ambas imágenes absolutas */
 .featured-recent-img {
+  position: absolute; /* Ahora ambas se apilan perfectamente */
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transition:
+    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.4s ease; /* Transición de opacidad para el desvanecimiento */
 }
 
-.featured-recent:hover .featured-recent-img {
-  transform: scale(1.02);
+/* --- LÓGICA MULTICAPA --- */
+
+/* Imagen 1: Visible al frente por defecto */
+.featured-recent-img:first-of-type {
+  z-index: 2;
+  opacity: 1;
 }
 
+/* Imagen 2 (hover): Oculta detrás */
+.featured-recent-img.hover-img {
+  z-index: 1;
+  opacity: 0;
+}
+
+/* El badge se queda por encima de todo el sistema de imágenes */
 .featured-recent-image-wrapper .badge {
   position: absolute;
   top: 30px;
@@ -693,6 +778,7 @@ nav.main-nav {
   z-index: 3;
 }
 
+/* El bloque de contenido se mantiene exactamente igual */
 .featured-recent-body {
   padding: 40px 45px;
   display: flex;
@@ -723,6 +809,23 @@ nav.main-nav {
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
+}
+
+/* ==========================================================================
+   INTERCAMBIO HOVER (Al pasar el mouse por CUALQUIER lado del post)
+   ========================================================================== */
+
+/* Se desvanece la primera e inicia el escalado */
+.featured-recent:hover .featured-recent-img:first-of-type {
+  opacity: 0;
+  transform: scale(1.02);
+}
+
+/* Se revela la segunda, sube su z-index y también escala */
+.featured-recent:hover .featured-recent-img.hover-img {
+  opacity: 1;
+  z-index: 2;
+  transform: scale(1.02);
 }
 
 .author-info {
@@ -819,7 +922,7 @@ nav.main-nav {
 }
 
 .post-item:hover .post-item-image {
-  width: 360px; 
+  width: 360px;
 }
 
 .post-item-title {
