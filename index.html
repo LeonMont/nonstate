@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Non-State | Un blog sobre ideas</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos del Proyecto -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- //////////////////////////////////////////// -->
+    <!-- [01] SECCIÓN A: HEADER                       -->
+    <!-- //////////////////////////////////////////// -->
+
+    <header class="main-header">
+      <!-- Logo y Eslogan -->
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="assets/header/logo.svg" alt="Non-State Logo" class="logo" />
+        </a>
+      </div>
+
+      <!-- Navegación Principal -->
+      <nav class="main-nav">
+        <input type="search" placeholder="Buscar" class="search-input" />
+        <button class="menu-btn">Menú</button>
+        <div class="language-selector">Español - <span>ES</span></div>
+      </nav>
+    </header>
+
+    <!-- //////////////////////////////////////////// -->
+    <!-- [02] SECCIÓN B: CONTENIDO                    -->
+    <!-- //////////////////////////////////////////// -->
+
+    <main>
+      <!-- PARTE A: CTA -->
+      <section class="hero-banner">
+        <div class="hero-content">
+          <h2>Construir. <br />Diseñar. Mejorar</h2>
+          <p>Lee nuestro manifiesto de diseño.</p>
+        </div>
+
+        <div class="circle-graphic">
+          <a href="#">
+            <img
+              src="assets/sello.svg"
+              alt="Sello - Diseñar con responsablidad por Non-State"
+              class="sello"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- PARTE B: Destacados -->
+      <section class="featured-grid">
+        <!-- Fila 1 -->
+        <!-- Destacado 1 (Indica) -->
+        <article class="grid-card image-card project-indica">
+          <img
+            src="assets/destacados/indica_1.jpg"
+            alt="Diseño interior minimalista de una tienda comercial en tonos verdes con iluminación cálida y mobiliario moderno"
+          />
+          <div class="project-overlay">
+            <div class="overlay-content">
+              <h3 class="overlay-title">Indica</h3>
+              <h2 class="overlay-subtitle">Medical Cannabis Store</h2>
+              <p class="overlay-text">
+                Conceived as a medical cannabis retail space, Indica was
+                developed by Non-State to usher in a new consumer experience.
+              </p>
+              <div class="overlay-footer">
+                <span class="overlay-year">2022 - Colombia</span>
+                <span class="overlay-views">
+                  <i class="view-icon">👁</i> 345 vistas
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Destacado 2 (Cómo romper las reglas) -->
+        <article class="grid-card text-card visual-hover-card">
+          <div class="card-default-content">
+            <span class="badge">Nuevo</span>
+            <h3 class="post-title">
+              <a href="#"
+                >¿Cómo romper las reglas del diseño sin perder coherencia?</a
+              >
+            </h3>
+            <div class="post-meta">
+              <span class="post-date">Subido: Junio 06, 2026</span>
+              <span class="post-read-time"
+                ><strong>4 min </strong>de lectura.</span
+              >
+            </div>
+          </div>
+          <img
+            src="assets/destacados/foto1.jpg"
+            alt="Estructura arquitectónica abstracta con líneas diagonales"
+            class="card-hover-bg"
+          />
+          <div class="text-card-overlay">
+            <div class="overlay-content">
+              <h3 class="overlay-title">Leer post</h3>
+              <p class="overlay-text">
+                El diseño funciona bajo un mundo de reglas estrictas y otras no
+                tanto. Te doy mi opinión sobre como hacerlo sin que luzca mal.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fila 2 -->
+        <!-- Destacado 3 (Armé mi setup) -->
+        <article class="grid-card text-card visual-hover-card">
+          <div class="card-default-content">
+            <span class="badge">Nuevo</span>
+            <h3 class="post-title">
+              <a href="#"
+                >Armé mi setup de diseño y te muestro el paso a paso.
+                <span>[Parte 1]</span></a
+              >
+            </h3>
+            <div class="post-meta">
+              <span class="post-date">Subido: Junio 20, 2026</span>
+              <span class="post-read-time"
+                ><strong>3 min </strong>de lectura.</span
+              >
+            </div>
+          </div>
+          <img
+            src="assets/destacados/foto2.jpeg"
+            alt="Escritorio de diseño de computadora con luces LED rojas"
+            class="card-hover-bg"
+          />
+          <div class="text-card-overlay">
+            <div class="overlay-content">
+              <h3 class="overlay-title">Leer post</h3>
+              <p class="overlay-text">
+                Pasa y te muestro mi nuevo setup de diseño para que te animes a
+                armar el tuyo.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Destacado 4 (Casa Grande) -->
+        <article class="grid-card image-card project-casagrande">
+          <img
+            src="assets/destacados/casagrande_1.png"
+            alt="Fachada exterior de un restaurante o café con estructura de madera, ventanas de arco y abundantes plantas decorativas"
+          />
+          <div class="project-overlay">
+            <div class="overlay-content">
+              <h3 class="overlay-title">Casa Grande</h3>
+              <h2 class="overlay-subtitle">Restaurante tradicional</h2>
+              <p class="overlay-text">
+                Un diseño gastronómico que rinde homenaje a las raíces
+                coloniales, fusionando texturas rústicas de madera con
+                vegetación viva.
+              </p>
+              <div class="overlay-footer">
+                <span class="overlay-year">2023 - Colombia</span>
+                <span class="overlay-views">
+                  <i class="view-icon">👁</i> 345 vistas
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fila 3 -->
+        <!-- Destacado 5 (Vestigio) -->
+        <article class="grid-card image-card project-vestigio">
+          <img
+            src="assets/destacados/vestigio_1.jpg"
+            alt="Pasillo interior de arquitectura clásica con grandes arcadas de color rojo terracota, iluminación cálida y una estatua al fondo"
+          />
+          <div class="project-overlay">
+            <div class="overlay-content">
+              <h3 class="overlay-title">Vestigio</h3>
+              <h2 class="overlay-subtitle">Galería de arte clásica</h2>
+              <p class="overlay-text">
+                Una exploración del espacio a través del color terracota y la
+                luz focalizada, creando una atmósfera de misterio y reverencia
+                histórica.
+              </p>
+              <div class="overlay-footer">
+                <span class="overlay-year">2023 - Colombia</span>
+                <span class="overlay-views">
+                  <i class="view-icon">👁</i> 345 vistas
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Destacado 6 -->
+        <article class="grid-card black-card smart-hover-card">
+          <div class="black-card-content">
+            <span class="badgeblack">24 proyectos</span>
+            <h3 class="post-titleblack">
+              <a href="#">Ver todo</a>
+            </h3>
+            <div class="divider-wrapper">
+              <hr class="card-divider" />
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- SECCIÓN C: Banner -->
+      <section class="wide-banner">
+        <a href="#">
+          <img
+            src="assets/bogota_3.png"
+            alt="Recreación digital de la Bogotá antigua"
+            class="banner-img"
+          />
+        </a>
+        <h2><span>Bogotá</span> - 1900</h2>
+        <p>
+          Un viaje al corazón de la Bogotá de 1900: devolviendo la vida a la
+          Plaza de Bolívar y su entorno a través de Adobe Firefly y la
+          tecnología de <strong>Unreal Engine 6</strong>.
+        </p>
+      </section>
+
+      <!-- Divisor -->
+      <div class="section-title-container">
+        <h2 class="section-title-inline">Posts recientes</h2>
+        <hr class="section-divider-inline" />
+      </div>
+
+      <!-- ========================================================================== -->
+      <!-- NUEVA CONTENEDOR GRID: POSTS RECIENTES + SHOUTBOX                           -->
+      <!-- ========================================================================== -->
+      <div class="recent-section-grid">
+        <!-- COLUMNA IZQUIERDA: Posts -->
+        <section class="recent-posts">
+          <!-- Post destacado -->
+          <article class="featured-recent">
+            <div class="featured-recent-image-wrapper">
+              <img
+                src="assets/posts/cafio.png"
+                alt="Fachada minimalista y moderna de una cafetería llamada Banana Cake & Coffee"
+                class="featured-recent-img"
+              />
+              <span class="badge">Nuevo</span>
+            </div>
+            <div class="featured-recent-body">
+              <h3 class="featured-recent-title">
+                <a href="#"
+                  >Comparativa <strong>Gemini 3.1</strong> <br />vs.
+                  <strong>Chat GPT 6</strong></a
+                >
+              </h3>
+              <p class="featured-recent-desc">
+                Modelos multimodales en acción: diferencias clave, ventajas
+                creativas y veredicto.
+              </p>
+              <div class="featured-recent-footer">
+                <div class="author-info">
+                  <img
+                    src="assets/posts/dexter.png"
+                    alt="Avatar de Alejandro Romero"
+                    class="author-avatar"
+                  />
+                  <span class="author-name">Alejandro Romero</span>
+                </div>
+                <span class="featured-recent-date">Junio 06, 2026</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- ========================================================================== -->
+          <!-- LISTA DE POSTS SECUNDARIOS (CORREGIDA INTERNAMENTE)                         -->
+          <!-- ========================================================================== -->
+          <div class="posts-list">
+            <!-- Post 1 -->
+            <article class="post-item">
+              <!-- Contenedor de imágenes: Ambas deben vivir aquí dentro para el efecto hover cruzado -->
+              <div class="post-item-image">
+                <img src="assets/post_1.png" alt="Render de un panda en 3D" />
+                <img
+                  src="assets/serpiente.png"
+                  alt="Render de un panda en 3D - Vista Alternativa"
+                />
+              </div>
+              <div class="post-item-content">
+                <h4 class="post-item-title">
+                  <a href="#">Inteligencia Artificial vs. Diseñador Humano.</a>
+                </h4>
+                <div class="post-item-meta">
+                  <span class="author">por Alejandro Romero</span>
+                  <span class="date">Junio 05, 2026</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="post-item">
+              <div class="post-item-image">
+                <img
+                  src="assets/incarnam.webp"
+                  alt="Escenario inspirado en Dofus"
+                />
+                <img
+                  src="assets/post6.png"
+                  alt="Escenario inspirado en Dofus - Vista Alternativa"
+                />
+              </div>
+              <div class="post-item-content">
+                <h4 class="post-item-title">
+                  <a href="#">[Top] Cinco mejores videojuegos que he jugado.</a>
+                </h4>
+                <div class="post-item-meta">
+                  <span class="author">por Alejandro Romero</span>
+                  <span class="date">Junio 02, 2026</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 3 -->
+            <article class="post-item">
+              <div class="post-item-image">
+                <img src="assets/post_3.jpg" alt="Diseño de texturas" />
+                <img
+                  src="assets/post5.webp"
+                  alt="Diseño de texturas - Vista Alternativa"
+                />
+              </div>
+              <div class="post-item-content">
+                <h4 class="post-item-title">
+                  <a href="#"
+                    >¿Por qué los mapas de Counter-Strike son perfectos?</a
+                  >
+                </h4>
+                <div class="post-item-meta">
+                  <span class="author">por Alejandro Romero</span>
+                  <span class="date">Mayo 28, 2026</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Post 4 -->
+            <article class="post-item">
+              <div class="post-item-image">
+                <img src="assets/post_4.jpg" alt="Diseño de texturas" />
+                <img
+                  src="assets/mutante.jpg"
+                  alt="Diseño de texturas - Vista Alternativa"
+                />
+              </div>
+              <div class="post-item-content">
+                <h4 class="post-item-title">
+                  <a href="#">Intenté crear una criatura mutante.</a>
+                </h4>
+                <div class="post-item-meta">
+                  <span class="author">por Alejandro Romero</span>
+                  <span class="date">Mayo 28, 2026</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- COLUMNA DERECHA: Shoutbox -->
+        <aside class="shoutbox-container">
+          <div class="shoutbox-header">
+            <h3 class="shoutbox-title">Shoutbox</h3>
+            <p class="shoutbox-subtitle">Top gifs de la semana.</p>
+          </div>
+
+          <div class="shoutbox-list">
+            <!-- GIF Card 1 (Erling Haaland) -->
+            <article class="shoutbox-card">
+              <div class="shoutbox-gif-wrapper">
+                <img
+                  src="assets/gif1.gif"
+                  alt="Erling Haaland comiendo"
+                  class="shoutbox-gif"
+                />
+              </div>
+              <div class="shoutbox-card-footer">
+                <button class="shoutbox-action btn-like" aria-label="Me gusta">
+                  <svg
+                    class="icon-heart"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    ></path>
+                  </svg>
+                  <span class="like-count">74</span>
+                </button>
+                <button
+                  class="shoutbox-action btn-comment"
+                  aria-label="Comentarios"
+                >
+                  <svg
+                    class="icon-bubble"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                    ></path>
+                  </svg>
+                  <span>23</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- GIF Card 2 (Militar) -->
+            <article class="shoutbox-card">
+              <div class="shoutbox-gif-wrapper">
+                <img
+                  src="assets/gif2.gif"
+                  alt="Soldado de gala en estadio"
+                  class="shoutbox-gif"
+                />
+              </div>
+              <div class="shoutbox-card-footer">
+                <button class="shoutbox-action btn-like" aria-label="Me gusta">
+                  <svg
+                    class="icon-heart"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    ></path>
+                  </svg>
+                  <span class="like-count">23</span>
+                </button>
+                <button
+                  class="shoutbox-action btn-comment"
+                  aria-label="Comentarios"
+                >
+                  <svg
+                    class="icon-bubble"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                    ></path>
+                  </svg>
+                  <span>12</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- GIF Card 3 (Vegeta bajo la lluvia) -->
+            <article class="shoutbox-card">
+              <div class="shoutbox-gif-wrapper">
+                <img
+                  src="assets/gif3.gif"
+                  alt="Vegeta bajo la lluvia"
+                  class="shoutbox-gif"
+                />
+              </div>
+              <div class="shoutbox-card-footer">
+                <button class="shoutbox-action btn-like" aria-label="Me gusta">
+                  <svg
+                    class="icon-heart"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    ></path>
+                  </svg>
+                  <span class="like-count">89</span>
+                </button>
+                <button
+                  class="shoutbox-action btn-comment"
+                  aria-label="Comentarios"
+                >
+                  <svg
+                    class="icon-bubble"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                    ></path>
+                  </svg>
+                  <span>56</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- GIF Card 4 (Vegeta bajo la lluvia) -->
+            <article class="shoutbox-card">
+              <div class="shoutbox-gif-wrapper">
+                <img
+                  src="assets/gif4.gif"
+                  alt="Vegeta bajo la lluvia"
+                  class="shoutbox-gif"
+                />
+              </div>
+              <div class="shoutbox-card-footer">
+                <button class="shoutbox-action btn-like" aria-label="Me gusta">
+                  <svg
+                    class="icon-heart"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    ></path>
+                  </svg>
+                  <span class="like-count">89</span>
+                </button>
+                <button
+                  class="shoutbox-action btn-comment"
+                  aria-label="Comentarios"
+                >
+                  <svg
+                    class="icon-bubble"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                    ></path>
+                  </svg>
+                  <span>56</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </aside>
+      </div>
+      <!-- Cierre de .recent-section-grid -->
+    </main>
+
+    <!-- //////////////////////////////////////////// -->
+    <!-- [03] SECCIÓN C: FOOTER                       -->
+    <!-- //////////////////////////////////////////// -->
+    <footer class="main-footer">
+      <div class="footer-container">
+        <!-- Bloque Superior: Logo, Menús y Sello Circular -->
+        <div class="footer-top">
+          <!-- Lado Izquierdo: Marca y Columnas de Navegación -->
+          <div class="footer-brand-nav">
+            <img
+              class="footer-logo"
+              src="assets/header/logohorizontal.svg"
+              alt=""
+            />
+
+            <div class="footer-links-grid">
+              <!-- Columna Categorías -->
+              <div class="footer-column">
+                <h3>Categorías</h3>
+                <ul>
+                  <li>
+                    <a href="#"><span>01</span> /inicio/</a>
+                  </li>
+                  <li>
+                    <a href="#"><span>02</span> /posts/</a>
+                  </li>
+                  <li>
+                    <a href="#"><span>03</span> /shoutbox/</a>
+                  </li>
+                  <li>
+                    <a href="#"><span>04</span> /contacto/</a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Columna General -->
+              <div class="footer-column">
+                <h3>General</h3>
+                <ul>
+                  <li><a href="#">Sobre nosotros</a></li>
+                  <li><a href="#">Canal RSS</a></li>
+                  <li><a href="#">Anunciar</a></li>
+                  <li><a href="#">Condiciones de uso</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lado Derecho: Sello de texto circular animado -->
+          <div class="circle-graphico">
+            <a href="#">
+              <img
+                src="assets/header/selloblanco.svg"
+                alt="Sello - Diseñar con responsablidad por Non-State"
+                class="sello"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Bloque Central: Iconos Redes Sociales -->
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Twitch">
+            <img src="assets/Recurso 1.svg" alt="" />
+          </a>
+          <a href="#" class="social-icon" aria-label="TikTok">
+            <img src="assets/Recurso 2.svg" alt="" />
+          </a>
+          <a href="#" class="social-icon" aria-label="WhatsApp">
+            <img src="assets/Recurso 3.svg" alt="" />
+          </a>
+          <a href="#" class="social-icon" aria-label="Reddit">
+            <img src="assets/Recurso 4.svg" alt="" />
+          </a>
+        </div>
+
+        <!-- Bloque Inferior: Copyright & Legal -->
+        <div class="footer-bottom">
+          <p class="copyright">© 2027. All rights reserved.</p>
+          <p class="legal-text">
+            No part of this content may be reproduced, in whole or in part, by
+            any means without the prior written permission of the copyright
+            holder.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
