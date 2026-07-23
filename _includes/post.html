@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Non-State | Un blog de Alejandro Romero</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos del Proyecto -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- //////////////////////////////////////////// -->
+    <!-- [01] SECCIÓN A: HEADER                       -->
+    <!-- //////////////////////////////////////////// -->
+
+    <header class="main-header">
+      <!-- Logo y Eslogan -->
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="assets/header/logo.svg" alt="Non-State Logo" class="logo" />
+        </a>
+      </div>
+
+      <!-- Navegación Principal -->
+      <nav class="main-nav">
+        <input type="search" placeholder="Buscar" class="search-input" />
+        <button class="menu-btn">Menú</button>
+        <div class="language-selector">Español - <span>ES</span></div>
+      </nav>
+    </header>
+
+    <!-- //////////////////////////////////////////// -->
+    <!-- [02] SECCIÓN B: CONTENIDO BLOG                    -->
+    <!-- //////////////////////////////////////////// -->
+
+<main class="post-content">
+      <h1>{{ title }}</h1>
+      <time>{{ date }}</time>
+      
+      <!-- Aquí se inyectará automáticamente el texto del editor -->
+      {{ content | safe }}
+    </main>
+
+    <!-- //////////////////////////////////////////// -->
+    <!-- [03] SECCIÓN C: FOOTER                       -->
+    <!-- //////////////////////////////////////////// -->
+    <footer class="main-footer">
+      <div class="footer-container">
+        <!-- Bloque Superior: Logo, Menús y Sello Circular -->
+        <div class="footer-top">
+          <!-- Lado Izquierdo: Marca y Columnas de Navegación -->
+          <div class="footer-brand-nav">
+            <img
+              class="footer-logo"
+              src="assets/header/logohorizontal.svg"
+              alt=""
+            />
+
+            <div class="footer-links-grid">
+              <!-- Columna Categorías -->
+              <div class="footer-column">
+                <h3>Categorías</h3>
+                <ul>
+                  <li>
+                    <a href="#"><span>01</span> /inicio/</a>
+                  </li>
+                  <li>
+                    <a href="#"><span>02</span> /posts/</a>
+                  </li>
+                  <li>
+                    <a href="#"><span>03</span> /shoutbox/</a>
+                  </li>
+                  <li>
+                    <a href="#"><span>04</span> /contacto/</a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Columna General -->
+              <div class="footer-column">
+                <h3>General</h3>
+                <ul>
+                  <li><a href="#">Sobre nosotros</a></li>
+                  <li><a href="#">Canal RSS</a></li>
+                  <li><a href="#">Anunciar</a></li>
+                  <li><a href="#">Condiciones de uso</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lado Derecho: Sello de texto circular animado -->
+          <div class="circle-graphico">
+            <a href="#">
+              <img
+                src="assets/header/selloblanco.svg"
+                alt="Sello - Diseñar con responsablidad por Non-State"
+                class="sello"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Bloque Central: Iconos Redes Sociales -->
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Twitch">
+            <img src="assets/Recurso 1.svg" alt="" />
+          </a>
+          <a href="#" class="social-icon" aria-label="TikTok">
+            <img src="assets/Recurso 2.svg" alt="" />
+          </a>
+          <a href="#" class="social-icon" aria-label="WhatsApp">
+            <img src="assets/Recurso 3.svg" alt="" />
+          </a>
+          <a href="#" class="social-icon" aria-label="Reddit">
+            <img src="assets/Recurso 4.svg" alt="" />
+          </a>
+        </div>
+
+        <!-- Bloque Inferior: Copyright & Legal -->
+        <div class="footer-bottom">
+          <p class="copyright">© 2027. All rights reserved.</p>
+          <p class="legal-text">
+            Ninguna parte de este contenido puede ser reproducida, en su
+            totalidad o en parte, por ningún medio sin el permiso previo por
+            escrito del titular de los derechos de autor.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main # Tu rama principal de GitHub
+
+# Dónde se guardarán las imágenes subidas desde el editor
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
+
+# Definición del blog / posts
+collections:
+  - name: "blog"
+    label: "Artículos / Posts"
+    folder: "content/posts" # Carpeta donde se guardarán los textos
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Fecha de publicación", name: "date", widget: "datetime" }
+      - { label: "Resumen corto", name: "description", widget: "text" }
+      - { label: "Imagen de portada", name: "image", widget: "image", required: false }
+      - { label: "Cuerpo del post", name: "body", widget: "markdown" }
