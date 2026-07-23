@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Non-State | Un blog de Alejandro Romero</title>
-
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <title>Non-State</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -222,35 +220,33 @@
       </section>
 
       <!-- SECCIÓN C: Banner -->
- <section class="wide-banner">
-  
-  <!-- El enlace ahora contiene ambas imágenes para el efecto multicapa -->
-  <a href="#" class="banner-bg-link">
-    <img 
-      src="assets/bogota_3.png" 
-      alt="Recreación digital de la Bogotá antigua" 
-      class="banner-img"
-    />
-    <img 
-      src="assets/bogota_5.png" 
-      alt="Recreación digital en detalle" 
-      class="banner-img hover-img"
-    />
-    <!-- Filtro oscuro para proteger la lectura del texto -->
-    <div class="banner-overlay"></div>
-  </a>
+      <section class="wide-banner">
+        <!-- El enlace ahora contiene ambas imágenes para el efecto multicapa -->
+        <a href="#" class="banner-bg-link">
+          <img
+            src="assets/bogota_3.png"
+            alt="Recreación digital de la Bogotá antigua"
+            class="banner-img"
+          />
+          <img
+            src="assets/bogota_5.png"
+            alt="Recreación digital en detalle"
+            class="banner-img hover-img"
+          />
+          <!-- Filtro oscuro para proteger la lectura del texto -->
+          <div class="banner-overlay"></div>
+        </a>
 
-  <!-- Encapsulamos el texto para que flote correctamente sobre el fondo -->
-  <div class="banner-content">
-    <h2><span>Bogotá</span> - 1900</h2>
-    <p>
-      Un viaje al corazón de la Bogotá de 1900: devolviendo la vida a la 
-      Plaza de Bolívar y su entorno a través de Adobe Firefly y la 
-      tecnología de <strong>Unreal Engine 6</strong>.
-    </p>
-  </div>
-
-</section>
+        <!-- Encapsulamos el texto para que flote correctamente sobre el fondo -->
+        <div class="banner-content">
+          <h2><span>Bogotá</span> - 1900</h2>
+          <p>
+            Un viaje al corazón de la Bogotá de 1900: devolviendo la vida a la
+            Plaza de Bolívar y su entorno a través de Adobe Firefly y la
+            tecnología de <strong>Unreal Engine 6</strong>.
+          </p>
+        </div>
+      </section>
 
       <!-- Divisor -->
       <div class="section-title-container">
@@ -264,48 +260,50 @@
       <div class="recent-section-grid">
         <!-- COLUMNA IZQUIERDA: Posts -->
         <section class="recent-posts">
-
-
           <!-- Post destacado -->
-<!-- Post destacado -->
-<article class="featured-recent">
-  <div class="featured-recent-image-wrapper">
-    <!-- Imagen por defecto -->
-    <img
-      src="assets/posts/cafio.png"
-      alt="Fachada minimalista y moderna de una cafetería llamada Banana Cake & Coffee"
-      class="featured-recent-img"
-    />
-    <!-- Imagen para el hover -->
-    <img
-      src="assets/cafe.png" 
-      alt="Detalle o proceso del render de la cafetería"
-      class="featured-recent-img hover-img"
-    />
-    <!-- El badge se queda arriba de ambas imágenes -->
-    <span class="badge">Nuevo</span>
-  </div>
-  
-  <div class="featured-recent-body">
-    <h3 class="featured-recent-title">
-      <a href="#">Comparativa <strong>Gemini 3.1</strong> <br />vs. <strong>Chat GPT 6</strong></a>
-    </h3>
-    <p class="featured-recent-desc">
-      Modelos multimodales en acción: diferencias clave, ventajas creativas y veredicto.
-    </p>
-    <div class="featured-recent-footer">
-      <div class="author-info">
-        <img
-          src="assets/posts/dexter.png"
-          alt="Avatar de Alejandro Romero"
-          class="author-avatar"
-        />
-        <span class="author-name">Alejandro Romero</span>
-      </div>
-      <span class="featured-recent-date">Junio 06, 2026</span>
-    </div>
-  </div>
-</article>
+          <!-- Post destacado -->
+          <article class="featured-recent">
+            <div class="featured-recent-image-wrapper">
+              <!-- Imagen por defecto -->
+              <img
+                src="assets/posts/cafio.png"
+                alt="Fachada minimalista y moderna de una cafetería llamada Banana Cake & Coffee"
+                class="featured-recent-img"
+              />
+              <!-- Imagen para el hover -->
+              <img
+                src="assets/cafe.png"
+                alt="Detalle o proceso del render de la cafetería"
+                class="featured-recent-img hover-img"
+              />
+              <!-- El badge se queda arriba de ambas imágenes -->
+              <span class="badge">Nuevo</span>
+            </div>
+
+            <div class="featured-recent-body">
+              <h3 class="featured-recent-title">
+                <a href="#"
+                  >Comparativa <strong>Gemini 3.1</strong> <br />vs.
+                  <strong>Chat GPT 6</strong></a
+                >
+              </h3>
+              <p class="featured-recent-desc">
+                Modelos multimodales en acción: diferencias clave, ventajas
+                creativas y veredicto.
+              </p>
+              <div class="featured-recent-footer">
+                <div class="author-info">
+                  <img
+                    src="assets/posts/dexter.png"
+                    alt="Avatar de Alejandro Romero"
+                    class="author-avatar"
+                  />
+                  <span class="author-name">Alejandro Romero</span>
+                </div>
+                <span class="featured-recent-date">Junio 06, 2026</span>
+              </div>
+            </div>
+          </article>
 
           <!-- ========================================================================== -->
           <!-- LISTA DE POSTS SECUNDARIOS (CORREGIDA INTERNAMENTE)                         -->
@@ -586,18 +584,6 @@
         </aside>
       </div>
       <!-- Cierre de .recent-section-grid -->
-
-      <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
     </main>
 
     <!-- //////////////////////////////////////////// -->
@@ -687,5 +673,19 @@
         </div>
       </div>
     </footer>
+
+    <!-- Scripts de Netlify Identity para Login/Invitaciones -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
