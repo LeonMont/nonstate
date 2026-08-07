@@ -3,44 +3,38 @@
    ========================================================================== */
 :root {
   --bg-primary: #ffffff;
-  --bg-secondary: #f0f0f0; /* Gris muy claro para las tarjetas */
-  --bg-dark: #000000; /* Para la tarjeta "Ver todo" y footer */
+  --bg-secondary: #f0f0f0;
+  --bg-dark: #000000;
   --text-primary: #111111;
   --text-secondary: #666666;
-  --accent-color: linear-gradient(
-    45deg,
-    #8f94fb,
-    #4e54c8
-  ); /* Color del badge "Nuevo" */
-  --border-radius: 14px; /* Redondeado de tarjetas */
-  --max-width: 1400px; /* Ancho máximo del contenedor */
+  --accent-color: linear-gradient(45deg, #8f94fb, #4e54c8);
+  --border-radius: 14px;
+  --max-width: 1400px;
   --font-titles: "League Spartan", sans-serif;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "League Spartan", sans-serif;
+  font-family: var(--font-titles);
   font-optical-sizing: auto;
   font-style: normal;
-  -webkit-font-smoothing: antialiased;
   font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.5;
 }
 
-/* Forzar renderizado y consistencia de League Spartan */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+/* Consistencia tipográfica */
+h1, h2, h3, h4, h5, h6,
 .logo-container p,
 .logovertical,
 .menu-btn,
@@ -53,7 +47,7 @@ h6,
 .featured-recent-title,
 .post-item-title,
 .shoutbox-title {
-  font-family: "League Spartan", sans-serif;
+  font-family: var(--font-titles);
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -76,154 +70,254 @@ img {
 header.main-header {
   background-color: var(--bg-primary);
   max-width: var(--max-width);
-  margin: 50px auto;
+  margin: 50px auto 30px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 10px 20px; /* Añadido padding lateral de seguridad */
+  padding: 10px 20px;
 }
 
 .logo-container {
   display: flex;
-  flex-direction: column;
-}
+  align-items: center;
+  gap: 20px;
 
-.logo {
-  width: 190px;
-}
+  .logo {
+    width: 190px;
+  }
 
-.eslogan {
-  margin-top: 25px;
-  width: 140px;
+  .eslogan {
+    margin-top: 25px;
+    width: 140px;
+  }
 }
 
 nav.main-nav {
   display: flex;
   align-items: center;
   gap: 15px;
-}
 
-.search-input {
-  border: 3px solid #ddd;
-  border-radius: 6px;
-  font-size: 1.6rem;
-  font-weight: 400;
-  background-color: #fafafa;
-  line-height: 1;
-  padding: 10px 12px 8px 12px;
-  color: var(--text-primary);
-  outline: none;
-}
+  .search-input {
+    border: 3px solid #dddddd;
+    border-radius: 6px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    background-color: #fafafa;
+    line-height: 1;
+    padding: 10px 12px 8px;
+    color: var(--text-primary);
+    outline: none;
 
-.search-input::placeholder {
-  color: var(--text-secondary);
-  opacity: 0.5;
-}
+    &::placeholder {
+      color: var(--text-secondary);
+      opacity: 0.5;
+    }
+  }
 
-.menu-btn {
-  background-color: var(--bg-secondary);
-  color: var(
-    --text-primary
-  ); /* Asegura que el texto use tu color oscuro por defecto */
-  border: none;
-  padding: 10px 30px 8px 30px;
-  font-family: inherit; /* CLAVE: Hereda tu fuente geométrica en lugar de la del sistema */
-  font-weight: 600;
-  border-radius: 0px 6px 0px 0px;
-  font-size: 1.6rem;
-  cursor: pointer;
+  .menu-btn {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: none;
+    padding: 10px 30px 8px;
+    font-family: inherit;
+    font-weight: 600;
+    border-radius: 0 6px 0 0;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
-  /* CLAVE: Transición suave para que el cambio de color no sea un golpe seco */
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
-}
+    &:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+  }
 
-/* ==========================================================================
-   EFECTO INTERACTIVO (HOVER)
-   ========================================================================== */
-.menu-btn:hover {
-  background-color: #000000; /* Pasa a negro pleno */
-  color: #ffffff; /* El texto se invierte a blanco puro */
-}
+  .language-selector {
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 0 30px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 
-.language-selector {
-  font-size: 1.6rem;
-  font-weight: 500;
-  padding: 0px 30px;
-  cursor: pointer; /* Hace notar que es un elemento cliqueable */
+    span {
+      font-weight: 700;
+    }
 
-  /* SOLUCIÓN: Alinea el triángulo y el texto en la misma línea */
-  display: inline-flex;
-  align-items: center;
-  gap: 10px; /* Controla la separación exacta entre el triángulo y la palabra "Español" */
-}
-
-.language-selector span {
-  font-weight: 700;
-}
-
-/* ==========================================================================
-   TRIÁNGULO INTEGRADO
-   ========================================================================== */
-.language-selector::before {
-  content: "";
-  display: inline-block;
-
-  /* Dibujo del triángulo mediante bordes limpios */
-  width: 0;
-  height: 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 7px solid currentColor; /* Usa automáticamente el color actual de tu texto */
-  transition: transform 0.3s ease;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 7px solid currentColor;
+      transition: transform 0.3s ease;
+    }
+  }
 }
 
 /* ==========================================================================
-   3. SECCIÓN HERO
+   3. SECCIÓN HERO Y CARROUSEL
    ========================================================================== */
 .hero-banner {
-  max-width: var(--max-width);
-  margin: 0 auto 20px auto;
-  background-color: var(--bg-secondary);
-  border-radius: var(--border-radius);
-  padding: 40px 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto 40px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
-.hero-content h2 {
-  font-size: 5rem;
-  font-weight: 500;
-  line-height: 0.9;
-  letter-spacing: -1px;
-  margin-bottom: 10px;
-  padding-left: 50px;
+.carousel-track {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+  flex-grow: 1;
 }
 
-.hero-content p {
+.carousel-slide {
+  grid-column: 1;
+  grid-row: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  width: 100%;
+  height: 340px;
+  box-sizing: border-box;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+
+  &.slide-1 {
+    background-image: url("assets/wide_cta/cta1.png");
+  }
+
+  &.slide-2 {
+    background-image: url("assets/wide_cta/cta2.png");
+  }
+
+  &.slide-3 {
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+  }
+}
+
+.hero-content {
+  padding-left: 60px;
+
+  h2 {
+    color: #ffffff;
+    font-size: 5rem;
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+    padding-left: 50px;
+  }
+
+  p {
+    color: #f0f0f0;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding-left: 50px;
+  }
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #0e0d0d;
+  font-family: var(--font-titles);
   font-size: 1.5rem;
-  text-decoration: underline;
-  color: var(--text-secondary);
-  cursor: pointer;
-  padding-left: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 50px;
+  margin-top: 20px;
+  margin-left: 50px;
+  transition: background-color 0.6s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    background-color: #292929;
+    color: #ffffff;
+  }
 }
 
-/* Sello Giratorio Continuo */
-.circle-graphic .sello {
-  width: 190px;
-  height: 190px;
-  animation: rotarSello 20s linear infinite;
+.circle-graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  .sello {
+    width: 130px;
+    height: 130px;
+    will-change: transform;
+    animation: rotarSello 20s linear infinite;
+  }
 }
 
 @keyframes rotarSello {
-  from {
-    transform: rotate(0deg);
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  border: none;
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  z-index: 6;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.7);
   }
-  to {
-    transform: rotate(360deg);
+
+  &.btn-prev { left: 10px; }
+  &.btn-next { right: 10px; }
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 6;
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &.active,
+    &:hover {
+      background-color: #ffffff;
+    }
   }
 }
 
@@ -232,9 +326,9 @@ nav.main-nav {
    ========================================================================== */
 .featured-grid {
   max-width: var(--max-width);
-  margin: 0 auto 20px auto;
+  margin: 0 auto 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   grid-auto-rows: minmax(380px, auto);
 }
@@ -245,66 +339,52 @@ nav.main-nav {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ajustado para empujar metadatos abajo */
+  justify-content: space-between;
   padding: 60px;
-  min-height: 380px; /* Altura unificada para consistencia visual */
+  min-height: 380px;
   position: relative;
+
+  &.image-card,
+  &.visual-hover-card {
+    padding: 0;
+    cursor: pointer;
+  }
+
+  &.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
 }
 
-.grid-card.project-vestigio {
-  /* Forzamos a la tarjeta a medir exactamente 380px, igual que las filas de arriba */
-  height: 380px !important;
-  max-height: 380px !important;
-}
-
-/* Tarjetas que contienen renders puros o modificados */
-.grid-card.image-card,
-.grid-card.visual-hover-card {
-  padding: 0;
-  cursor: pointer;
-}
-
-.grid-card.image-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* BADGE "NUEVO" CON ANIMACIÓN DINÁMICA */
 .badge {
   background: linear-gradient(135deg, #8f94fb, #4e54c8, #8f94fb);
   background-size: 200% auto;
-  color: #fff;
+  color: #ffffff;
   font-size: 1.1rem;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 8px 14px 6px 14px;
+  padding: 8px 14px 6px;
   border-radius: 8px;
   align-self: flex-start;
   margin-bottom: 15px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  animation:
-    moverGradiente 4s linear infinite,
-    pulsoGlow 2.5s ease-in-out infinite;
+  will-change: background-position, transform, box-shadow;
+  animation: moverGradiente 4s linear infinite, pulsoGlow 2.5s ease-in-out infinite;
 }
 
 @keyframes moverGradiente {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes pulsoGlow {
-  0% {
+  0%, 100% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(143, 148, 251, 0.6);
   }
@@ -312,23 +392,18 @@ nav.main-nav {
     transform: scale(1.03);
     box-shadow: 0 0 12px 6px rgba(143, 148, 251, 0);
   }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(143, 148, 251, 0);
-  }
 }
 
-/* Estilos de Tipografías en tarjetas de texto iniciales */
 .post-title {
   font-size: 3.4rem;
   font-weight: 500;
   line-height: 1.04;
   margin-bottom: 20px;
   letter-spacing: -0.5px;
-}
 
-.post-title span {
-  font-weight: 700;
+  span {
+    font-weight: 700;
+  }
 }
 
 .post-meta {
@@ -337,13 +412,64 @@ nav.main-nav {
   font-size: 1.1rem;
   color: var(--text-secondary);
   width: 100%;
-  margin-top: auto; /* Asegura que se fije al fondo del padding */
+  margin-top: auto;
 }
 
-/* Tarjeta Negra ("Ver todo") */
 .black-card {
   background-color: var(--bg-dark);
-  color: #fff;
+  color: #ffffff;
+
+  .card-default-content {
+    background: var(--bg-dark);
+    padding: 60px;
+  }
+
+  &.visual-hover-card {
+    &:hover .card-default-content {
+      opacity: 0;
+    }
+
+    .card-hover-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out, transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      z-index: 1;
+    }
+
+    .text-card-overlay,
+    .overlay-title,
+    .overlay-subtitle,
+    .overlay-text,
+    .overlay-year,
+    .overlay-views {
+      color: #111111;
+    }
+
+    .overlay-title {
+      font-size: 5.4rem;
+      font-weight: 600;
+      line-height: 0.8;
+      letter-spacing: -0.5px;
+    }
+
+    .overlay-text {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin: 0;
+      padding-left: 10px;
+    }
+
+    &:hover {
+      .card-hover-bg { filter: none; }
+      .text-card-overlay { opacity: 1; }
+      .text-card-overlay .overlay-content { transform: translateY(0); }
+    }
+  }
 }
 
 .post-titleblack {
@@ -355,14 +481,11 @@ nav.main-nav {
 }
 
 .badgeblack {
-  color: #fff;
+  color: #ffffff;
   font-size: 1.4rem;
   align-self: flex-start;
 }
 
-/* ==========================================================================
-   4.1 INTERACCIÓN HOVER - OVERLAYS POR PROYECTO
-   ========================================================================== */
 .project-overlay {
   position: absolute;
   top: 0;
@@ -379,20 +502,14 @@ nav.main-nav {
   z-index: 2;
 }
 
-/* Colores de Fondos Específicos */
-.project-indica .project-overlay {
-  background-color: rgba(89, 138, 94, 0.95);
-}
-.project-casagrande .project-overlay {
-  background-color: rgba(214, 133, 75, 0.95);
-}
-.project-vestigio .project-overlay {
-  background-color: rgba(184, 61, 57, 0.95);
-}
+.project-indica .project-overlay { background-color: rgba(89, 138, 94, 0.95); }
+.project-casagrande .project-overlay { background-color: rgba(214, 133, 75, 0.95); }
+.project-vestigio .project-overlay { background-color: rgba(184, 61, 57, 0.95); }
 
 .overlay-content {
   color: #ffffff;
   transform: translateY(20px);
+  will-change: transform;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -409,13 +526,8 @@ nav.main-nav {
   color: rgba(255, 255, 255, 0.9);
 }
 
-.overlay-year {
-  font-weight: 600;
-}
-
-.overlay-views {
-  font-weight: 400;
-}
+.overlay-year { font-weight: 600; }
+.overlay-views { font-weight: 400; }
 
 .overlay-text {
   font-size: 1.3rem;
@@ -436,20 +548,12 @@ nav.main-nav {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Estados de Activación del Hover */
-.grid-card.image-card:hover .project-overlay {
-  opacity: 1;
-}
-.grid-card.image-card:hover .overlay-content {
-  transform: translateY(0);
-}
-.grid-card.image-card:hover img {
-  transform: scale(1.03);
+.grid-card.image-card:hover {
+  .project-overlay { opacity: 1; }
+  .overlay-content { transform: translateY(0); }
+  img { transform: scale(1.03); }
 }
 
-/* ==========================================================================
-   4.2 INTERACCIÓN HOVER - TARJETAS DE TEXTO (VISUAL HOVER)
-   ========================================================================== */
 .card-default-content {
   width: 100%;
   height: 100%;
@@ -466,15 +570,8 @@ nav.main-nav {
 }
 
 @keyframes moverGradienteFondo {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .card-hover-bg {
@@ -486,9 +583,8 @@ nav.main-nav {
   object-fit: cover;
   opacity: 0;
   filter: brightness(0.35);
-  transition:
-    opacity 0.4s ease-in-out,
-    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+  transition: opacity 0.4s ease-in-out, transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   z-index: 1;
 }
 
@@ -507,35 +603,48 @@ nav.main-nav {
   z-index: 3;
   pointer-events: none;
   transition: opacity 0.4s ease-in-out;
+
+  .overlay-content {
+    color: #ffffff;
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
 }
 
-.text-card-overlay .overlay-content {
-  color: #ffffff;
-  transform: translateY(20px);
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+.visual-hover-card:hover {
+  .card-default-content { opacity: 0; }
+  .card-hover-bg { opacity: 1; transform: scale(1.03); }
+  .text-card-overlay { opacity: 1; }
+  .text-card-overlay .overlay-content { transform: translateY(0); }
 }
 
-/* Activación Hover Visual Card */
-.visual-hover-card:hover .card-default-content {
-  opacity: 0;
-}
-.visual-hover-card:hover .card-hover-bg {
-  opacity: 1;
-  transform: scale(1.03);
-}
-.visual-hover-card:hover .text-card-overlay {
-  opacity: 1;
-}
-.visual-hover-card:hover .text-card-overlay .overlay-content {
-  transform: translateY(0);
-}
-
-/* ==========================================================================
-   4.3 INTERACCIÓN HOVER - TARJETA NEGRA "VER TODO"
-   ========================================================================== */
 .smart-hover-card {
   cursor: pointer;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+  .badgeblack,
+  .post-titleblack {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s ease;
+    transform-origin: left center;
+  }
+
+  .card-divider {
+    border: 0;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 100%;
+    transform: scaleX(0.4);
+    transform-origin: left center;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.4s ease;
+  }
+
+  &:hover {
+    background-color: #080808;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    .post-titleblack { transform: translateY(-5px) scale(1.02); }
+    .card-divider { transform: scaleX(1); background-color: rgba(255, 255, 255, 0.7); }
+  }
 }
 
 .black-card-content {
@@ -546,149 +655,98 @@ nav.main-nav {
   width: 100%;
 }
 
-.smart-hover-card .badgeblack,
-.smart-hover-card .post-titleblack {
-  transition:
-    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
-    color 0.4s ease;
-  transform-origin: left center;
-}
-
-.smart-hover-card .card-divider {
-  border: 0;
-  height: 2px;
-  background-color: rgba(255, 255, 255, 0.15);
-  width: 100%;
-  transform: scaleX(0.4);
-  transform-origin: left center;
-  transition:
-    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-    background-color 0.4s ease;
-}
-
-.smart-hover-card:hover {
-  background-color: #080808;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.25),
-    0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.smart-hover-card:hover .post-titleblack {
-  transform: translateY(-5px) scale(1.02);
-}
-.smart-hover-card:hover .card-divider {
-  transform: scaleX(1);
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
 /* ==========================================================================
-   5. BANNER ANCHO (BOGOTÁ - 1900)
+   5. BANNER ANCHO (WIDE BANNER)
    ========================================================================== */
 .wide-banner {
   max-width: var(--max-width);
-  margin: 0 auto 20px auto;
+  margin: 0 auto 20px;
   position: relative;
   border-radius: var(--border-radius);
   overflow: hidden;
-  color: #fff;
+  color: #ffffff;
   height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 60px;
-}
 
-/* El enlace invisible que cubre TODO el banner se queda al frente de todo */
-.wide-banner .banner-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 4; /* Subió a 4 para estar por encima de la imagen hover */
-}
+  .banner-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+  }
 
-/* Base compartida para ambas imágenes de fondo */
-.wide-banner .banner-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.55);
-  transition:
-    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
-    filter 0.6s ease,
-    opacity 0.5s ease; /* Añadida transición de opacidad */
-}
+  .banner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.55);
+    will-change: transform, opacity, filter;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease, opacity 0.5s ease;
 
-/* --- LOGICA MULTICAPA --- */
+    &:first-of-type {
+      z-index: 1;
+      opacity: 1;
+    }
 
-/* Imagen 1 (Por defecto) */
-.wide-banner .banner-img:first-of-type {
-  z-index: 1;
-  opacity: 1;
-}
+    &.hover-img {
+      z-index: 0;
+      opacity: 0;
+    }
+  }
 
-/* Imagen 2 (La que aparece en hover) */
-.wide-banner .banner-img.hover-img {
-  z-index: 0;
-  opacity: 0;
-}
+  h2, p {
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+  }
 
-/* Textos fijos por encima del fondo */
-.wide-banner h2,
-.wide-banner p {
-  position: relative;
-  z-index: 3; /* Se mantiene seguro entre el fondo y el link invisible */
-  pointer-events: none;
-}
+  p {
+    padding-right: 60px;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    max-width: 650px;
+    color: #dddddd;
+  }
 
-.wide-banner p {
-  padding-right: 60px;
-  font-size: 1.3rem;
-  line-height: 1.4;
-  max-width: 650px;
-  color: #dddddd;
-}
+  h2 {
+    font-size: 4.6rem;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 10px;
 
-.wide-banner h2 {
-  font-size: 4.6rem;
-  font-weight: 300;
-  line-height: 1;
-  margin-bottom: 10px;
-}
+    span { font-weight: 600; }
+  }
 
-.wide-banner h2 span {
-  font-weight: 600;
-}
+  &:hover {
+    .banner-img:first-of-type {
+      opacity: 0;
+      transform: scale(1.02);
+      filter: brightness(0.4);
+    }
 
-/* ==========================================================================
-   EFECTO HOVER ACTUALIZADO
-   ========================================================================== */
-
-/* 1. Hacemos que la primera imagen se desvanezca */
-.wide-banner:hover .banner-img:first-of-type {
-  opacity: 0;
-  transform: scale(1.02);
-  filter: brightness(0.4);
-}
-
-/* 2. Revelamos la segunda imagen con los mismos filtros que te gustan */
-.wide-banner:hover .banner-img.hover-img {
-  opacity: 1;
-  z-index: 2; /* Sube momentáneamente para tapar el fondo */
-  transform: scale(1.02);
-  filter: brightness(0.4);
+    .banner-img.hover-img {
+      opacity: 1;
+      z-index: 2;
+      transform: scale(1.02);
+      filter: brightness(0.4);
+    }
+  }
 }
 
 /* ==========================================================================
-   6. SECCIÓN DE RECIENTES Y SHOUTBOX (DISEÑO A DOS COLUMNAS)
+   6. SECCIÓN DE RECIENTES Y SHOUTBOX
    ========================================================================== */
 .section-title-container {
   max-width: var(--max-width);
-  margin: 50px auto 25px auto;
+  margin: 50px auto 25px;
   display: flex;
   align-items: baseline;
   gap: 20px;
@@ -696,11 +754,13 @@ nav.main-nav {
 
 .section-title-inline {
   font-size: 2.4rem;
-  font-weight: 500;
+  font-weight: 300;
   color: var(--bg-dark);
   white-space: nowrap;
   line-height: 1;
 }
+
+.negrita { font-weight: 600; }
 
 .section-divider-inline {
   flex-grow: 1;
@@ -709,22 +769,20 @@ nav.main-nav {
   background-color: #0a0a0a;
 }
 
-/* CORREGIDO: Enlazado con la clase real de tu HTML */
 .recent-section-grid {
   max-width: var(--max-width);
-  margin: 0 auto 60px auto;
+  margin: 0 auto 60px;
   display: grid;
-  grid-template-columns: 2fr 1fr; /* Columna principal 2/3, Shoutbox 1/3 */
+  grid-template-columns: 2fr 1fr;
   gap: 30px;
-  align-items: stretch; /* Fuerza a que el aside mida lo mismo que la columna izquierda */
+  align-items: stretch;
 }
 
-/* Columna Izquierda: Posts Recientes */
 .recent-posts {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  min-width: 0; /* ¡TRUCO CLAVE!: Evita que las imágenes expandan la columna */
+  min-width: 0;
 }
 
 .featured-recent {
@@ -733,112 +791,96 @@ nav.main-nav {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-}
 
-/* El contenedor mantiene su tamaño rígido de 380px */
-.featured-recent-image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 380px;
-  overflow: hidden;
-}
+  .featured-recent-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
 
-/* Base compartida para ambas imágenes absolutas */
-.featured-recent-img {
-  position: absolute; /* Ahora ambas se apilan perfectamente */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition:
-    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
-    opacity 0.4s ease; /* Transición de opacidad para el desvanecimiento */
-}
+    .badge {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      z-index: 3;
+    }
+  }
 
-/* --- LÓGICA MULTICAPA --- */
+  .featured-recent-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
 
-/* Imagen 1: Visible al frente por defecto */
-.featured-recent-img:first-of-type {
-  z-index: 2;
-  opacity: 1;
-}
+    &:first-of-type {
+      z-index: 2;
+      opacity: 1;
+    }
 
-/* Imagen 2 (hover): Oculta detrás */
-.featured-recent-img.hover-img {
-  z-index: 1;
-  opacity: 0;
-}
+    &.hover-img {
+      z-index: 1;
+      opacity: 0;
+    }
+  }
 
-/* El badge se queda por encima de todo el sistema de imágenes */
-.featured-recent-image-wrapper .badge {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  z-index: 3;
-}
+  .featured-recent-body {
+    padding: 40px 45px;
+    display: flex;
+    flex-direction: column;
+  }
 
-/* El bloque de contenido se mantiene exactamente igual */
-.featured-recent-body {
-  padding: 40px 45px;
-  display: flex;
-  flex-direction: column;
-}
+  .featured-recent-title {
+    font-size: 3.2rem;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
 
-.featured-recent-title {
-  font-size: 3.2rem;
-  font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.5px;
-  margin-bottom: 15px;
-}
+    strong { font-weight: 700; }
+  }
 
-.featured-recent-title strong {
-  font-weight: 700;
-}
+  .featured-recent-desc {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 35px;
+    opacity: 0.85;
+  }
 
-.featured-recent-desc {
-  font-size: 1.3rem;
-  color: var(--text-primary);
-  margin-bottom: 35px;
-  opacity: 0.85;
-}
+  .featured-recent-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
 
-.featured-recent-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-}
+  &:hover {
+    .featured-recent-img:first-of-type {
+      opacity: 0;
+      transform: scale(1.02);
+    }
 
-/* ==========================================================================
-   INTERCAMBIO HOVER (Al pasar el mouse por CUALQUIER lado del post)
-   ========================================================================== */
-
-/* Se desvanece la primera e inicia el escalado */
-.featured-recent:hover .featured-recent-img:first-of-type {
-  opacity: 0;
-  transform: scale(1.02);
-}
-
-/* Se revela la segunda, sube su z-index y también escala */
-.featured-recent:hover .featured-recent-img.hover-img {
-  opacity: 1;
-  z-index: 2;
-  transform: scale(1.02);
+    .featured-recent-img.hover-img {
+      opacity: 1;
+      z-index: 2;
+      transform: scale(1.02);
+    }
+  }
 }
 
 .author-info {
   display: flex;
   align-items: center;
   gap: 12px;
-}
 
-.author-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  object-fit: cover;
+  .author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 }
 
 .author-name,
@@ -847,7 +889,6 @@ nav.main-nav {
   font-weight: 500;
 }
 
-/* Lista de Posts Secundarios */
 .posts-list {
   display: flex;
   flex-direction: column;
@@ -863,90 +904,71 @@ nav.main-nav {
   align-items: center;
   transition: background-color 0.3s ease;
   height: 240px;
-  min-width: 0; /* Protege el flujo interno */
-  gap: 25px;
-}
-
-.post-item:hover {
-  background-color: #e8e8e8;
-}
-
-.post-item-image {
-  width: 310px;
-  height: 100%;
-  flex-shrink: 0;
-  position: relative; /* Clave para el efecto hover multicapa */
-  overflow: hidden;
-  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.post-item-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute; /* Se acomodan una encima de la otra */
-  top: 0;
-  left: 0;
-  transition: opacity 0.4s ease;
-}
-
-/* Imagen por defecto visible */
-.post-item-image img:first-child {
-  z-index: 2;
-  opacity: 1;
-}
-
-/* Imagen de hover oculta al fondo inicialmente */
-.post-item-image img:nth-child(2) {
-  z-index: 1;
-  opacity: 0;
-}
-
-/* EFECTO HOVER: Se desvanece la primera y se revela la segunda limpiamente */
-.post-item:hover .post-item-image img:first-child {
-  opacity: 0;
-}
-
-.post-item:hover .post-item-image img:nth-child(2) {
-  opacity: 1;
-  z-index: 3;
-}
-
-.post-item-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
   min-width: 0;
-  padding: 0px 30px 0px 20px;
+  gap: 25px;
+
+  &:hover {
+    background-color: #e8e8e8;
+
+    .post-item-image {
+      width: 360px;
+
+      img:first-child { opacity: 0; }
+      img:nth-child(2) { opacity: 1; z-index: 3; }
+    }
+  }
+
+  .post-item-image {
+    width: 310px;
+    height: 100%;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.4s ease;
+
+      &:first-child { z-index: 2; opacity: 1; }
+      &:nth-child(2) { z-index: 1; opacity: 0; }
+    }
+  }
+
+  .post-item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    min-width: 0;
+    padding: 0 30px 0 20px;
+  }
+
+  .post-item-title {
+    font-size: 2.7rem;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .post-item-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+  }
 }
 
-.post-item:hover .post-item-image {
-  width: 360px;
-}
-
-.post-item-title {
-  font-size: 2.7rem;
-  font-weight: 500;
-  line-height: 1.1;
-  margin-bottom: 8px;
-  color: var(--text-primary);
-  white-space: normal;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.post-item-meta {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-}
-
-/* ==========================================================================
-   SHOUTBOX SIDEBAR (Optimizado para calzar con la referencia)
-   ========================================================================== */
 .shoutbox-container {
   background-color: var(--bg-secondary);
   border-radius: var(--border-radius);
@@ -954,31 +976,31 @@ nav.main-nav {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  height: 100%; /* Ocupa el 100% de la altura del grid actual */
+  height: 100%;
 }
 
 .shoutbox-header {
   display: flex;
   flex-direction: column;
   gap: 4px;
-}
 
-.shoutbox-title {
-  font-size: 3.1rem;
-  font-weight: 700;
-  line-height: 1.1;
-}
+  .shoutbox-title {
+    font-size: 3.1rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
 
-.shoutbox-subtitle {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
+  .shoutbox-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+  }
 }
 
 .shoutbox-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  justify-content: flex-start; /* Distribuye las 3 tarjetas uniformemente */
+  justify-content: flex-start;
   height: 100%;
 }
 
@@ -987,42 +1009,42 @@ nav.main-nav {
   flex-direction: column;
   border-radius: 14px;
   overflow: hidden;
-  background-color: #ffffff; /* Fondo blanco interno idéntico a tu mockup */
+  background-color: #ffffff;
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  flex: 1 1 0px;
+  flex: 1 1 0;
   min-height: 0;
-}
 
-.shoutbox-card:hover {
-  transform: translateY(-3px);
-}
+  &:hover {
+    transform: translateY(-3px);
+  }
 
-.shoutbox-gif-wrapper {
-  width: 100%;
-  height: 300px; /* Ajustado para mantener una proporción áurea en el lateral */
-  overflow: hidden;
-  flex-grow: 1;
-  min-height: 120px; /* Un mínimo de seguridad para pantallas muy pequeñas */
-  position: relative;
-}
+  .shoutbox-gif-wrapper {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    flex-grow: 1;
+    min-height: 120px;
+    position: relative;
 
-.shoutbox-gif {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+    .shoutbox-gif {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
 
-.shoutbox-card-footer {
-  background-color: #e2e2e2; /* Tono de gris sutil para los botones de interacción */
-  padding: 12px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  flex-shrink: 0;
+  .shoutbox-card-footer {
+    background-color: #e2e2e2;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-shrink: 0;
+  }
 }
 
 .shoutbox-action {
@@ -1036,62 +1058,85 @@ nav.main-nav {
   color: #333333;
   cursor: pointer;
   transition: color 0.2s ease;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5px;
+    transition: transform 0.2s ease, fill 0.2s ease;
+  }
+
+  &.btn-like:hover {
+    color: #e0245e;
+
+    svg {
+      fill: #e0245e;
+      transform: scale(1.1);
+    }
+  }
+
+  &.btn-comment:hover {
+    color: #4e54c8;
+
+    svg {
+      fill: rgba(78, 84, 200, 0.1);
+      transform: scale(1.1);
+    }
+  }
 }
 
-.shoutbox-action svg {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.5px;
-  transition:
-    transform 0.2s ease,
-    fill 0.2s ease;
-}
+.spotify-grid {
+  max-width: var(--max-width);
+  justify-content: center;
+  margin: 30px auto 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 
-.btn-like:hover {
-  color: #e0245e;
-}
-.btn-like:hover svg {
-  fill: #e0245e;
-  transform: scale(1.1);
-}
-
-.btn-comment:hover {
-  color: #4e54c8;
-}
-.btn-comment:hover svg {
-  fill: rgba(78, 84, 200, 0.1);
-  transform: scale(1.1);
+  .spotify-playlist {
+    width: 100%;
+    display: flex;
+  }
 }
 
 /* ==========================================================================
-   7. PIE DE PÁGINA (FOOTER)
+   7. PIE DE PÁGINA (FOOTER) Y ELEMENTOS FLOTANTES
    ========================================================================== */
-/* ==========================================================================
-   MAIN FOOTER DESIGN
-   ========================================================================== */
-
 .main-footer {
-  background-color: #000000; /* Fondo negro puro */
+  background-color: #000000;
   color: #ffffff;
-  padding: 80px 0 40px 0;
+  padding: 80px 0 40px;
   width: 100%;
-  font-family: inherit; /* Hereda tus fuentes geométricas */
+  font-family: inherit;
 }
 
 .footer-container {
-  max-width: var(--max-width); /* Se alinea con el ancho de tus grillas */
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 40px;
 }
 
-/* --- BLOQUE SUPERIOR --- */
 .footer-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 60px;
+  position: relative;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-seal-wrapper .sello {
+  width: 170px;
+  height: 170px;
+  will-change: transform;
+  animation: rotarSello 20s linear infinite;
 }
 
 .footer-brand-nav {
@@ -1105,140 +1150,125 @@ nav.main-nav {
   margin-bottom: 20px;
 }
 
-/* Distribución de las dos columnas de links */
 .footer-links-grid {
   display: grid;
-  grid-template-columns: minmax(180px, auto) minmax(180px, auto);
+  grid-template-columns: repeat(2, minmax(180px, auto));
   gap: 60px;
 }
 
-.footer-column h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #ffffff;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-column ul li a {
-  color: #e0e0e0;
-  text-decoration: none;
-  font-size: 1.6rem;
-  font-weight: 400;
-  transition: color 0.2s ease;
-  display: inline-block;
-}
-
-.footer-column ul li a hover {
-  color: var(--text-primary); /* O tu color de acento */
-}
-
-/* Estilo para los números fijos 01, 02... */
-.footer-column ul li a span {
-  font-weight: 400;
-  opacity: 0.7;
-  margin-right: 2px;
-}
-
-/* --- SELLO CIRCULAR ROTATIVO (SVG) --- */
-.circle-graphico .sello {
-  width: 190px;
-  height: 190px;
-  animation: rotarSello 20s linear infinite;
-}
-
-@keyframes rotarSello {
-  from {
-    transform: rotate(0deg);
+.footer-column {
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffffff;
   }
-  to {
-    transform: rotate(360deg);
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    li a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 1.6rem;
+      font-weight: 400;
+      transition: color 0.2s ease;
+      display: inline-block;
+
+      &:hover { color: var(--text-primary); }
+
+      span {
+        font-weight: 400;
+        opacity: 0.7;
+        margin-right: 2px;
+      }
+    }
   }
 }
 
-/* --- BLOQUE CENTRAL (REDES SOCIALES) --- */
 .footer-socials {
   display: flex;
   gap: 16px;
   margin-bottom: 50px;
+
+  .social-icon {
+    width: 52px;
+    height: 52px;
+    background-color: #121212;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s;
+
+    &:hover {
+      background-color: #1a1a1a;
+      transform: translateY(-3px);
+    }
+  }
 }
 
-.social-icon {
-  width: 52px;
-  height: 52px;
-  background-color: #121212; /* Fondo gris oscuro redondo */
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
-  font-size: 2rem;
-  text-decoration: none;
-  transition:
-    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-    background-color 0.2s;
-}
-
-.social-icon hover {
-  background-color: #1a1a1a;
-  transform: translateY(-3px); /* Pequeño salto al pasar el mouse */
-}
-
-/* --- BLOQUE INFERIOR (LEGAL) --- */
 .footer-bottom {
-  border-top: 1px solid #1a1a1a; /* Línea divisoria muy sutil */
+  border-top: 1px solid #1a1a1a;
   padding-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
 
-.copyright {
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin: 0;
-  color: #ffffff;
-}
-
-.legal-text {
-  font-size: 1.1rem;
-  line-height: 1.3;
-  color: #888888; /* Texto secundario apagado */
-  max-width: 900px;
-  margin: 0;
-}
-
-/* --- RESPONSIVE AJUSTES --- */
-@media (max-width: 768px) {
-  .footer-top {
-    flex-direction: column;
-    gap: 50px;
+  .copyright {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+    color: #ffffff;
   }
 
-  .footer-badge {
-    justify-content: flex-start; /* En celus se alinea a la izquierda */
+  .legal-text {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    color: #888888;
+    max-width: 900px;
+    margin: 0;
   }
+}
 
-  .footer-links-grid {
-    gap: 40px;
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  z-index: 99;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #111111;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M18 15l-6-6-6 6'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 22px 22px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    background-color: #333333;
   }
 }
 
 /* ==========================================================================
-   8. ESTILOS RESPONSIVE (MEDIA QUERIES) - ESTRUCTURA DEFINITIVA
+   8. MEDIA QUERIES (RESPONSIVE)
    ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   [Breakpoint 1]: Pantallas Medianas / Tablets en Horizontal (Max 1024px)
-   -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   header.main-header,
   .hero-banner,
@@ -1252,18 +1282,11 @@ nav.main-nav {
     padding-right: 24px;
   }
 
-  /* Ajuste de la grilla principal a dos columnas equilibradas */
   .featured-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
   }
-  
-  .grid-card.project-vestigio {
-    height: auto !important;
-    max-height: none !important;
-  }
 
-  /* El bloque inferior pasa a una sola columna para dar aire */
   .recent-section-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1276,9 +1299,6 @@ nav.main-nav {
   }
 }
 
-/* --------------------------------------------------------------------------
-   [Breakpoint 2]: Tablets en Vertical (Max 768px)
-   -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   header.main-header {
     margin: 30px auto;
@@ -1293,7 +1313,6 @@ nav.main-nav {
     flex-wrap: wrap;
   }
 
-  /* Hero Banner se vuelve vertical */
   .hero-banner {
     flex-direction: column-reverse;
     text-align: center;
@@ -1302,23 +1321,15 @@ nav.main-nav {
   }
 
   .hero-content h2 {
+    padding-left: 0;
     font-size: 3.8rem;
-    padding-left: 0;
   }
 
-  .hero-content p {
-    font-size: 1.3rem;
-    padding-left: 0;
-  }
-
-  /* Control del tamaño del sello en pantallas medianas/pequeñas */
-  .circle-graphic .sello,
-  .circle-graphico .sello {
+  .circle-graphic .sello {
     width: 120px;
     height: 120px;
   }
 
-  /* Grilla de tarjetas a una sola columna */
   .featured-grid {
     grid-template-columns: 1fr;
   }
@@ -1328,58 +1339,47 @@ nav.main-nav {
     min-height: 320px;
   }
 
-  /* Corrección del hover en móviles (activación por toque) */
   .project-overlay {
     padding: 30px;
   }
 
-  .overlay-title { font-size: 3.2rem; }
-  .post-titleblack { font-size: 4rem; }
+  .overlay-title {
+    font-size: 3.2rem;
+  }
 
-  /* Banner ancho dinámico para evitar que el texto desborde */
+  .post-titleblack {
+    font-size: 4rem;
+  }
+
   .wide-banner {
     height: auto;
     min-height: 280px;
     padding: 40px 24px;
+
+    h2 { font-size: 3.4rem; }
+    p { padding-right: 0; font-size: 1.2rem; }
   }
 
-  .wide-banner h2 {
-    font-size: 3.4rem;
-  }
-
-  .wide-banner p {
-    padding-right: 0;
-    font-size: 1.2rem;
-  }
-
-  /* Listado de posts secundarios vertical */
   .post-item {
     height: auto;
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
     padding-bottom: 20px;
+
+    .post-item-image {
+      width: 100% !important;
+      height: 200px;
+    }
+
+    .post-item-content { padding: 0 20px; }
+    .post-item-title { font-size: 2rem; }
   }
 
-  .post-item-image {
-    width: 100% !important;
-    height: 200px;
-  }
-
-  .post-item-content {
-    padding: 0 20px;
-  }
-
-  .post-item-title {
-    font-size: 2rem;
-  }
-
-  /* Shoutbox a una columna */
   .shoutbox-list {
     grid-template-columns: 1fr;
   }
 
-  /* Footer en formato vertical */
   .footer-top {
     flex-direction: column;
     align-items: center;
@@ -1409,9 +1409,6 @@ nav.main-nav {
   }
 }
 
-/* --------------------------------------------------------------------------
-   [Breakpoint 3]: Smartphones / Pantallas Pequeñas (Max 480px)
-   -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
   header.main-header,
   .hero-banner,
@@ -1421,7 +1418,6 @@ nav.main-nav {
     padding-right: 16px;
   }
 
-  /* Contención del buscador para que no rompa el header */
   .search-input {
     width: 100%;
     font-size: 1.4rem;
@@ -1432,7 +1428,8 @@ nav.main-nav {
     gap: 10px;
   }
 
-  .menu-btn, .language-selector {
+  .menu-btn,
+  .language-selector {
     font-size: 1.4rem;
     padding: 8px 20px;
   }
@@ -1457,7 +1454,6 @@ nav.main-nav {
     padding: 25px 20px;
   }
 
-  /* Footer links apilados */
   .footer-links-grid {
     grid-template-columns: 1fr;
     gap: 40px;

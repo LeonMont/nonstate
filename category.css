@@ -1,0 +1,909 @@
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN GENERAL
+   ========================================================================== */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f0f0f0;
+  --bg-dark: #000000;
+  --text-primary: #111111;
+  --text-secondary: #666666;
+  --accent-color: linear-gradient(45deg, #8f94fb, #4e54c8);
+  --border-radius: 14px;
+  --max-width: 1400px;
+  --font-titles: "League Spartan", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-titles);
+  font-optical-sizing: auto;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo-container p,
+.logovertical,
+.menu-btn,
+.language-selector,
+.badge,
+.search-input,
+.overlay-title,
+.post-title,
+.post-titleblack,
+.featured-recent-title,
+.post-item-title,
+.shoutbox-title {
+  font-family: var(--font-titles);
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   2. ENCABEZADO (HEADER)
+   ========================================================================== */
+header.main-header {
+  background-color: var(--bg-primary);
+  max-width: var(--max-width);
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 20px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  width: 190px;
+}
+
+.eslogan {
+  margin-top: 25px;
+  width: 140px;
+}
+
+nav.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-input {
+  border: 3px solid #ddd;
+  border-radius: 6px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  background-color: #fafafa;
+  line-height: 1;
+  padding: 10px 12px 8px 12px;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.menu-btn {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: none;
+  padding: 10px 30px 8px 30px;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 0 6px 0 0;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.menu-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.language-selector {
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 0 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.language-selector span {
+  font-weight: 700;
+}
+
+.language-selector::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid currentColor;
+  transition: transform 0.3s ease;
+}
+
+/* ==========================================================================
+   3. GRILLAS INDEPENDIENTES (INTERIOR Y RETAIL)
+   ========================================================================== */
+
+/* A. GRILLA INTERIOR (1 Columna / Wide Banners) */
+.interior-grid {
+  max-width: var(--max-width);
+  margin: 0 auto 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.interior-grid .grid-card {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* B. GRILLA RETAIL (2 Columnas) */
+.retail-grid {
+  max-width: var(--max-width);
+  margin: 0 auto 50px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.retail-grid .grid-card {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   4. REGLAS COMUNES DE TARJETAS Y HOVERS
+   ========================================================================== */
+.grid-card.image-card,
+.grid-card.visual-hover-card {
+  padding: 0;
+  cursor: pointer;
+}
+
+.grid-card.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 50px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 2;
+}
+
+.project-indica .project-overlay {
+  background-color: rgba(89, 138, 94, 0.9);
+}
+.project-casagrande .project-overlay {
+  background-color: rgba(214, 133, 75, 0.9);
+}
+.project-vestigio .project-overlay {
+  background-color: rgba(184, 61, 57, 0.9);
+}
+
+.overlay-content {
+  color: #ffffff;
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.overlay-title {
+  font-size: 4.2rem;
+  font-weight: 500;
+  line-height: 0.9;
+}
+
+.overlay-subtitle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.overlay-year {
+  font-weight: 600;
+}
+.overlay-views {
+  font-weight: 400;
+}
+
+.overlay-text {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  font-weight: 300;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.overlay-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 300;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.grid-card.image-card:hover .project-overlay {
+  opacity: 1;
+}
+.grid-card.image-card:hover .overlay-content {
+  transform: translateY(0);
+}
+.grid-card.image-card:hover img {
+  transform: scale(1.03);
+}
+
+.card-default-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px;
+  background: linear-gradient(135deg, #f0f0f0, #e4e4e4, #f5f5f5, #f0f0f0);
+  background-size: 300% 300%;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+  animation: moverGradienteFondo 8s ease-in-out infinite;
+}
+
+@keyframes moverGradienteFondo {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.card-hover-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  filter: brightness(0.35);
+  transition:
+    opacity 0.4s ease-in-out,
+    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1;
+}
+
+.text-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 60px;
+  box-sizing: border-box;
+  opacity: 0;
+  z-index: 3;
+  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.text-card-overlay .overlay-content {
+  color: #ffffff;
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.visual-hover-card:hover .card-default-content {
+  opacity: 0;
+}
+.visual-hover-card:hover .card-hover-bg {
+  opacity: 1;
+  transform: scale(1.03);
+}
+.visual-hover-card:hover .text-card-overlay {
+  opacity: 1;
+}
+.visual-hover-card:hover .text-card-overlay .overlay-content {
+  transform: translateY(0);
+}
+
+.smart-hover-card {
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.black-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+}
+
+.smart-hover-card .badgeblack,
+.smart-hover-card .post-titleblack {
+  transition:
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    color 0.4s ease;
+  transform-origin: left center;
+}
+
+.smart-hover-card .card-divider {
+  border: 0;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.15);
+  width: 100%;
+  transform: scaleX(0.4);
+  transform-origin: left center;
+  transition:
+    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    background-color 0.4s ease;
+}
+
+.smart-hover-card:hover {
+  background-color: #080808;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.25),
+    0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.smart-hover-card:hover .post-titleblack {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.smart-hover-card:hover .card-divider {
+  transform: scaleX(1);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* ==========================================================================
+   5. BANNER ANCHO (BOGOTÁ - 1900)
+   ========================================================================== */
+.wide-banner {
+  max-width: var(--max-width);
+  margin: 0 auto 20px auto;
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  color: #fff;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+}
+
+.wide-banner .banner-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+.wide-banner .banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55);
+  transition:
+    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    filter 0.6s ease,
+    opacity 0.5s ease;
+}
+
+.wide-banner .banner-img:first-of-type {
+  z-index: 1;
+  opacity: 1;
+}
+
+.wide-banner .banner-img.hover-img {
+  z-index: 0;
+  opacity: 0;
+}
+
+.wide-banner h2,
+.wide-banner p {
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.wide-banner p {
+  padding-right: 60px;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  max-width: 650px;
+  color: #dddddd;
+}
+
+.wide-banner h2 {
+  font-size: 4.6rem;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.wide-banner h2 span {
+  font-weight: 600;
+}
+
+.wide-banner:hover .banner-img:first-of-type {
+  opacity: 0;
+  transform: scale(1.02);
+  filter: brightness(0.4);
+}
+
+.wide-banner:hover .banner-img.hover-img {
+  opacity: 1;
+  z-index: 2;
+  transform: scale(1.02);
+  filter: brightness(0.4);
+}
+
+/* ==========================================================================
+   6. SECCIÓN DE RECIENTES Y SHOUTBOX
+   ========================================================================== */
+.section-title-container {
+  max-width: var(--max-width);
+  margin: 50px auto 30px auto;
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.section-title-inline {
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--bg-dark);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.negrita {
+  font-weight: 600;
+}
+
+.section-divider-inline {
+  flex-grow: 1;
+  border: 0;
+  height: 1px;
+  background-color: #0a0a0a;
+}
+
+/* ==========================================================================
+   7. PIE DE PÁGINA (FOOTER) Y SELLO GIRATORIO UNIFICADO
+   ========================================================================== */
+.main-footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 0 40px 0;
+  width: 100%;
+  font-family: inherit;
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.footer-brand-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-logo {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, auto) minmax(180px, auto);
+  gap: 60px;
+}
+
+.footer-column h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column ul li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 400;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.footer-column ul li a:hover {
+  color: var(--text-primary);
+}
+
+.footer-column ul li a span {
+  font-weight: 400;
+  opacity: 0.7;
+  margin-right: 2px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 50px;
+}
+
+.social-icon {
+  width: 52px;
+  height: 52px;
+  background-color: #121212;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 2rem;
+  text-decoration: none;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    background-color 0.2s;
+}
+
+.social-icon:hover {
+  background-color: #1a1a1a;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  border-top: 1px solid #1a1a1a;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.copyright {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0;
+  color: #ffffff;
+}
+
+.legal-text {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: #888888;
+  max-width: 900px;
+  margin: 0;
+}
+
+.circle-graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.circle-graphic .sello {
+  width: 190px;
+  height: 190px;
+  animation: rotarSello 20s linear infinite;
+}
+
+@keyframes rotarSello {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   8. MEDIA QUERIES (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  header.main-header,
+  .hero-banner,
+  .featured-grid,
+  .wide-banner,
+  .section-title-container,
+  .recent-section-grid,
+  .footer-container {
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .grid-card.project-vestigio {
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .recent-section-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .shoutbox-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  header.main-header {
+    margin: 30px auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  nav.main-nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-banner {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+    padding: 40px 24px;
+  }
+
+  .hero-content h2 {
+    font-size: 3.8rem;
+    padding-left: 0;
+  }
+
+  .hero-content p {
+    font-size: 1.3rem;
+    padding-left: 0;
+  }
+
+  .circle-graphic .sello {
+    width: 120px;
+    height: 120px;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-card {
+    padding: 40px;
+    min-height: 320px;
+  }
+
+  .project-overlay {
+    padding: 30px;
+  }
+
+  .overlay-title {
+    font-size: 3.2rem;
+  }
+  .post-titleblack {
+    font-size: 4rem;
+  }
+
+  .wide-banner {
+    height: auto;
+    min-height: 280px;
+    padding: 40px 24px;
+  }
+
+  .wide-banner h2 {
+    font-size: 3.4rem;
+  }
+  .wide-banner p {
+    padding-right: 0;
+    font-size: 1.2rem;
+  }
+
+  .post-item {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 20px;
+  }
+
+  .post-item-image {
+    width: 100% !important;
+    height: 200px;
+  }
+
+  .post-item-content {
+    padding: 0 20px;
+  }
+
+  .post-item-title {
+    font-size: 2rem;
+  }
+
+  .shoutbox-list {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer-brand-nav {
+    align-items: center;
+  }
+
+  .footer-links-grid {
+    justify-items: center;
+    gap: 30px;
+  }
+
+  .footer-column ul {
+    align-items: center;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header.main-header,
+  .hero-banner,
+  .wide-banner,
+  .footer-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .search-input {
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 8px 10px;
+  }
+
+  nav.main-nav {
+    gap: 10px;
+  }
+
+  .menu-btn,
+  .language-selector {
+    font-size: 1.4rem;
+    padding: 8px 20px;
+  }
+
+  .hero-content h2 {
+    font-size: 3rem;
+  }
+  .post-title {
+    font-size: 2.4rem;
+  }
+  .overlay-title {
+    font-size: 2.8rem;
+  }
+  .featured-recent-title {
+    font-size: 2.4rem;
+  }
+
+  .featured-recent-body {
+    padding: 25px 20px;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
