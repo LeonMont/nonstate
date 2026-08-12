@@ -1273,13 +1273,20 @@ nav.main-nav {
   header.main-header,
   .hero-banner,
   .featured-grid,
-  .wide-banner,
   .section-title-container,
   .recent-section-grid,
-  .footer-container {
+  .footer-container,
+  .spotify-grid {
     max-width: 100%;
     padding-left: 24px;
     padding-right: 24px;
+  }
+
+  .wide-banner {
+    max-width: 100%;
+    margin-left: 24px;
+    margin-right: 24px;
+    width: auto;
   }
 
   .featured-grid {
@@ -1294,7 +1301,13 @@ nav.main-nav {
 
   .shoutbox-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .spotify-grid {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 }
@@ -1305,6 +1318,16 @@ nav.main-nav {
     flex-direction: column;
     align-items: center;
     gap: 25px;
+  }
+
+  .logo-container {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .logo-container .logo {
+    content: url("assets/header/logoquery.svg");
+    margin: 0 auto;
   }
 
   nav.main-nav {
@@ -1320,9 +1343,31 @@ nav.main-nav {
     padding: 40px 24px;
   }
 
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    text-align: center;
+    width: 100%;
+  }
+
   .hero-content h2 {
     padding-left: 0;
     font-size: 3.8rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero-content p {
+    padding-left: 0;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero-btn {
+    margin: 15px auto 0 auto;
   }
 
   .circle-graphic .sello {
@@ -1337,6 +1382,13 @@ nav.main-nav {
   .grid-card {
     padding: 40px;
     min-height: 320px;
+  }
+
+  .grid-card.text-card.visual-hover-card .overlay-text,
+  .grid-card .overlay-text,
+  .text-card .overlay-text,
+  .visual-hover-card .overlay-text {
+    display: block; 
   }
 
   .project-overlay {
@@ -1358,6 +1410,10 @@ nav.main-nav {
 
     h2 { font-size: 3.4rem; }
     p { padding-right: 0; font-size: 1.2rem; }
+  }
+
+  .featured-recent .featured-recent-title {
+    font-size: 2.2rem;
   }
 
   .post-item {
@@ -1412,10 +1468,15 @@ nav.main-nav {
 @media (max-width: 480px) {
   header.main-header,
   .hero-banner,
-  .wide-banner,
-  .footer-container {
+  .footer-container,
+  .spotify-grid {
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .wide-banner {
+    margin-left: 16px;
+    margin-right: 16px;
   }
 
   .search-input {
@@ -1446,8 +1507,9 @@ nav.main-nav {
     font-size: 2.8rem;
   }
 
+  .featured-recent .featured-recent-title,
   .featured-recent-title {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
 
   .featured-recent-body {
