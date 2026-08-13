@@ -8,17 +8,41 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.getElementById("close-btn");
   const fullscreenMenu = document.getElementById("fullscreen-menu");
 
+  window.addEventListener('scroll', function() {
+  const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  
+  // Calcula el porcentaje de scroll completado
+  const scrolled = (winScroll / height) * 100;
+  
+  // Actualiza el ancho de la barra de progreso
+  const progressBar = document.getElementById('readingProgressBar');
+  if (progressBar) {
+    progressBar.style.width = scrolled + '%';
+  }
+});
+
   if (menuBtn && fullscreenMenu && closeBtn) {
     menuBtn.addEventListener("click", () => {
       fullscreenMenu.classList.add("is-active");
-      document.body.style.overflow = "hidden"; // Bloquea el scroll de fondo
+      document.body.style.overflow = "hidden";
     });
 
     closeBtn.addEventListener("click", () => {
       fullscreenMenu.classList.remove("is-active");
-      document.body.style.overflow = "auto"; // Restaura el scroll
+      document.body.style.overflow = "auto";
     });
   }
+
+window.addEventListener('scroll', function() {
+  const floatingBar = document.getElementById('floatingBar');
+  
+  if (window.scrollY > 300) {
+    floatingBar.classList.add('visible');
+  } else {
+    floatingBar.classList.remove('visible');
+  }
+});
   
   // ==========================================
   // 1. CARROUSEL / SLIDER
@@ -31,9 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
   let autoSlideInterval;
 
-  // Lógica principal de renderizado
   function showSlide(index) {
-    if (slides.length === 0) return; // Evita errores si no hay carrousel en la página
+    if (slides.length === 0) return; 
 
     if (index >= slides.length) currentIndex = 0;
     else if (index < 0) currentIndex = slides.length - 1;
@@ -48,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Navegación
   function nextSlide() {
     showSlide(currentIndex + 1);
   }
@@ -57,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
     showSlide(currentIndex - 1);
   }
 
-  // Control de reproducción automática
   function startAutoSlide() {
     if (slides.length > 0) {
       autoSlideInterval = setInterval(nextSlide, 5000);
@@ -69,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
     startAutoSlide();
   }
 
-  // Event Listeners del Carrousel
   if (btnNext && btnPrev) {
     btnNext.addEventListener("click", () => {
       nextSlide();
@@ -92,17 +112,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 2. BOTÓN SCROLL TO TOP
+  // 2. BOTÓN SCROLL TO TOP (Optimizado)
   // ==========================================
   const scrollTopBtn = document.getElementById("scrollTopBtn");
 
   if (scrollTopBtn) {
-    // Mostrar u ocultar botón según el scroll
+    let isScrolling = false;
+
     window.addEventListener("scroll", () => {
-      scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+      if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+          scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+          isScrolling = false;
+        });
+        isScrolling = true;
+      }
     });
 
-    // Volver al inicio con scroll suave
     scrollTopBtn.addEventListener("click", () => {
       window.scrollTo({
         top: 0,
@@ -119,20 +145,17 @@ document.addEventListener("DOMContentLoaded", () => {
   if (copyButtons.length > 0) {
     copyButtons.forEach((btn) => {
       btn.addEventListener('click', async () => {
-        // Ubica la tarjeta contenedora y extrae la ruta de la imagen
         const card = btn.closest('.shoutbox-card');
-        if (!card) return; // Prevención si el botón no está dentro de una tarjeta
+        if (!card) return; 
 
         const gifImg = card.querySelector('.shoutbox-gif');
         if (!gifImg) return;
 
-        // Obtiene la URL absoluta del GIF (ej: https://tusitio.com/assets/posts/shoutbox/gif1.gif)
         const gifUrl = gifImg.src;
 
         try {
           await navigator.clipboard.writeText(gifUrl);
 
-          // Feedback temporal al usuario
           const statusSpan = btn.querySelector('.copy-status');
           
           if (statusSpan) {

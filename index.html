@@ -25,25 +25,24 @@
   <!-- [01] HEADER & NAVEGACIÓN                                                   -->
   <!-- ========================================================================== -->
   <header class="main-header">
-    <!-- Logo y Eslogan -->
     <div class="logo-container">
       <a href="index.html">
         <img src="assets/header/logo.svg" alt="Non-State Logo" class="logo" />
       </a>
     </div>
 
-    <!-- Sello gráfico fijo sobre el carrusel -->
     <div class="circle-graphic">
-      <a href="#">
+      <a href="index.html" class="sello-link">
         <img src="assets/header/sello.svg" alt="Sello - Diseñar con responsabilidad por Non-State" class="sello" />
       </a>
     </div>
 
-    <!-- Navegación Principal -->
     <nav class="main-nav">
-      <input type="search" placeholder="Buscar" class="search-input" />
-      <button class="menu-btn">Menú</button>
-      <div class="language-selector">Español - <span>ES</span></div>
+      <a href="#destacados">Destacados</a>
+      <a href="category.html">Proyectos</a>
+      <a href="#posts">Posts</a>
+      <a href="careers.html">Acerca de</a>
+      <button class="menu-btn">Contacto</button>
     </nav>
   </header>
 
@@ -53,45 +52,35 @@
   <main>
     <!-- PARTE A: Hero Carousel -->
     <section class="hero-banner carousel">
-      <!-- Contenedor de las diapositivas -->
       <div class="carousel-track">
-        <!-- Slide 1 -->
         <div class="carousel-slide slide-1 active">
           <div class="hero-content">
             <h2>Construir. <br />Diseñar. Mejorar</h2>
-            <p>Lee nuestro manifiesto de diseño.</p>
-            <a href="TU_ENLACE_AQUI" class="hero-btn">Lee el manifiesto</a>
+            <p>Podemos ayudarte a alcanzar tus objetivos de visibilidad.</p>
+            <a href="TU_ENLACE_AQUI" class="hero-btn">Descubre cómo.</a>
           </div>
         </div>
 
-        <!-- Slide 2 -->
         <div class="carousel-slide slide-2">
           <div class="hero-content">
             <h2>Explorar. <br />Crear. Innovar</h2>
             <p>Conoce nuestras propuestas comerciales de retail.</p>
-            <a href="TU_ENLACE_AQUI" class="hero-btn">Explorar</a>
+            <a href="TU_ENLACE_AQUI" class="hero-btn">Descubre nuestros paquetes.</a>
           </div>
         </div>
 
-        <!-- Slide 3 -->
         <div class="carousel-slide slide-3">
           <div class="hero-content">
-            <h2>Estructura. <br />Forma. Espacio</h2>
-            <p>Proyectos de arquitectura interior y concepto.</p>
-            <a href="TU_ENLACE_AQUI" class="hero-btn">Ver proyectos</a>
+            <h2>Sabemos que la IA <br />se apoderará de todo.</h2>
+            <p>Mientras lo hace, déjanos asesorarte.</p>
+            <a href="TU_ENLACE_AQUI" class="hero-btn">Solicita tu asesoría. <strong>Es gratis.</strong></a>
           </div>
         </div>
       </div>
 
-      <!-- Controles del carrusel -->
-      <button class="carousel-btn btn-prev" aria-label="Anterior">
-        &#10094;
-      </button>
-      <button class="carousel-btn btn-next" aria-label="Siguiente">
-        &#10095;
-      </button>
+      <button class="carousel-btn btn-prev" aria-label="Anterior">&#10094;</button>
+      <button class="carousel-btn btn-next" aria-label="Siguiente">&#10095;</button>
 
-      <!-- Puntos de navegación (Indicadores) -->
       <div class="carousel-dots">
         <span class="dot active"></span>
         <span class="dot"></span>
@@ -100,29 +89,19 @@
     </section>
 
     <!-- PARTE B: Destacados Grid -->
-    <section class="featured-grid">
-      <!-- Fila 1 -->
+    <section class="featured-grid" id="destacados">
       <!-- Destacado 1 (Indica) -->
       <article class="grid-card image-card project-indica">
-        <a href="project1.html" style="
-              display: block;
-              width: 100%;
-              height: 100%;
-              text-decoration: none;
-              color: inherit;
-            ">
-          <img src="assets/destacados/indica_1.webp" alt="Display Retail 1" />
+        <a href="project1.html" class="card-link">
+          <img src="assets/destacados/indica_1.webp" alt="Mobiliario comercial Indica" />
           <div class="project-overlay">
             <div class="overlay-content">
               <h3 class="overlay-title">Indica</h3>
               <h2 class="overlay-subtitle">Medical Cannabis Store</h2>
-              <p class="overlay-text">
-                Mobiliario comercial para punto de venta.
-              </p>
+              <p class="overlay-text">Espacio de venta con diseño moderno y funcional.</p>
               <div class="overlay-footer">
                 <span class="overlay-year">28 de febrero de 2022</span>
-                <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 3,9 mil
-                  vistas</span>
+                <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 3,9 mil vistas</span>
               </div>
             </div>
           </div>
@@ -130,106 +109,79 @@
       </article>
 
       <!-- Destacado 2 (Cómo romper las reglas) -->
-      <article class="grid-card text-card visual-hover-card">
-        <div class="card-default-content">
+      <article class="grid-card double-image-card">
+        <!-- Imagen principal (se oscurece con CSS) -->
+        <img src="assets/destacados/foto1.webp" alt="Fondo principal" class="card-bg-img img-main" />
+
+        <!-- Imagen al hacer hover -->
+        <img src="assets/destacados/foto2.webp" alt="Estructura arquitectónica" class="card-bg-img img-hover" />
+
+        <!-- Contenido fijo (siempre visible) -->
+        <div class="persistent-content">
           <span class="badge">Nuevo</span>
-          <h3 class="post-title">
+          <h3 class="post-title text-light">
             <a href="post-template.html">¿Cómo romper las reglas del diseño sin perder coherencia?</a>
           </h3>
-          <div class="post-meta">
+          <div class="post-meta text-light">
             <span class="post-date">Subido: Junio 06, 2026</span>
             <span class="post-read-time"><strong>4 min </strong>de lectura.</span>
           </div>
         </div>
-        <img src="assets/destacados/foto1.webp" alt="Estructura arquitectónica abstracta con líneas diagonales"
-          class="card-hover-bg" />
-        <div class="text-card-overlay">
-          <div class="overlay-content">
-            <h3 class="overlay-title">Leer post</h3>
-            <p class="overlay-text">
-              El diseño funciona bajo un mundo de reglas strictly y otras no
-              tanto. Te doy mi opinión sobre como hacerlo sin que luzca mal.
-            </p>
-          </div>
-        </div>
       </article>
 
-      <!-- Fila 2 -->
       <!-- Destacado 3 (Armé mi setup) -->
-      <article class="grid-card text-card visual-hover-card">
-        <div class="card-default-content">
+      <article class="grid-card double-image-card">
+        <!-- Imagen principal (se oscurece con CSS) -->
+        <img src="assets/destacados/foto2.webp" alt="Fondo principal" class="card-bg-img img-main" />
+
+        <!-- Imagen al hacer hover -->
+        <img src="assets/destacados/foto1.webp" alt="Estructura arquitectónica" class="card-bg-img img-hover" />
+
+        <!-- Contenido fijo (siempre visible) -->
+        <div class="persistent-content">
           <span class="badge">Nuevo</span>
-          <h3 class="post-title">
-            <a href="#">Armé mi setup de diseño y te muestro el paso a paso.
-              <span>[Parte 1]</span></a>
+          <h3 class="post-title text-light">
+            <a href="post-template.html">Armé mi setup de diseño y te muestro el paso a paso. <strong>[Parte
+                1]</strong></a>
           </h3>
-          <div class="post-meta">
-            <span class="post-date">Subido: Junio 20, 2026</span>
-            <span class="post-read-time"><strong>3 min </strong>de lectura.</span>
-          </div>
-        </div>
-        <img src="assets/destacados/foto2.webp" alt="Escritorio de diseño de computadora con luces LED rojas"
-          class="card-hover-bg" />
-        <div class="text-card-overlay">
-          <div class="overlay-content">
-            <h3 class="overlay-title">Leer post</h3>
-            <p class="overlay-text">
-              Pasa y te muestro mi nuevo setup de diseño para que te animes a
-              armar el tuyo.
-            </p>
+          <div class="post-meta text-light">
+            <span class="post-date">Subido: Junio 06, 2026</span>
+            <span class="post-read-time"><strong>4 min </strong>de lectura.</span>
           </div>
         </div>
       </article>
 
       <!-- Destacado 4 (Casa Grande) -->
       <article class="grid-card image-card project-casagrande">
-        <a href="project2.html" style="
-              display: block;
-              width: 100%;
-              height: 100%;
-              text-decoration: none;
-              color: inherit;
-            ">
-          <img src="assets/destacados/casagrande_1.webp" alt="Display Retail 1" />
+        <a href="project2.html" class="card-link">
+          <img src="assets/destacados/casagrande_1.webp" alt="Restaurante tradicional Casa Grande" />
           <div class="project-overlay">
             <div class="overlay-content">
               <h3 class="overlay-title">Casa Grande</h3>
               <h2 class="overlay-subtitle">Restaurante tradicional</h2>
-              <p class="overlay-text">
-                Un diseño gastronómico que rinde homenaje a las raíces
-                coloniales, fusionando texturas rústicas de madera con
-                vegetación viva.
-              </p>
+              <p class="overlay-text">Un diseño gastronómico que rinde homenaje a las raíces coloniales, fusionando
+                texturas rústicas de madera con vegetación viva.</p>
               <div class="overlay-footer">
                 <span class="overlay-year">11 de febrero de 2023</span>
-                <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 4 mil
-                  vistas</span>
+                <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 4 mil vistas</span>
               </div>
             </div>
           </div>
         </a>
       </article>
 
-      <!-- Fila 3 -->
       <!-- Destacado 5 (Vestigio) -->
       <article class="grid-card image-card project-vestigio">
-        <img src="assets/destacados/vestigio_1.webp"
-          alt="Pasillo interior de arquitectura clásica con grandes arcadas de color rojo terracota, iluminación cálida y una estatua al fondo"
-          loading="lazy" />
+        <img src="assets/destacados/vestigio_1.webp" alt="Pasillo interior de arquitectura clásica" loading="lazy" />
         <div class="project-overlay">
           <div class="overlay-content">
             <h3 class="overlay-title">Vestigio</h3>
             <h2 class="overlay-subtitle">Galería de arte clásica</h2>
-            <p class="overlay-text">
-              Una exploración del espacio a través del color terracota y la
-              luz focalizada, creando una atmósfera de misterio y reverencia
-              histórica.
-            </p>
+            <p class="overlay-text">Una exploración del espacio a través del color terracota y la luz focalizada,
+              creando una atmósfera de misterio y reverencia histórica.</p>
             <div class="overlay-footer">
               <span class="overlay-year">5 de noviembre de 2023</span>
-              <span class="overlay-views">
-                <i class="view-icon" aria-hidden="true">👁</i> 2 mil
-              </span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 2 mil vistas</span>
             </div>
           </div>
         </div>
@@ -237,7 +189,6 @@
 
       <!-- Destacado 6 (Ver Todo) -->
       <article class="grid-card black-card smart-hover-card visual-hover-card">
-        <!-- Fondo predeterminado (visible al inicio) -->
         <div class="card-default-content black-card-content">
           <span class="badgeblack">24 proyectos</span>
           <h3 class="post-titleblack">
@@ -247,11 +198,8 @@
             <hr class="card-divider" />
           </div>
         </div>
-
-        <!-- Imagen de fondo para el hover (puedes cambiar la ruta de la imagen) -->
-        <img src="assets/destacados/planta.png" alt="Ver todos los proyectos" class="card-hover-bg" loading="lazy" />
-
-        <!-- Overlay con la información al hacer Hover -->
+        <img src="assets/destacados/planta.png" alt="Planta decorativa para ver todos los proyectos"
+          class="card-hover-bg" loading="lazy" />
         <div class="text-card-overlay">
           <div class="overlay-content">
             <h3 class="overlay-title">Ver todo</h3>
@@ -270,49 +218,37 @@
           loading="lazy" />
         <div class="banner-overlay"></div>
       </a>
-
       <div class="banner-content">
         <h2><span>Bogotá</span> - 1900</h2>
-        <p>
-          Un viaje al corazón de la Bogotá de 1900: devolviendo la vida a la
-          Plaza de Bolívar y su entorno a través de Adobe Firefly y la
-          tecnología de <strong>Unreal Engine 6</strong>.
-        </p>
+        <p>Un viaje al corazón de la Bogotá de 1900: devolviendo la vida a la Plaza de Bolívar y su entorno a través de
+          Adobe Firefly y la tecnología de <strong>Unreal Engine 6</strong>.</p>
       </div>
     </section>
 
     <!-- Divisor de Título -->
-    <div class="section-title-container">
-      <h2 class="section-title-inline">
-        Posts -<span class="negrita">Nuevos</span>
-      </h2>
+    <div class="section-title-container" id="posts">
+      <h2 class="section-title-inline">Posts -<span class="negrita">Nuevos</span></h2>
       <hr class="section-divider-inline" />
     </div>
 
     <!-- PARTE D: Grid Posts Recientes + Shoutbox -->
     <div class="recent-section-grid">
-      <!-- Columna Izquierda: Posts -->
       <section class="recent-posts">
         <!-- Post destacado -->
         <article class="featured-recent">
           <div class="featured-recent-image-wrapper">
-            <img src="assets/posts/destacadoprincipal.webp"
-              alt="Fachada minimalista y moderna de una cafetería llamada Banana Cake & Coffee"
+            <img src="assets/posts/destacadoprincipal.webp" alt="Fachada minimalista y moderna de cafetería"
               class="featured-recent-img" loading="lazy" />
-            <img src="assets/posts/destacadoprincipalhover.webp" alt="Detalle o proceso del render de la cafetería"
+            <img src="assets/posts/destacadoprincipalhover.webp" alt="Detalle del render de la cafetería"
               class="featured-recent-img hover-img" loading="lazy" />
             <span class="badge">Nuevo</span>
           </div>
-
           <div class="featured-recent-body">
             <h3 class="featured-recent-title">
-              <a href="#">Comparativa <strong>Gemini 3.1</strong> <br />vs.
-                <strong>Chat GPT Image 2</strong></a>
+              <a href="#">Comparativa <strong>Gemini 3.1</strong> <br />vs. <strong>Chat GPT Image 2</strong></a>
             </h3>
-            <p class="featured-recent-desc">
-              Modelos multimodales en acción: diferencias clave, ventajas
-              creativas y veredicto.
-            </p>
+            <p class="featured-recent-desc">Modelos multimodales en acción: diferencias clave, ventajas creativas y
+              veredicto.</p>
             <div class="featured-recent-footer">
               <div class="author-info">
                 <img src="assets/posts/user.webp" alt="Avatar de Alejandro Romero" class="author-avatar"
@@ -326,12 +262,10 @@
 
         <!-- Lista de Posts Secundarios -->
         <div class="posts-list">
-          <!-- Post 1 -->
           <article class="post-item">
             <div class="post-item-image">
               <img src="assets/posts/cards/post_1.webp" alt="Render de un panda en 3D" loading="lazy" />
-              <img src="assets/posts/cards/hover_1.webp" alt="Render de un panda en 3D - Vista Alternativa"
-                loading="lazy" />
+              <img src="assets/posts/cards/hover_1.webp" alt="Vista Alternativa de panda en 3D" loading="lazy" />
             </div>
             <div class="post-item-content">
               <h4 class="post-item-title">
@@ -344,13 +278,11 @@
             </div>
           </article>
 
- <!-- Post 2 -->
           <article class="post-item">
-            <a href="a_post1.html" class="post-item-link-wrapper" style="display: flex; gap: 1rem; align-items: center; width: 100%; text-decoration: none; color: inherit;">
+            <a href="a_post1.html" class="post-item-link-wrapper">
               <div class="post-item-image">
                 <img src="assets/posts/cards/post_2.webp" alt="Escenario inspirado en Dofus" loading="lazy" />
-                <img src="assets/posts/cards/hover_2.webp" alt="Escenario inspirado en Dofus - Vista Alternativa"
-                  loading="lazy" />
+                <img src="assets/posts/cards/hover_2.webp" alt="Vista Alternativa del escenario" loading="lazy" />
               </div>
               <div class="post-item-content">
                 <h4 class="post-item-title">
@@ -364,11 +296,10 @@
             </a>
           </article>
 
-          <!-- Post 3 -->
           <article class="post-item">
             <div class="post-item-image">
               <img src="assets/posts/cards/post_3.webp" alt="Diseño de texturas" loading="lazy" />
-              <img src="assets/posts/cards/hover_3.webp" alt="Diseño de texturas - Vista Alternativa" loading="lazy" />
+              <img src="assets/posts/cards/hover_3.webp" alt="Vista Alternativa de diseño de texturas" loading="lazy" />
             </div>
             <div class="post-item-content">
               <h4 class="post-item-title">
@@ -381,11 +312,10 @@
             </div>
           </article>
 
-          <!-- Post 4 -->
           <article class="post-item">
             <div class="post-item-image">
-              <img src="assets/posts/cards/post_4.webp" alt="Diseño de texturas" loading="lazy" />
-              <img src="assets/posts/cards/hover_4.webp" alt="Diseño de texturas - Vista Alternativa" loading="lazy" />
+              <img src="assets/posts/cards/post_4.webp" alt="Novedades para V-ray" loading="lazy" />
+              <img src="assets/posts/cards/hover_4.webp" alt="Vista Alternativa V-ray" loading="lazy" />
             </div>
             <div class="post-item-content">
               <h4 class="post-item-title">
@@ -400,7 +330,7 @@
         </div>
       </section>
 
-      <!-- Columna Derecha: Shoutbox / Giftbox -->
+      <!-- Columna Derecha: Shoutbox -->
       <aside class="shoutbox-container">
         <div class="shoutbox-header">
           <h3 class="shoutbox-title">Giftbox</h3>
@@ -424,8 +354,6 @@
                 </svg>
                 <span class="like-count">74</span>
               </button>
-
-              <!-- Botón Copiar Enlace -->
               <button class="shoutbox-action btn-copy" aria-label="Copiar enlace del GIF">
                 <svg class="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   aria-hidden="true">
@@ -453,8 +381,6 @@
                 </svg>
                 <span class="like-count">23</span>
               </button>
-
-              <!-- Botón Copiar Enlace -->
               <button class="shoutbox-action btn-copy" aria-label="Copiar enlace del GIF">
                 <svg class="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   aria-hidden="true">
@@ -482,8 +408,6 @@
                 </svg>
                 <span class="like-count">89</span>
               </button>
-
-              <!-- Botón Copiar Enlace -->
               <button class="shoutbox-action btn-copy" aria-label="Copiar enlace del GIF">
                 <svg class="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   aria-hidden="true">
@@ -511,8 +435,6 @@
                 </svg>
                 <span class="like-count">89</span>
               </button>
-
-              <!-- Botón Copiar Enlace -->
               <button class="shoutbox-action btn-copy" aria-label="Copiar enlace del GIF">
                 <svg class="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   aria-hidden="true">
@@ -527,45 +449,47 @@
       </aside>
     </div>
 
-    <!-- Divisor de Título -->
     <div class="section-title-container">
-      <h2 class="section-title-inline">
-        <span class="negrita">Playlists</span>
-      </h2>
+      <h2 class="section-title-inline"><span class="negrita">Playlists</span></h2>
       <hr class="section-divider-inline" />
     </div>
 
     <!-- Playlists -->
     <section class="spotify-grid">
-      <!-- Fila 1 -->
       <article class="spotify-playlist">
         <iframe data-testid="embed-iframe" style="border-radius:12px"
           src="https://open.spotify.com/embed/playlist/4FJ6ALqVBPC47va7wIlFz8?utm_source=generator&theme=0&si=c439df08a8ba461b"
           width="100%" height="352" frameBorder="0" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </article>
-
       <article class="spotify-playlist">
         <iframe data-testid="embed-iframe" style="border-radius:12px"
           src="https://open.spotify.com/embed/playlist/1e4sDAWPgmOZI7TRpaWX9M?utm_source=generator&theme=0&si=3a35e17b7545479b"
           width="100%" height="352" frameBorder="0" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </article>
-
-      <!-- Fila 2 -->
       <article class="spotify-playlist">
         <iframe data-testid="embed-iframe" style="border-radius:12px"
           src="https://open.spotify.com/embed/playlist/6yAiKkiqvfhVw2kmHQah3i?utm_source=generator&theme=0&si=8ef6900f099c4613"
           width="100%" height="352" frameBorder="0" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </article>
-
       <article class="spotify-playlist">
         <iframe data-testid="embed-iframe" style="border-radius:12px"
           src="https://open.spotify.com/embed/playlist/4Tw13dJDCpgWCoVD2cPxFx?utm_source=generator&theme=0&si=3b454b2ada384428"
           width="100%" height="352" frameBorder="0" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </article>
+    </section>
+
+     <!-- Juego -->
+       <section class="game-embed-section">
+    <div class="game-embed-container">
+      <h2 class="game-embed-title">Juego destacado</h2>
+      <p class="game-embed-description">Disfruta de un juego divertido y desafiante directamente en nuestro sitio web.</p>
+      <iframe src='https://www.minijuegos.com/embed/bad-ice-cream' style='width:100%;height:100%;' frameborder='0'
+        allowfullscreen></iframe>
+    </div>
     </section>
   </main>
 
@@ -574,33 +498,19 @@
   <!-- ========================================================================== -->
   <footer class="main-footer">
     <div class="footer-container">
-      <!-- Bloque Superior (Marca, Enlaces y Sello) -->
       <div class="footer-top">
-        <!-- Columna Izquierda: Logo, Enlaces y Redes Sociales -->
         <div class="footer-left">
           <img class="footer-logo" src="assets/footer/logohorizontal.svg" alt="Non-State" loading="lazy" />
-
           <div class="footer-links-grid">
-            <!-- Categorías -->
             <div class="footer-column">
               <h3>Categorías</h3>
               <ul>
-                <li>
-                  <a href="#"><span>01</span> /inicio/</a>
-                </li>
-                <li>
-                  <a href="#"><span>02</span> /posts/</a>
-                </li>
-                <li>
-                  <a href="#"><span>03</span> /shoutbox/</a>
-                </li>
-                <li>
-                  <a href="#"><span>04</span> /contacto/</a>
-                </li>
+                <li><a href="#"><span>01</span> /inicio/</a></li>
+                <li><a href="#"><span>02</span> /posts/</a></li>
+                <li><a href="#"><span>03</span> /shoutbox/</a></li>
+                <li><a href="#"><span>04</span> /contacto/</a></li>
               </ul>
             </div>
-
-            <!-- General -->
             <div class="footer-column">
               <h3>General</h3>
               <ul>
@@ -611,25 +521,17 @@
               </ul>
             </div>
           </div>
-
-          <!-- Redes Sociales -->
           <div class="footer-socials">
-            <a href="#" class="social-icon" aria-label="Behance">
-              <img src="assets/footer/behance.svg" alt="" loading="lazy" />
-            </a>
-            <a href="#" class="social-icon" aria-label="Instagram">
-              <img src="assets/footer/instagram.svg" alt="" loading="lazy" />
-            </a>
-            <a href="#" class="social-icon" aria-label="Spotify">
-              <img src="assets/footer/spotify.svg" alt="" loading="lazy" />
-            </a>
-            <a href="#" class="social-icon" aria-label="YouTube">
-              <img src="assets/footer/youtube.svg" alt="" loading="lazy" />
-            </a>
+            <a href="https://www.behance.net/nonstate" class="social-icon" aria-label="Behance"><img src="assets/footer/behance.svg" alt=""
+                loading="lazy" /></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><img src="assets/footer/instagram.svg" alt=""
+                loading="lazy" /></a>
+            <a href="#" class="social-icon" aria-label="Spotify"><img src="assets/footer/spotify.svg" alt=""
+                loading="lazy" /></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><img src="assets/footer/youtube.svg" alt=""
+                loading="lazy" /></a>
           </div>
         </div>
-
-        <!-- Columna Derecha: Sello circular -->
         <div class="footer-seal-wrapper">
           <a href="#">
             <img src="assets/footer/selloblanco.svg" alt="Sello - Diseñar con responsabilidad por Non-State"
@@ -637,73 +539,72 @@
           </a>
         </div>
       </div>
-      <!-- Fin de .footer-top -->
 
-      <!-- Copyright & Legal -->
       <div class="footer-bottom">
         <p class="copyright">© 2027. All rights reserved.</p>
-        <p class="legal-text">
-          Ninguna parte de este contenido puede ser reproducida, en su
-          totalidad o en parte, por ningún medio sin el permiso previo por
-          escrito del titular de los derechos de autor.
-        </p>
+        <p class="legal-text">Ninguna parte de este contenido puede ser reproducida, en su totalidad o en parte, por
+          ningún medio sin el permiso previo por escrito del titular de los derechos de autor.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Botón para volver arriba -->
   <button id="scrollTopBtn" title="Volver arriba" aria-label="Volver arriba"></button>
 
-  <!-- Menú Overlay a Pantalla Completa con Imagen Lateral -->
   <div id="fullscreen-menu" class="fullscreen-menu">
     <div class="menu-content-wrapper">
-
-      <!-- Columna Izquierda: Contenido del Menú -->
       <div class="menu-left-pane">
-        <!-- Cabecera del menú: Botón CERRAR y Selector de Idioma -->
         <div class="menu-header-top">
           <button id="close-btn" class="close-btn">CERRAR</button>
-          <div class="language-selector">
-            <span>ESPAÑOL - ES</span> <span class="arrow-down">▼</span>
-          </div>
         </div>
-
-        <!-- Enlaces principales de navegación -->
         <nav class="menu-nav-links">
           <a href="index.html">INICIO</a>
-          <a href="#">PROYECTOS</a>
+          <a href="category.html">PROYECTOS</a>
+          <a href="#posts">POSTS</a>
           <a href="#">ACERCA DE</a>
-          <a href="#">CARRERAS</a>
           <a href="#">CONTACTO</a>
         </nav>
-
-        <!-- Pie del menú: Eslogan y Redes / Contacto (Con margen inferior ampliado) -->
         <div class="menu-footer-info">
-          <p class="menu-tagline"><strong>DISEÑO</strong> MÁS ALLÁ DE LAS FRONTERAS.</p>
-
           <div class="menu-socials">
-            <a href="https://nonstate.co" target="_blank">BEHANCE ↗</a>
+            <a href="https://www.behance.net/nonstate" target="_blank">BEHANCE ↗</a>
             <a href="#" target="_blank">INSTAGRAM ↗</a>
             <a href="#" target="_blank">LINKEDIN ↗</a>
           </div>
-
           <div class="menu-contact-details">
             <p>+57 3123453445</p>
             <p><a href="mailto:info@nonstate.co">conctact@nonstate.co</a></p>
           </div>
         </div>
       </div>
-
-      <!-- Columna Derecha: Imagen de Referencia / Visual (Indicada para ubicar la imagen) -->
       <div class="menu-right-pane">
         <div class="menu-image-container">
-          <!-- AQUÍ PUEDES PONER TU IMAGEN -->
           <img src="assets/destacados/indica_1.webp" alt="Vista previa de proyectos Non-State" />
         </div>
       </div>
-
     </div>
   </div>
 </body>
+
+<!-- Barra de progreso de lectura -->
+<div class="reading-progress-container">
+  <div class="reading-progress-bar" id="readingProgressBar"></div>
+</div>
+
+<div class="scroll-floating-bar" id="floatingBar">
+  <!-- Logo horizontal -->
+  <a href="#" class="floating-logo-link">
+    <img src="assets/footer/logohorizontal.svg" alt="Non State Logo" class="floating-logo">
+  </a>
+  
+  <!-- Categorías del Nav (ajusta los enlaces href según tus secciones) -->
+  <nav class="floating-nav-links">
+    <a href="#destacados">Destacados</a>
+    <a href="category.html">Proyectos</a>
+    <a href="#posts">Posts</a>
+    <a href="#blog">Acerca de</a>
+  </nav>
+  
+  <!-- Botón de Contacto -->
+  <a href="#fullscreen-menu" class="floating-btn">Contacto</a>
+</div>
 
 </html>

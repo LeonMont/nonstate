@@ -1,6 +1,10 @@
 /* ==========================================================================
    1. VARIABLES Y CONFIGURACIÓN GENERAL
    ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg-primary: #ffffff;
   --bg-secondary: #f0f0f0;
@@ -9,7 +13,7 @@
   --text-secondary: #666666;
   --accent-color: linear-gradient(45deg, #8f94fb, #4e54c8);
   --border-radius: 14px;
-  --max-width: 1400px;
+  --max-width: 1500px;
   --font-titles: "League Spartan", sans-serif;
 }
 
@@ -33,8 +37,32 @@ body {
   line-height: 1.5;
 }
 
+/* Clases utilitarias extraídas del HTML */
+.card-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-item-link-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Consistencia tipográfica */
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .logo-container p,
 .logovertical,
 .menu-btn,
@@ -70,11 +98,11 @@ img {
 header.main-header {
   background-color: var(--bg-primary);
   max-width: var(--max-width);
-  margin: 50px auto 30px;
+  margin: 40px auto 30px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 10px 20px;
+  padding: 10px 0;
 }
 
 .logo-container {
@@ -92,25 +120,22 @@ header.main-header {
   }
 }
 
-nav.main-nav {
+.main-nav {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 45px;
 
-  .search-input {
-    border: 3px solid #dddddd;
-    border-radius: 6px;
-    font-size: 1.6rem;
-    font-weight: 400;
-    background-color: #fafafa;
-    line-height: 1;
-    padding: 10px 12px 8px;
+  a {
+    font-weight: 500;
+    font-size: 1.4rem;
     color: var(--text-primary);
-    outline: none;
+    text-decoration: none;
+    transition:
+      color 0.3s ease,
+      text-decoration 0.3s ease;
 
-    &::placeholder {
-      color: var(--text-secondary);
-      opacity: 0.5;
+    &:hover {
+      text-decoration: underline;
     }
   }
 
@@ -124,36 +149,13 @@ nav.main-nav {
     border-radius: 0 6px 0 0;
     font-size: 1.6rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
 
     &:hover {
       background-color: #000000;
       color: #ffffff;
-    }
-  }
-
-  .language-selector {
-    font-size: 1.6rem;
-    font-weight: 500;
-    padding: 0 30px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-
-    span {
-      font-weight: 700;
-    }
-
-    &::before {
-      content: "";
-      display: inline-block;
-      width: 0;
-      height: 0;
-      border-top: 5px solid transparent;
-      border-bottom: 5px solid transparent;
-      border-left: 7px solid currentColor;
-      transition: transform 0.3s ease;
     }
   }
 }
@@ -184,7 +186,9 @@ nav.main-nav {
   grid-row: 1;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  transition:
+    opacity 0.5s ease-in-out,
+    visibility 0.5s ease-in-out;
   width: 100%;
   height: 340px;
   box-sizing: border-box;
@@ -199,15 +203,12 @@ nav.main-nav {
   &.slide-1 {
     background-image: url("assets/wide_cta/cta1.png");
   }
-
   &.slide-2 {
     background-image: url("assets/wide_cta/cta2.png");
   }
-
   &.slide-3 {
     background: linear-gradient(to right, #ff9966, #ff5e62);
   }
-
   &.active {
     opacity: 1;
     visibility: visible;
@@ -248,7 +249,10 @@ nav.main-nav {
   border-radius: 50px;
   margin-top: 20px;
   margin-left: 50px;
-  transition: background-color 0.6s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background-color 0.6s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:hover {
     background-color: #292929;
@@ -261,6 +265,7 @@ nav.main-nav {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  padding-right: 250px;
 
   .sello {
     width: 130px;
@@ -271,8 +276,12 @@ nav.main-nav {
 }
 
 @keyframes rotarSello {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .carousel-btn {
@@ -292,9 +301,12 @@ nav.main-nav {
   &:hover {
     background: rgba(0, 0, 0, 0.7);
   }
-
-  &.btn-prev { left: 10px; }
-  &.btn-next { right: 10px; }
+  &.btn-prev {
+    left: 10px;
+  }
+  &.btn-next {
+    right: 10px;
+  }
 }
 
 .carousel-dots {
@@ -341,7 +353,7 @@ nav.main-nav {
   flex-direction: column;
   justify-content: space-between;
   padding: 60px;
-  min-height: 380px;
+  height: 392px;
   position: relative;
 
   &.image-card,
@@ -374,17 +386,26 @@ nav.main-nav {
   align-items: center;
   justify-content: center;
   will-change: background-position, transform, box-shadow;
-  animation: moverGradiente 4s linear infinite, pulsoGlow 2.5s ease-in-out infinite;
+  animation:
+    moverGradiente 4s linear infinite,
+    pulsoGlow 2.5s ease-in-out infinite;
 }
 
 @keyframes moverGradiente {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes pulsoGlow {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(143, 148, 251, 0.6);
   }
@@ -392,6 +413,80 @@ nav.main-nav {
     transform: scale(1.03);
     box-shadow: 0 0 12px 6px rgba(143, 148, 251, 0);
   }
+}
+
+/* ==========================================================================
+   VARIANTE: TARJETA CON DOS IMÁGENES Y TEXTO FIJO
+   ========================================================================== */
+.double-image-card {
+  padding: 0; /* Removemos el padding de grid-card para que la imagen cubra todo */
+  cursor: pointer;
+}
+
+/* Comportamiento de las imágenes de fondo */
+.double-image-card .card-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: opacity, transform;
+  transition:
+    opacity 0.4s ease-in-out,
+    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1;
+}
+
+/* Filtro para oscurecer las imágenes y permitir leer el texto blanco */
+.double-image-card .img-main {
+  filter: brightness(0.4);
+  opacity: 1;
+}
+
+.double-image-card .img-hover {
+  filter: brightness(0.4);
+  opacity: 0;
+  transform: scale(1.05); /* Pequeño zoom inicial para dar efecto dinámico */
+}
+
+/* Contenedor del texto siempre visible */
+.double-image-card .persistent-content {
+  position: relative;
+  z-index: 2; /* Siempre por encima de las imágenes */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 60px; /* Recuperamos el padding interior estándar de tus tarjetas */
+  pointer-events: none; /* Evita que el div bloquee el hover de la tarjeta */
+}
+
+/* Permitir clics en los enlaces aunque el contenedor tenga pointer-events: none */
+.double-image-card .persistent-content a {
+  pointer-events: auto;
+}
+
+/* Ajustes tipográficos para contraste oscuro */
+.double-image-card .text-light,
+.double-image-card .text-light a {
+  color: #ffffff;
+}
+
+.double-image-card .post-meta.text-light {
+  color: #dddddd;
+}
+
+/* === Efecto Hover === */
+.double-image-card:hover .img-main {
+  opacity: 0;
+  transform: scale(1.03);
+}
+
+.double-image-card:hover .img-hover {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .post-title {
@@ -437,7 +532,9 @@ nav.main-nav {
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      transition: opacity 0.4s ease-in-out, transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      transition:
+        opacity 0.4s ease-in-out,
+        transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
       z-index: 1;
     }
 
@@ -465,9 +562,15 @@ nav.main-nav {
     }
 
     &:hover {
-      .card-hover-bg { filter: none; }
-      .text-card-overlay { opacity: 1; }
-      .text-card-overlay .overlay-content { transform: translateY(0); }
+      .card-hover-bg {
+        filter: none;
+      }
+      .text-card-overlay {
+        opacity: 1;
+      }
+      .text-card-overlay .overlay-content {
+        transform: translateY(0);
+      }
     }
   }
 }
@@ -502,9 +605,15 @@ nav.main-nav {
   z-index: 2;
 }
 
-.project-indica .project-overlay { background-color: rgba(89, 138, 94, 0.95); }
-.project-casagrande .project-overlay { background-color: rgba(214, 133, 75, 0.95); }
-.project-vestigio .project-overlay { background-color: rgba(184, 61, 57, 0.95); }
+.project-indica .project-overlay {
+  background-color: rgba(89, 138, 94, 0.95);
+}
+.project-casagrande .project-overlay {
+  background-color: rgba(214, 133, 75, 0.95);
+}
+.project-vestigio .project-overlay {
+  background-color: rgba(184, 61, 57, 0.95);
+}
 
 .overlay-content {
   color: #ffffff;
@@ -518,16 +627,18 @@ nav.main-nav {
   font-weight: 500;
   line-height: 0.9;
 }
-
 .overlay-subtitle {
   font-size: 1.8rem;
   font-weight: 300;
   margin-bottom: 15px;
   color: rgba(255, 255, 255, 0.9);
 }
-
-.overlay-year { font-weight: 600; }
-.overlay-views { font-weight: 400; }
+.overlay-year {
+  font-weight: 600;
+}
+.overlay-views {
+  font-weight: 400;
+}
 
 .overlay-text {
   font-size: 1.3rem;
@@ -549,9 +660,15 @@ nav.main-nav {
 }
 
 .grid-card.image-card:hover {
-  .project-overlay { opacity: 1; }
-  .overlay-content { transform: translateY(0); }
-  img { transform: scale(1.03); }
+  .project-overlay {
+    opacity: 1;
+  }
+  .overlay-content {
+    transform: translateY(0);
+  }
+  img {
+    transform: scale(1.03);
+  }
 }
 
 .card-default-content {
@@ -570,8 +687,13 @@ nav.main-nav {
 }
 
 @keyframes moverGradienteFondo {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .card-hover-bg {
@@ -584,7 +706,9 @@ nav.main-nav {
   opacity: 0;
   filter: brightness(0.35);
   will-change: opacity, transform;
-  transition: opacity 0.4s ease-in-out, transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  transition:
+    opacity 0.4s ease-in-out,
+    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   z-index: 1;
 }
 
@@ -612,10 +736,19 @@ nav.main-nav {
 }
 
 .visual-hover-card:hover {
-  .card-default-content { opacity: 0; }
-  .card-hover-bg { opacity: 1; transform: scale(1.03); }
-  .text-card-overlay { opacity: 1; }
-  .text-card-overlay .overlay-content { transform: translateY(0); }
+  .card-default-content {
+    opacity: 0;
+  }
+  .card-hover-bg {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  .text-card-overlay {
+    opacity: 1;
+  }
+  .text-card-overlay .overlay-content {
+    transform: translateY(0);
+  }
 }
 
 .smart-hover-card {
@@ -624,7 +757,9 @@ nav.main-nav {
 
   .badgeblack,
   .post-titleblack {
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s ease;
+    transition:
+      transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+      color 0.4s ease;
     transform-origin: left center;
   }
 
@@ -635,15 +770,24 @@ nav.main-nav {
     width: 100%;
     transform: scaleX(0.4);
     transform-origin: left center;
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.4s ease;
+    transition:
+      transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+      background-color 0.4s ease;
   }
 
   &:hover {
     background-color: #080808;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.25),
+      0 10px 30px rgba(0, 0, 0, 0.3);
 
-    .post-titleblack { transform: translateY(-5px) scale(1.02); }
-    .card-divider { transform: scaleX(1); background-color: rgba(255, 255, 255, 0.7); }
+    .post-titleblack {
+      transform: translateY(-5px) scale(1.02);
+    }
+    .card-divider {
+      transform: scaleX(1);
+      background-color: rgba(255, 255, 255, 0.7);
+    }
   }
 }
 
@@ -670,6 +814,7 @@ nav.main-nav {
   flex-direction: column;
   justify-content: center;
   padding: 60px;
+  height: 392px;
 
   .banner-link {
     position: absolute;
@@ -689,20 +834,23 @@ nav.main-nav {
     object-fit: cover;
     filter: brightness(0.55);
     will-change: transform, opacity, filter;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease, opacity 0.5s ease;
+    transition:
+      transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+      filter 0.6s ease,
+      opacity 0.5s ease;
 
     &:first-of-type {
       z-index: 1;
       opacity: 1;
     }
-
     &.hover-img {
       z-index: 0;
       opacity: 0;
     }
   }
 
-  h2, p {
+  h2,
+  p {
     position: relative;
     z-index: 3;
     pointer-events: none;
@@ -722,7 +870,9 @@ nav.main-nav {
     line-height: 1;
     margin-bottom: 10px;
 
-    span { font-weight: 600; }
+    span {
+      font-weight: 600;
+    }
   }
 
   &:hover {
@@ -731,7 +881,6 @@ nav.main-nav {
       transform: scale(1.02);
       filter: brightness(0.4);
     }
-
     .banner-img.hover-img {
       opacity: 1;
       z-index: 2;
@@ -760,7 +909,9 @@ nav.main-nav {
   line-height: 1;
 }
 
-.negrita { font-weight: 600; }
+.negrita {
+  font-weight: 600;
+}
 
 .section-divider-inline {
   flex-grow: 1;
@@ -813,13 +964,14 @@ nav.main-nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+    transition:
+      transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+      opacity 0.4s ease;
 
     &:first-of-type {
       z-index: 2;
       opacity: 1;
     }
-
     &.hover-img {
       z-index: 1;
       opacity: 0;
@@ -839,7 +991,9 @@ nav.main-nav {
     letter-spacing: -0.5px;
     margin-bottom: 15px;
 
-    strong { font-weight: 700; }
+    strong {
+      font-weight: 700;
+    }
   }
 
   .featured-recent-desc {
@@ -861,7 +1015,6 @@ nav.main-nav {
       opacity: 0;
       transform: scale(1.02);
     }
-
     .featured-recent-img.hover-img {
       opacity: 1;
       z-index: 2;
@@ -912,9 +1065,13 @@ nav.main-nav {
 
     .post-item-image {
       width: 360px;
-
-      img:first-child { opacity: 0; }
-      img:nth-child(2) { opacity: 1; z-index: 3; }
+      img:first-child {
+        opacity: 0;
+      }
+      img:nth-child(2) {
+        opacity: 1;
+        z-index: 3;
+      }
     }
   }
 
@@ -935,8 +1092,14 @@ nav.main-nav {
       left: 0;
       transition: opacity 0.4s ease;
 
-      &:first-child { z-index: 2; opacity: 1; }
-      &:nth-child(2) { z-index: 1; opacity: 0; }
+      &:first-child {
+        z-index: 2;
+        opacity: 1;
+      }
+      &:nth-child(2) {
+        z-index: 1;
+        opacity: 0;
+      }
     }
   }
 
@@ -989,7 +1152,6 @@ nav.main-nav {
     font-weight: 700;
     line-height: 1.1;
   }
-
   .shoutbox-subtitle {
     font-size: 1.25rem;
     color: var(--text-secondary);
@@ -1065,12 +1227,13 @@ nav.main-nav {
     fill: none;
     stroke: currentColor;
     stroke-width: 2.5px;
-    transition: transform 0.2s ease, fill 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      fill 0.2s ease;
   }
 
   &.btn-like:hover {
     color: #e0245e;
-
     svg {
       fill: #e0245e;
       transform: scale(1.1);
@@ -1079,7 +1242,6 @@ nav.main-nav {
 
   &.btn-comment:hover {
     color: #4e54c8;
-
     svg {
       fill: rgba(78, 84, 200, 0.1);
       transform: scale(1.1);
@@ -1102,6 +1264,182 @@ nav.main-nav {
 }
 
 /* ==========================================================================
+   6. JUEGO
+   ========================================================================== */
+
+.game-embed-section {
+  max-width: var(--max-width);
+  margin: 0 auto 40px;
+}
+
+.game-embed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.game-embed-container iframe {
+  width: 100% !important;
+  /* Forzamos una proporción rectangular estándar (16:9), perfecta para la mayoría de juegos web */
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important; /* Anula cualquier altura heredada que lo aplaste */
+  min-height: 500px; /* Asegura un tamaño cómodo en pantallas grandes */
+  border-radius: 12px;
+  border: none;
+  background-color: #000;
+}
+
+.game-embed-title {
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: var(--bg-dark);
+  line-height: 0.7;
+}
+
+.game-embed-description {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+/* El truco clave para el iframe */
+.game-embed-container iframe {
+  width: 100%;
+  height: 600px; /* Define una altura cómoda para escritorio (ej. 600px o 650px) */
+  max-height: 80vh; /* Evita que sea más grande que la pantalla del usuario */
+  border-radius: var(
+    --border-radius
+  ); /* Hereda los bordes redondeados de tu web */
+  border: none;
+  background-color: #000; /* Fondo negro por si el juego tarda en cargar */
+}
+
+/* Ajuste responsive para celulares */
+@media (max-width: 768px) {
+  .game-embed-section {
+    padding: 0 24px;
+  }
+  .game-embed-container iframe {
+    height: 400px; /* Una altura menor para pantallas pequeñas */
+  }
+}
+
+/* ==========================================================================
+   6. BARRA FLOTANTE
+   ========================================================================== */
+
+.scroll-floating-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(7, 7, 7, 0.95);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+
+  transform: translateY(-100%);
+  opacity: 0;
+  transition:
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-floating-bar.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Estilo del Logo */
+.floating-logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.scroll-floating-bar .floating-logo {
+  height: 26px; /* Ajusta este valor según el tamaño óptimo de tu SVG */
+  width: auto;
+  display: block;
+}
+
+/* Estilo de las categorías del Nav */
+.floating-nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.floating-nav-links a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.floating-nav-links a:hover {
+  color: #ffffff;
+}
+
+/* Estilo del Botón de Contacto */
+.scroll-floating-bar .floating-btn {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.scroll-floating-bar .floating-btn:hover {
+  background-color: rgb(7, 7, 7, 0.95);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Ajuste responsive para móviles */
+@media (max-width: 768px) {
+  .scroll-floating-bar {
+    padding: 12px 20px;
+  }
+  .floating-nav-links {
+    display: none; /* Oculta las categorías en pantallas pequeñas para evitar saturar el espacio */
+  }
+}
+
+/* ==========================================================================
+   7. BARRA DE PROGRESO DE LECTURA
+   ========================================================================== */
+
+.reading-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  z-index: 1002; /* Por encima de cualquier otro elemento flotante */
+  pointer-events: none; /* Evita que interfiera con clics */
+}
+
+.reading-progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #ffffff; /* Puedes cambiarlo por un color de acento si lo prefieres */
+  transition: width 0.05s ease-out; /* Transición ultra fluida */
+}
+
+/* ==========================================================================
    7. PIE DE PÁGINA (FOOTER) Y ELEMENTOS FLOTANTES
    ========================================================================== */
 .main-footer {
@@ -1115,7 +1453,6 @@ nav.main-nav {
 .footer-container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 40px;
 }
 
 .footer-top {
@@ -1144,7 +1481,6 @@ nav.main-nav {
   flex-direction: column;
   gap: 30px;
 }
-
 .footer-logo {
   color: #ffffff;
   margin-bottom: 20px;
@@ -1163,14 +1499,12 @@ nav.main-nav {
     margin-bottom: 15px;
     color: #ffffff;
   }
-
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-
     li a {
       color: #e0e0e0;
       text-decoration: none;
@@ -1179,8 +1513,9 @@ nav.main-nav {
       transition: color 0.2s ease;
       display: inline-block;
 
-      &:hover { color: var(--text-primary); }
-
+      &:hover {
+        color: var(--text-primary);
+      }
       span {
         font-weight: 400;
         opacity: 0.7;
@@ -1206,7 +1541,9 @@ nav.main-nav {
     color: #ffffff;
     font-size: 2rem;
     text-decoration: none;
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s;
+    transition:
+      transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+      background-color 0.2s;
 
     &:hover {
       background-color: #1a1a1a;
@@ -1229,7 +1566,6 @@ nav.main-nav {
     margin: 0;
     color: #ffffff;
   }
-
   .legal-text {
     font-size: 1.1rem;
     line-height: 1.3;
@@ -1258,7 +1594,10 @@ nav.main-nav {
   background-position: center;
   background-size: 22px 22px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.2s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.2s ease,
+    background-color 0.2s ease;
 
   &:hover {
     transform: translateY(-3px);
@@ -1270,7 +1609,6 @@ nav.main-nav {
    8. MEDIA QUERIES (RESPONSIVE)
    ========================================================================== */
 @media (max-width: 1024px) {
-  /* FIX (Captura 2026-08-11 213234.png): Se agregó .spotify-grid para heredar los márgenes generales */
   header.main-header,
   .hero-banner,
   .featured-grid,
@@ -1289,23 +1627,19 @@ nav.main-nav {
     margin-right: 24px;
     width: auto;
   }
-
   .featured-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
   }
-
   .recent-section-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-
   .shoutbox-list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
   }
-
   .spotify-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -1320,30 +1654,25 @@ nav.main-nav {
     align-items: center;
     gap: 25px;
   }
-
   .logo-container {
     justify-content: center;
     width: 100%;
   }
-
   .logo-container .logo {
     content: url("assets/header/logoquery.svg");
     margin: 0 auto;
   }
-
   nav.main-nav {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
   }
-
   .hero-banner {
     flex-direction: column-reverse;
     text-align: center;
     gap: 30px;
     padding: 40px 24px;
   }
-
   .hero-content {
     display: flex;
     flex-direction: column;
@@ -1353,53 +1682,43 @@ nav.main-nav {
     text-align: center;
     width: 100%;
   }
-
   .hero-content h2 {
     padding-left: 0;
     font-size: 3.8rem;
     text-align: center;
     margin: 0 auto;
   }
-
   .hero-content p {
     padding-left: 0;
     text-align: center;
     margin: 0 auto;
   }
-
   .hero-btn {
     margin: 15px auto 0 auto;
   }
-
   .circle-graphic .sello {
     width: 120px;
     height: 120px;
   }
-
   .featured-grid {
     grid-template-columns: 1fr;
   }
-
   .grid-card {
     padding: 40px;
     min-height: 320px;
   }
-
   .grid-card.text-card.visual-hover-card .overlay-text,
   .grid-card .overlay-text,
   .text-card .overlay-text,
   .visual-hover-card .overlay-text {
-    display: block; 
+    display: block;
   }
-
   .project-overlay {
     padding: 30px;
   }
-
   .overlay-title {
     font-size: 3.2rem;
   }
-
   .post-titleblack {
     font-size: 4rem;
   }
@@ -1408,9 +1727,13 @@ nav.main-nav {
     height: auto;
     min-height: 280px;
     padding: 40px 24px;
-
-    h2 { font-size: 3.4rem; }
-    p { padding-right: 0; font-size: 1.2rem; }
+    h2 {
+      font-size: 3.4rem;
+    }
+    p {
+      padding-right: 0;
+      font-size: 1.2rem;
+    }
   }
 
   .featured-recent .featured-recent-title {
@@ -1423,51 +1746,46 @@ nav.main-nav {
     align-items: flex-start;
     gap: 15px;
     padding-bottom: 20px;
-
     .post-item-image {
       width: 100% !important;
       height: 200px;
     }
-
-    .post-item-content { padding: 0 20px; }
-    .post-item-title { font-size: 2rem; }
+    .post-item-content {
+      padding: 0 20px;
+    }
+    .post-item-title {
+      font-size: 2rem;
+    }
   }
 
   .shoutbox-list {
     grid-template-columns: 1fr;
   }
-
   .footer-top {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 40px;
   }
-
   .footer-brand-nav {
     align-items: center;
   }
-
   .footer-links-grid {
     justify-items: center;
     gap: 30px;
   }
-
   .footer-column ul {
     align-items: center;
   }
-
   .footer-socials {
     justify-content: center;
   }
-
   .footer-bottom {
     text-align: center;
   }
 }
 
 @media (max-width: 480px) {
-  /* FIX (Captura 2026-08-11 213234.png): Se agregó .spotify-grid para heredar los márgenes en móviles */
   header.main-header,
   .hero-banner,
   .footer-container,
@@ -1480,48 +1798,38 @@ nav.main-nav {
     margin-left: 16px;
     margin-right: 16px;
   }
-
   .search-input {
     width: 100%;
     font-size: 1.4rem;
     padding: 8px 10px;
   }
-
   nav.main-nav {
     gap: 10px;
   }
-
   .menu-btn,
   .language-selector {
     font-size: 1.4rem;
     padding: 8px 20px;
   }
-
   .hero-content h2 {
     font-size: 3rem;
   }
-
-   .post-principaltitle {
+  .post-principaltitle {
     font-size: 5rem;
   }
-
   .post-title {
     font-size: 2.4rem;
   }
-
   .overlay-title {
     font-size: 2.8rem;
   }
-
   .featured-recent .featured-recent-title,
   .featured-recent-title {
     font-size: 1.8rem;
   }
-
   .featured-recent-body {
     padding: 25px 20px;
   }
-
   .footer-links-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1529,7 +1837,7 @@ nav.main-nav {
 }
 
 /* ==========================================================================
-   FULLSCREEN MENU OVERLAY (DOS COLUMNAS CON IMAGEN)
+   FULLSCREEN MENU OVERLAY
    ========================================================================== */
 .fullscreen-menu {
   position: fixed;
@@ -1544,7 +1852,9 @@ nav.main-nav {
   flex-direction: column;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
   overflow-y: auto;
 }
 
@@ -1557,9 +1867,9 @@ nav.main-nav {
   max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;
-  padding: 50px 40px 80px 40px; /* Margen inferior superior (padding-bottom de 80px) */
+  padding: 50px 40px 80px 40px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr; /* Distribución de espacio */
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 60px;
   min-height: 100%;
   align-items: center;
@@ -1572,7 +1882,6 @@ nav.main-nav {
   height: 100%;
   min-height: 750px;
 }
-
 .menu-header-top {
   display: flex;
   justify-content: space-between;
@@ -1589,11 +1898,9 @@ nav.main-nav {
   padding: 10px 24px 7px 24px;
   font-size: 1.4rem;
   cursor: pointer;
-  letter-spacing: 1px;
-  transition: background 0.2s;
   border-radius: 50px;
   letter-spacing: 0.3px;
-  
+  transition: background 0.2s;
 }
 
 .close-btn:hover {
@@ -1606,7 +1913,6 @@ nav.main-nav {
   gap: 12px;
   margin: 30px 0;
 }
-
 .menu-nav-links a {
   color: var(--bg-primary);
   text-decoration: none;
@@ -1627,20 +1933,18 @@ nav.main-nav {
   gap: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: 30px;
-  margin-bottom: 20px; /* Margen extra para dar más espacio abajo */
+  margin-bottom: 20px;
 }
 
 .menu-tagline {
   font-size: 1.4rem;
   letter-spacing: 0.5px;
 }
-
 .menu-socials {
   display: flex;
   gap: 25px;
   flex-wrap: wrap;
 }
-
 .menu-socials a,
 .menu-contact-details p,
 .menu-contact-details a {
@@ -1649,19 +1953,15 @@ nav.main-nav {
   font-size: 1.2rem;
   font-weight: 500;
 }
-
 .menu-socials a:hover,
 .menu-contact-details a:hover {
   text-decoration: underline;
 }
-
 .menu-contact-details {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-
-/* Columna Derecha: Imagen lateral */
 .menu-right-pane {
   width: 100%;
   height: 100%;
@@ -1685,22 +1985,18 @@ nav.main-nav {
   object-fit: cover;
 }
 
-/* Ajustes responsivos para tablets y celulares */
 @media (max-width: 1024px) {
   .menu-content-wrapper {
-    grid-template-columns: 1fr; /* Una sola columna en pantallas medianas/pequeñas */
+    grid-template-columns: 1fr;
     padding: 40px 24px 60px 24px;
   }
-  
   .menu-right-pane {
-    display: none; /* Oculta la imagen lateral en móviles para priorizar la navegación fluida */
+    display: none;
   }
-
   .menu-left-pane {
     min-height: auto;
     gap: 40px;
   }
-
   .menu-nav-links a {
     font-size: 3.5rem;
   }

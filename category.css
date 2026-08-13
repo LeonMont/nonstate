@@ -71,94 +71,68 @@ img {
 header.main-header {
   background-color: var(--bg-primary);
   max-width: var(--max-width);
-  margin: 50px auto;
+  margin: 40px auto 30px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 10px 20px;
+  padding: 10px 0;
 }
 
 .logo-container {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  .logo {
+    width: 190px;
+  }
+
+  .eslogan {
+    margin-top: 25px;
+    width: 140px;
+  }
 }
 
-.logo {
-  width: 190px;
-}
-
-.eslogan {
-  margin-top: 25px;
-  width: 140px;
-}
-
-nav.main-nav {
+.main-nav {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 45px;
+
+  a {
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition:
+      color 0.3s ease,
+      text-decoration 0.3s ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .menu-btn {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: none;
+    padding: 10px 30px 8px;
+    font-family: inherit;
+    font-weight: 600;
+    border-radius: 0 6px 0 0;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+  }
 }
 
-.search-input {
-  border: 3px solid #ddd;
-  border-radius: 6px;
-  font-size: 1.6rem;
-  font-weight: 400;
-  background-color: #fafafa;
-  line-height: 1;
-  padding: 10px 12px 8px 12px;
-  color: var(--text-primary);
-  outline: none;
-}
-
-.search-input::placeholder {
-  color: var(--text-secondary);
-  opacity: 0.5;
-}
-
-.menu-btn {
-  background-color: var(--bg-secondary);
-  color: var(--text-primary);
-  border: none;
-  padding: 10px 30px 8px 30px;
-  font-family: inherit;
-  font-weight: 600;
-  border-radius: 0 6px 0 0;
-  font-size: 1.6rem;
-  cursor: pointer;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
-}
-
-.menu-btn:hover {
-  background-color: #000000;
-  color: #ffffff;
-}
-
-.language-selector {
-  font-size: 1.6rem;
-  font-weight: 500;
-  padding: 0 30px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.language-selector span {
-  font-weight: 700;
-}
-
-.language-selector::before {
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 7px solid currentColor;
-  transition: transform 0.3s ease;
-}
 
 /* ==========================================================================
    3. GRILLAS INDEPENDIENTES (INTERIOR Y RETAIL)
@@ -681,12 +655,14 @@ nav.main-nav {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-}
+  padding-right: 250px;
 
-.circle-graphic .sello {
-  width: 190px;
-  height: 190px;
-  animation: rotarSello 20s linear infinite;
+  .sello {
+    width: 130px;
+    height: 130px;
+    will-change: transform;
+    animation: rotarSello 20s linear infinite;
+  }
 }
 
 @keyframes rotarSello {
@@ -697,6 +673,7 @@ nav.main-nav {
     transform: rotate(360deg);
   }
 }
+
 
 /* ==========================================================================
    8. MEDIA QUERIES (RESPONSIVE)
