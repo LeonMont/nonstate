@@ -1270,6 +1270,7 @@ nav.main-nav {
    8. MEDIA QUERIES (RESPONSIVE)
    ========================================================================== */
 @media (max-width: 1024px) {
+  /* FIX (Captura 2026-08-11 213234.png): Se agregó .spotify-grid para heredar los márgenes generales */
   header.main-header,
   .hero-banner,
   .featured-grid,
@@ -1466,6 +1467,7 @@ nav.main-nav {
 }
 
 @media (max-width: 480px) {
+  /* FIX (Captura 2026-08-11 213234.png): Se agregó .spotify-grid para heredar los márgenes en móviles */
   header.main-header,
   .hero-banner,
   .footer-container,
@@ -1499,6 +1501,10 @@ nav.main-nav {
     font-size: 3rem;
   }
 
+   .post-principaltitle {
+    font-size: 5rem;
+  }
+
   .post-title {
     font-size: 2.4rem;
   }
@@ -1519,5 +1525,183 @@ nav.main-nav {
   .footer-links-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+}
+
+/* ==========================================================================
+   FULLSCREEN MENU OVERLAY (DOS COLUMNAS CON IMAGEN)
+   ========================================================================== */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--bg-primary);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  overflow-y: auto;
+}
+
+.fullscreen-menu.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-content-wrapper {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 40px 80px 40px; /* Margen inferior superior (padding-bottom de 80px) */
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* Distribución de espacio */
+  gap: 60px;
+  min-height: 100%;
+  align-items: center;
+}
+
+.menu-left-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 750px;
+}
+
+.menu-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.close-btn {
+  background: var(--bg-primary);
+  color: var(--bg-dark);
+  border: none;
+  font-family: var(--font-titles);
+  font-weight: 700;
+  padding: 10px 24px 7px 24px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+  border-radius: 50px;
+  letter-spacing: 0.3px;
+  
+}
+
+.close-btn:hover {
+  background: #e0e0e0;
+}
+
+.menu-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.menu-nav-links a {
+  color: var(--bg-primary);
+  text-decoration: none;
+  font-size: clamp(2.8rem, 5vw, 5.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  transition: opacity 0.2s;
+}
+
+.menu-nav-links a:hover {
+  opacity: 0.6;
+}
+
+.menu-footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 30px;
+  margin-bottom: 20px; /* Margen extra para dar más espacio abajo */
+}
+
+.menu-tagline {
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+.menu-socials {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.menu-socials a,
+.menu-contact-details p,
+.menu-contact-details a {
+  color: var(--bg-primary);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.menu-socials a:hover,
+.menu-contact-details a:hover {
+  text-decoration: underline;
+}
+
+.menu-contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Columna Derecha: Imagen lateral */
+.menu-right-pane {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-image-container {
+  width: 100%;
+  height: 80vh;
+  max-height: 700px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.menu-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ajustes responsivos para tablets y celulares */
+@media (max-width: 1024px) {
+  .menu-content-wrapper {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas medianas/pequeñas */
+    padding: 40px 24px 60px 24px;
+  }
+  
+  .menu-right-pane {
+    display: none; /* Oculta la imagen lateral en móviles para priorizar la navegación fluida */
+  }
+
+  .menu-left-pane {
+    min-height: auto;
+    gap: 40px;
+  }
+
+  .menu-nav-links a {
+    font-size: 3.5rem;
   }
 }

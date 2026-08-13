@@ -221,6 +221,15 @@ ul {
   margin: 0;
 }
 
+.project-header {
+  font-size: 3.5rem;
+  font-weight: 500;
+  max-width: 60%;
+  margin: 60px auto 40px auto;
+  color: var(--text-primary);
+  line-height: 90px;
+}
+
 .project-description {
   font-size: 1.3rem;
   font-weight: 400;

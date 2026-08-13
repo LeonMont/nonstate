@@ -2,6 +2,25 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
+  // MENÚ OVERLAY A PANTALLA COMPLETA
+  // ==========================================
+  const menuBtn = document.querySelector(".menu-btn");
+  const closeBtn = document.getElementById("close-btn");
+  const fullscreenMenu = document.getElementById("fullscreen-menu");
+
+  if (menuBtn && fullscreenMenu && closeBtn) {
+    menuBtn.addEventListener("click", () => {
+      fullscreenMenu.classList.add("is-active");
+      document.body.style.overflow = "hidden"; // Bloquea el scroll de fondo
+    });
+
+    closeBtn.addEventListener("click", () => {
+      fullscreenMenu.classList.remove("is-active");
+      document.body.style.overflow = "auto"; // Restaura el scroll
+    });
+  }
+  
+  // ==========================================
   // 1. CARROUSEL / SLIDER
   // ==========================================
   const slides = document.querySelectorAll(".carousel-slide");
