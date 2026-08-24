@@ -4,41 +4,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Non-State</title>
+  <meta name="description" content="Non-State: Catálogo de proyectos y propuestas de diseño." />
+  <title>Proyectos - Non-State</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet" />
 
-  <!-- Estilos del Proyecto -->
+  <!-- Estilos Base (Header, Footer, Complementos y utilidades globales) -->
   <link rel="stylesheet" href="projects.css" />
+
+  <!-- JavaScript Unificado -->
+  <script src="script.js" defer></script>
 </head>
 
 <body>
   <!-- ========================================================================== -->
-  <!-- [01] HEADER & NAVEGACIÓN                                                   -->
+  <!-- [01] HEADER & NAVEGACIÓN (ESTÁNDAR UNIFICADO)                              -->
   <!-- ========================================================================== -->
   <header class="main-header">
-    <!-- Logo y Eslogan -->
     <div class="logo-container">
       <a href="index.html">
         <img src="assets/header/logo.svg" alt="Non-State Logo" class="logo" />
       </a>
     </div>
 
-    <!-- Sello gráfico fijo sobre el carrusel -->
     <div class="circle-graphic">
-      <a href="#">
+      <a href="index.html" class="sello-link">
         <img src="assets/header/sello.svg" alt="Sello - Diseñar con responsabilidad por Non-State" class="sello" />
       </a>
     </div>
 
-    <!-- Navegación Principal -->
     <nav class="main-nav">
-      <input type="search" placeholder="Buscar" class="search-input" />
-      <button class="menu-btn">Menú</button>
-      <div class="language-selector">Español - <span>ES</span></div>
+      <a href="index.html#destacados">Destacados</a>
+      <a href="category.html">Proyectos</a>
+      <a href="index.html#posts">Posts</a>
+      <a href="careers.html">Acerca de</a>
+      <button class="menu-btn">Contacto</button>
     </nav>
   </header>
 
@@ -124,38 +127,24 @@
     </section>
   </main>
 
-  <!-- //////////////////////////////////////////// -->
-  <!-- [03] SECCIÓN C: FOOTER                       -->
-  <!-- //////////////////////////////////////////// -->
+  <!-- ========================================================================== -->
+  <!-- [03] FOOTER & COMPLEMENTOS (ESTÁNDAR UNIFICADO)                            -->
+  <!-- ========================================================================== -->
   <footer class="main-footer">
     <div class="footer-container">
-      <!-- Bloque Superior: Logo, Menús y Sello Circular -->
       <div class="footer-top">
-        <!-- Lado Izquierdo: Marca y Columnas de Navegación -->
-        <div class="footer-brand-nav">
-          <img class="footer-logo" src="assets/footer/logohorizontal.svg" alt="Non-State" />
-
+        <div class="footer-left">
+          <img class="footer-logo" src="assets/footer/logohorizontal.svg" alt="Non-State" loading="lazy" />
           <div class="footer-links-grid">
-            <!-- Columna Categorías -->
             <div class="footer-column">
               <h3>Categorías</h3>
               <ul>
-                <li>
-                  <a href="#"><span>01</span> /inicio/</a>
-                </li>
-                <li>
-                  <a href="#"><span>02</span> /posts/</a>
-                </li>
-                <li>
-                  <a href="#"><span>03</span> /shoutbox/</a>
-                </li>
-                <li>
-                  <a href="#"><span>04</span> /contacto/</a>
-                </li>
+                <li><a href="#"><span>01</span> /inicio/</a></li>
+                <li><a href="#"><span>02</span> /posts/</a></li>
+                <li><a href="#"><span>03</span> /shoutbox/</a></li>
+                <li><a href="#"><span>04</span> /contacto/</a></li>
               </ul>
             </div>
-
-            <!-- Columna General -->
             <div class="footer-column">
               <h3>General</h3>
               <ul>
@@ -166,44 +155,89 @@
               </ul>
             </div>
           </div>
+          <div class="footer-socials">
+            <a href="https://www.behance.net/nonstate" class="social-icon" aria-label="Behance"><img
+                src="assets/footer/behance.svg" alt="" loading="lazy" /></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><img src="assets/footer/instagram.svg" alt=""
+                loading="lazy" /></a>
+            <a href="#" class="social-icon" aria-label="Spotify"><img src="assets/footer/spotify.svg" alt=""
+                loading="lazy" /></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><img src="assets/footer/youtube.svg" alt=""
+                loading="lazy" /></a>
+          </div>
         </div>
-
-        <!-- Lado Derecho: Sello de texto circular animado (Clase corregida a circle-graphic) -->
-        <div class="circle-graphic">
+        <div class="footer-seal-wrapper">
           <a href="#">
             <img src="assets/footer/selloblanco.svg" alt="Sello - Diseñar con responsabilidad por Non-State"
-              class="sello" />
+              class="sello" loading="lazy" />
           </a>
         </div>
       </div>
 
-      <!-- Bloque Central: Iconos Redes Sociales -->
-      <div class="footer-socials">
-        <a href="#" class="social-icon" aria-label="Behance">
-          <img src="assets/footer/behance.svg" alt="" />
-        </a>
-        <a href="#" class="social-icon" aria-label="Instagram">
-          <img src="assets/footer/instagram.svg" alt="" />
-        </a>
-        <a href="#" class="social-icon" aria-label="Spotify">
-          <img src="assets/footer/spotify.svg" alt="" />
-        </a>
-        <a href="#" class="social-icon" aria-label="YouTube">
-          <img src="assets/footer/youtube.svg" alt="" />
-        </a>
-      </div>
-
-      <!-- Bloque Inferior: Copyright & Legal -->
       <div class="footer-bottom">
         <p class="copyright">© 2027. All rights reserved.</p>
-        <p class="legal-text">
-          Ninguna parte de este contenido puede ser reproducida, en su
-          totalidad o en parte, por ningún medio sin el permiso previo por
-          escrito del titular de los derechos de autor.
-        </p>
+        <p class="legal-text">Ninguna parte de este contenido puede ser reproducida, en su totalidad o en parte, por
+          ningún medio sin el permiso previo por escrito del titular de los derechos de autor.</p>
       </div>
     </div>
   </footer>
+
+  <!-- COMPLEMENTOS FLOTANTES Y SCRIPTS -->
+  <button id="scrollTopBtn" title="Volver arriba" aria-label="Volver arriba"></button>
+
+  <div id="fullscreen-menu" class="fullscreen-menu">
+    <div class="menu-content-wrapper">
+      <div class="menu-left-pane">
+        <div class="menu-header-top">
+          <button id="close-btn" class="close-btn">CERRAR</button>
+        </div>
+        <nav class="menu-nav-links">
+          <a href="index.html">INICIO</a>
+          <a href="category.html">PROYECTOS</a>
+          <a href="index.html#posts">POSTS</a>
+          <a href="#">ACERCA DE</a>
+          <a href="#">CONTACTO</a>
+        </nav>
+        <div class="menu-footer-info">
+          <div class="menu-socials">
+            <a href="https://www.behance.net/nonstate" target="_blank">BEHANCE ↗</a>
+            <a href="#" target="_blank">INSTAGRAM ↗</a>
+            <a href="#" target="_blank">LINKEDIN ↗</a>
+          </div>
+          <div class="menu-contact-details">
+            <p>+57 3123453445</p>
+            <p><a href="mailto:info@nonstate.co">conctact@nonstate.co</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="menu-right-pane">
+        <div class="menu-image-container">
+          <img src="assets/destacados/indica_1.webp" alt="Vista previa de proyectos Non-State" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de progreso de lectura -->
+  <div class="reading-progress-container">
+    <div class="reading-progress-bar" id="readingProgressBar"></div>
+  </div>
+
+  <!-- Barra Flotante -->
+  <div class="scroll-floating-bar" id="floatingBar">
+    <a href="index.html" class="floating-logo-link">
+      <img src="assets/footer/logohorizontal.svg" alt="Non State Logo" class="floating-logo">
+    </a>
+
+    <nav class="floating-nav-links">
+      <a href="index.html#destacados">Destacados</a>
+      <a href="category.html">Proyectos</a>
+      <a href="index.html#posts">Posts</a>
+      <a href="careers.html">Acerca de</a>
+    </nav>
+
+    <a href="#fullscreen-menu" class="floating-btn">Contacto</a>
+  </div>
 </body>
 
 </html>

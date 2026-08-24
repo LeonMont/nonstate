@@ -538,7 +538,6 @@ header.main-header {
 .footer-container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 40px;
 }
 
 .footer-top {

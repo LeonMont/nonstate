@@ -13,7 +13,7 @@ html {
   --text-secondary: #666666;
   --accent-color: linear-gradient(45deg, #8f94fb, #4e54c8);
   --border-radius: 14px;
-  --max-width: 1500px;
+  --max-width: 1600px;
   --font-titles: "League Spartan", sans-serif;
 }
 
@@ -140,8 +140,8 @@ header.main-header {
   }
 
   .menu-btn {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
+    background-color: #000000;
+    color: #ffffff;
     border: none;
     padding: 10px 30px 8px;
     font-family: inherit;
@@ -154,10 +154,167 @@ header.main-header {
       color 0.3s ease;
 
     &:hover {
-      background-color: #000000;
-      color: #ffffff;
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
     }
   }
+}
+
+/* Banda */
+.marquee-container {
+  background-color: #000000;
+  color: #ffffff;
+  overflow: hidden;
+  width: 100%;
+  padding: 12px 0;
+  font-family: "open sans", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  position: relative;
+  letter-spacing: 0.1px;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scrollMarquee 20s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-right: 40px;
+  white-space: nowrap;
+}
+
+.dot {
+  font-size: 20px;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+/* ==========================================================================
+   SERVICIOS
+   ========================================================================== */
+/* Contenedor del Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: var(--max-width);
+  margin: 40px auto;
+}
+
+@media (max-width: 968px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tarjeta individual */
+.service-card {
+  background: linear-gradient(135deg, #f0f0f0, #e4e4e4, #f5f5f5, #f0f0f0);
+  border-radius: 24px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Contenedor superior con efecto visual y brillo */
+.card-image-box {
+  height: 300px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* Fondos específicos y degradados de las tarjetas superiores */
+.card-1 .card-image-box {
+  background-image: url("assets/plano1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.card-2 .card-image-box {
+  background-image: url("assets/plano1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.card-3 .card-image-box {
+  background-image: url("assets/plano1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Efecto de luz diagonal (brillo superior) */
+.card-image-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 30%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* Textos de la tarjeta */
+.service-content h3 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.service-content ul {
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+}
+
+/* Botón inferior */
+.btn-learn-more {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.btn-learn-more:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ==========================================================================
@@ -201,13 +358,13 @@ header.main-header {
   border-radius: 12px;
 
   &.slide-1 {
-    background-image: url("assets/wide_cta/cta1.png");
+    background-image: url("assets/wide_cta/nor.jpg");
   }
   &.slide-2 {
-    background-image: url("assets/wide_cta/cta2.png");
+    background-image: url("assets/wide_cta/nor.jpg");
   }
   &.slide-3 {
-    background: linear-gradient(to right, #ff9966, #ff5e62);
+    background-image: url("assets/wide_cta/nor.jpg");
   }
   &.active {
     opacity: 1;
@@ -378,7 +535,7 @@ header.main-header {
   font-size: 1.1rem;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 8px 14px 6px;
+  padding: 8px 14px 4px;
   border-radius: 8px;
   align-self: flex-start;
   margin-bottom: 15px;
@@ -419,11 +576,10 @@ header.main-header {
    VARIANTE: TARJETA CON DOS IMÁGENES Y TEXTO FIJO
    ========================================================================== */
 .double-image-card {
-  padding: 0; /* Removemos el padding de grid-card para que la imagen cubra todo */
+  padding: 0;
   cursor: pointer;
 }
 
-/* Comportamiento de las imágenes de fondo */
 .double-image-card .card-bg-img {
   position: absolute;
   top: 0;
@@ -438,7 +594,6 @@ header.main-header {
   z-index: 1;
 }
 
-/* Filtro para oscurecer las imágenes y permitir leer el texto blanco */
 .double-image-card .img-main {
   filter: brightness(0.4);
   opacity: 1;
@@ -447,28 +602,25 @@ header.main-header {
 .double-image-card .img-hover {
   filter: brightness(0.4);
   opacity: 0;
-  transform: scale(1.05); /* Pequeño zoom inicial para dar efecto dinámico */
+  transform: scale(1.05);
 }
 
-/* Contenedor del texto siempre visible */
 .double-image-card .persistent-content {
   position: relative;
-  z-index: 2; /* Siempre por encima de las imágenes */
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: 60px; /* Recuperamos el padding interior estándar de tus tarjetas */
-  pointer-events: none; /* Evita que el div bloquee el hover de la tarjeta */
+  padding: 60px;
+  pointer-events: none;
 }
 
-/* Permitir clics en los enlaces aunque el contenedor tenga pointer-events: none */
 .double-image-card .persistent-content a {
   pointer-events: auto;
 }
 
-/* Ajustes tipográficos para contraste oscuro */
 .double-image-card .text-light,
 .double-image-card .text-light a {
   color: #ffffff;
@@ -478,7 +630,6 @@ header.main-header {
   color: #dddddd;
 }
 
-/* === Efecto Hover === */
 .double-image-card:hover .img-main {
   opacity: 0;
   transform: scale(1.03);
@@ -809,7 +960,6 @@ header.main-header {
   border-radius: var(--border-radius);
   overflow: hidden;
   color: #ffffff;
-  height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1264,72 +1414,8 @@ header.main-header {
 }
 
 /* ==========================================================================
-   6. JUEGO
+   8. BARRA FLOTANTE
    ========================================================================== */
-
-.game-embed-section {
-  max-width: var(--max-width);
-  margin: 0 auto 40px;
-}
-
-.game-embed-container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.game-embed-container iframe {
-  width: 100% !important;
-  /* Forzamos una proporción rectangular estándar (16:9), perfecta para la mayoría de juegos web */
-  aspect-ratio: 16 / 9 !important;
-  height: auto !important; /* Anula cualquier altura heredada que lo aplaste */
-  min-height: 500px; /* Asegura un tamaño cómodo en pantallas grandes */
-  border-radius: 12px;
-  border: none;
-  background-color: #000;
-}
-
-.game-embed-title {
-  font-size: 2.4rem;
-  font-weight: 400;
-  color: var(--bg-dark);
-  line-height: 0.7;
-}
-
-.game-embed-description {
-  font-size: 1.3rem;
-  color: var(--text-secondary);
-  margin-bottom: 10px;
-}
-
-/* El truco clave para el iframe */
-.game-embed-container iframe {
-  width: 100%;
-  height: 600px; /* Define una altura cómoda para escritorio (ej. 600px o 650px) */
-  max-height: 80vh; /* Evita que sea más grande que la pantalla del usuario */
-  border-radius: var(
-    --border-radius
-  ); /* Hereda los bordes redondeados de tu web */
-  border: none;
-  background-color: #000; /* Fondo negro por si el juego tarda en cargar */
-}
-
-/* Ajuste responsive para celulares */
-@media (max-width: 768px) {
-  .game-embed-section {
-    padding: 0 24px;
-  }
-  .game-embed-container iframe {
-    height: 400px; /* Una altura menor para pantallas pequeñas */
-  }
-}
-
-/* ==========================================================================
-   6. BARRA FLOTANTE
-   ========================================================================== */
-
 .scroll-floating-bar {
   position: fixed;
   top: 0;
@@ -1357,19 +1443,17 @@ header.main-header {
   opacity: 1;
 }
 
-/* Estilo del Logo */
 .floating-logo-link {
   display: flex;
   align-items: center;
 }
 
 .scroll-floating-bar .floating-logo {
-  height: 26px; /* Ajusta este valor según el tamaño óptimo de tu SVG */
+  height: 26px;
   width: auto;
   display: block;
 }
 
-/* Estilo de las categorías del Nav */
 .floating-nav-links {
   display: flex;
   gap: 35px;
@@ -1387,7 +1471,6 @@ header.main-header {
   color: #ffffff;
 }
 
-/* Estilo del Botón de Contacto */
 .scroll-floating-bar .floating-btn {
   background-color: #ffffff;
   color: #1a1a1a;
@@ -1407,20 +1490,18 @@ header.main-header {
   transform: translateY(-1px);
 }
 
-/* Ajuste responsive para móviles */
 @media (max-width: 768px) {
   .scroll-floating-bar {
     padding: 12px 20px;
   }
   .floating-nav-links {
-    display: none; /* Oculta las categorías en pantallas pequeñas para evitar saturar el espacio */
+    display: none;
   }
 }
 
 /* ==========================================================================
-   7. BARRA DE PROGRESO DE LECTURA
+   9. BARRA DE PROGRESO DE LECTURA
    ========================================================================== */
-
 .reading-progress-container {
   position: fixed;
   top: 0;
@@ -1428,19 +1509,19 @@ header.main-header {
   width: 100%;
   height: 3px;
   background: transparent;
-  z-index: 1002; /* Por encima de cualquier otro elemento flotante */
-  pointer-events: none; /* Evita que interfiera con clics */
+  z-index: 1002;
+  pointer-events: none;
 }
 
 .reading-progress-bar {
   height: 100%;
   width: 0%;
-  background-color: #ffffff; /* Puedes cambiarlo por un color de acento si lo prefieres */
-  transition: width 0.05s ease-out; /* Transición ultra fluida */
+  background-color: #ffffff;
+  transition: width 0.05s ease-out;
 }
 
 /* ==========================================================================
-   7. PIE DE PÁGINA (FOOTER) Y ELEMENTOS FLOTANTES
+   10. PIE DE PÁGINA (FOOTER) Y ELEMENTOS FLOTANTES
    ========================================================================== */
 .main-footer {
   background-color: #000000;
@@ -1606,7 +1687,7 @@ header.main-header {
 }
 
 /* ==========================================================================
-   8. MEDIA QUERIES (RESPONSIVE)
+   11. MEDIA QUERIES (RESPONSIVE)
    ========================================================================== */
 @media (max-width: 1024px) {
   header.main-header,
@@ -1683,7 +1764,6 @@ header.main-header {
     width: 100%;
   }
   .hero-content h2 {
-    padding-left: 0;
     font-size: 3.8rem;
     text-align: center;
     margin: 0 auto;
@@ -1694,7 +1774,7 @@ header.main-header {
     margin: 0 auto;
   }
   .hero-btn {
-    margin: 15px auto 0 auto;
+    margin: 0 auto;
   }
   .circle-graphic .sello {
     width: 120px;
@@ -1837,7 +1917,7 @@ header.main-header {
 }
 
 /* ==========================================================================
-   FULLSCREEN MENU OVERLAY
+   12. FULLSCREEN MENU OVERLAY
    ========================================================================== */
 .fullscreen-menu {
   position: fixed;

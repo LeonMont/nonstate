@@ -4,25 +4,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Non-State: Construir, diseñar y mejorar. Proyectos de arquitectura interior, mobiliario comercial y diseño." />
-  <title>Non-State</title>
+  <meta name="description" content="Non-State: Catálogo de proyectos y propuestas de diseño." />
+  <title>Proyectos - Non-State</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet" />
 
-  <!-- Estilos del Proyecto -->
+  <!-- Estilos Base (Header, Footer, Complementos y utilidades globales) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Estilos Específicos de esta vista (Opcional, solo para contenido interno) -->
   <link rel="stylesheet" href="category.css" />
 
-  <!-- JavaScript -->
+  <!-- JavaScript Unificado -->
   <script src="script.js" defer></script>
 </head>
 
 <body>
   <!-- ========================================================================== -->
-  <!-- [01] HEADER & NAVEGACIÓN                                                   -->
+  <!-- [01] HEADER & NAVEGACIÓN (ESTÁNDAR UNIFICADO)                              -->
   <!-- ========================================================================== -->
   <header class="main-header">
     <div class="logo-container">
@@ -38,446 +40,442 @@
     </div>
 
     <nav class="main-nav">
-      <a href="#destacados">Destacados</a>
+      <a href="index.html#destacados">Destacados</a>
       <a href="category.html">Proyectos</a>
-      <a href="#posts">Posts</a>
+      <a href="index.html#posts">Posts</a>
       <a href="careers.html">Acerca de</a>
       <button class="menu-btn">Contacto</button>
     </nav>
   </header>
 
-    <main>
-      <!-- ==========================================================================
+  <!-- ========================================================================== -->
+  <!-- [02] CONTENIDO PRINCIPAL DE LA CATEGORÍA                                   -->
+  <!-- ========================================================================== -->
+  <main>
+    <div class="section-title-container">
+      <h2 class="section-title-inline">Todos los <span class="negrita">Proyectos</span></h2>
+      <hr class="section-divider-inline" />
+    </div>
+
+    <!-- Ejemplo de contenedor para tus proyectos. 
+         Puedes reutilizar las clases de "featured-grid" de tu style.css -->
+    <section class="featured-grid" id="proyectos-lista">
+      <!-- Aquí van los <article class="grid-card..."> de tus proyectos -->
+    </section>
+    <!-- ==========================================================================
        SECCIÓN: PROYECTOS - INTERIOR (WIDE BANNERS)
        ========================================================================== -->
-      <div class="section-title-container">
-        <h2 class="section-title-inline">
-          Proyectos - <span class="negrita">Nuevos</span>
-        </h2>
-        <hr class="section-divider-inline" />
-      </div>
 
-      <section class="interior-grid">
-        <!-- BANNER 4 -->
-        <article class="grid-card image-card project-indica">
-          <img
-            src="assets/posts/destacadoprincipalhover.webp"
-            alt="Proyecto Cafe"
-          />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Coffee Shop</h3>
-              <h2 class="overlay-subtitle">Specialty Coffee</h2>
-              <p class="overlay-text">
-                Diseño interior pensado en la calidez de la madera y tonos
-                neutros.
-              </p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024 - Colombia</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 345
-                  vistas</span
-                >
-              </div>
+    <section class="interior-grid">
+      <!-- BANNER 4 -->
+      <article class="grid-card image-card project-indica">
+        <img src="assets/posts/destacadoprincipalhover.webp" alt="Proyecto Cafe" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Coffee Shop</h3>
+            <h2 class="overlay-subtitle">Specialty Coffee</h2>
+            <p class="overlay-text">
+              Diseño interior pensado en la calidez de la madera y tonos
+              neutros.
+            </p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024 - Colombia</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 345
+                vistas</span>
             </div>
           </div>
-        </article>
-      </section>
+        </div>
+      </article>
+    </section>
 
-      <!-- ==========================================================================
+    <!-- ==========================================================================
        SECCIÓN: PROYECTOS - RETAIL (2 COLUMNAS)
        ========================================================================== -->
-      <div class="section-title-container">
-        <h2 class="section-title-inline">
-          Proyectos - <span class="negrita">Interior</span>
-        </h2>
-        <hr class="section-divider-inline" />
-      </div>
+    <div class="section-title-container">
+      <h2 class="section-title-inline">
+        Proyectos - <span class="negrita">Interior</span>
+      </h2>
+      <hr class="section-divider-inline" />
+    </div>
 
-      <section class="retail-grid">
-        <!-- FILA 1 -->
-        <article class="grid-card image-card project-indica">
-          <a href="proyecto1.html"></a>
-          <img src="assets/destacados/indica_1.webp" alt="Display Retail 1" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Display 1</h3>
-              <h2 class="overlay-subtitle">Retail Exhibition</h2>
-              <p class="overlay-text">
-                Mobiliario comercial para punto de venta.
-              </p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 120
-                  vistas</span
-                >
-              </div>
+    <section class="retail-grid">
+      <!-- FILA 1 -->
+      <article class="grid-card image-card project-indica">
+        <a href="proyecto1.html"></a>
+        <img src="assets/destacados/indica_1.webp" alt="Display Retail 1" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Display 1</h3>
+            <h2 class="overlay-subtitle">Retail Exhibition</h2>
+            <p class="overlay-text">
+              Mobiliario comercial para punto de venta.
+            </p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 120
+                vistas</span>
             </div>
-          </div>
-        </article>
-
-        <article class="grid-card image-card project-casagrande">
-          <img
-            src="assets/destacados/casagrande_1.webp"
-            alt="Display Retail 2"
-          />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Display 2</h3>
-              <h2 class="overlay-subtitle">Retail Exhibition</h2>
-              <p class="overlay-text">
-                Propuesta conceptual para stand comercial.
-              </p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 210
-                  vistas</span
-                >
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- FILA 2 -->
-        <article class="grid-card image-card project-vestigio">
-          <img src="assets/destacados/vestigio_1.webp" alt="Display Retail 3" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Display 3</h3>
-              <h2 class="overlay-subtitle">Retail Exhibition</h2>
-              <p class="overlay-text">Estructura modular en punto de venta.</p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 180
-                  vistas</span
-                >
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="grid-card image-card project-indica">
-          <img src="assets/plaza.png" alt="Display Retail 4" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Display 4</h3>
-              <h2 class="overlay-subtitle">Retail Exhibition</h2>
-              <p class="overlay-text">Visual merchandising dinámico.</p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 310
-                  vistas</span
-                >
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <!-- Divisor - Retail -->
-      <div class="section-title-container">
-        <h2 class="section-title-inline">
-          Proyectos - <span class="negrita">Retail</span>
-        </h2>
-        <hr class="section-divider-inline" />
-      </div>
-
-      <section class="retail-grid">
-        <!-- FILA 1 -->
-        <article class="grid-card image-card project-indica">
-          <img src="assets/5senses.png" alt="Display Retail 1" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Display 1</h3>
-              <h2 class="overlay-subtitle">Retail Exhibition</h2>
-              <p class="overlay-text">
-                Mobiliario comercial para punto de venta.
-              </p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 120
-                  vistas</span
-                >
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="grid-card image-card project-casagrande">
-          <img src="assets/monkey.png" alt="Display Retail 2" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Display 2</h3>
-              <h2 class="overlay-subtitle">Retail Exhibition</h2>
-              <p class="overlay-text">
-                Propuesta conceptual para stand comercial.
-              </p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 210
-                  vistas</span
-                >
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- FILA 2 -->
-        <article class="grid-card image-card project-vestigio">
-          <img src="assets/lineal.png" alt="Display Retail 3" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Display 3</h3>
-              <h2 class="overlay-subtitle">Retail Exhibition</h2>
-              <p class="overlay-text">Estructura modular en punto de venta.</p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 180
-                  vistas</span
-                >
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="grid-card image-card project-indica">
-          <img src="assets/coca.png" alt="Display Retail 4" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Display 4</h3>
-              <h2 class="overlay-subtitle">Retail Exhibition</h2>
-              <p class="overlay-text">Visual merchandising dinámico.</p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 310
-                  vistas</span
-                >
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- FILA 3 -->
-        <article class="grid-card image-card project-vestigio">
-          <img src="assets/chivas.png" alt="Display Retail 3" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Display 3</h3>
-              <h2 class="overlay-subtitle">Retail Exhibition</h2>
-              <p class="overlay-text">Estructura modular en punto de venta.</p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 180
-                  vistas</span
-                >
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="grid-card image-card project-indica">
-          <img src="assets/aero.png" alt="Display Retail 4" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Display 4</h3>
-              <h2 class="overlay-subtitle">Retail Exhibition</h2>
-              <p class="overlay-text">Visual merchandising dinámico.</p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 310
-                  vistas</span
-                >
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <!-- Divisor - 3D -->
-      <div class="section-title-container">
-        <h2 class="section-title-inline">
-          Proyectos - <span class="negrita">3D</span>
-        </h2>
-        <hr class="section-divider-inline" />
-      </div>
-
-      <section class="retail-grid">
-        <!-- FILA 1 -->
-        <article class="grid-card image-card project-indica">
-          <img src="assets/tiahuanaco.jpg" alt="Display Retail 1" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Display 1</h3>
-              <h2 class="overlay-subtitle">Retail Exhibition</h2>
-              <p class="overlay-text">
-                Mobiliario comercial para punto de venta.
-              </p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 120
-                  vistas</span
-                >
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="grid-card image-card project-casagrande">
-          <img src="assets/distrito.png" alt="Display Retail 2" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Display 2</h3>
-              <h2 class="overlay-subtitle">Retail Exhibition</h2>
-              <p class="overlay-text">
-                Propuesta conceptual para stand comercial.
-              </p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 210
-                  vistas</span
-                >
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- FILA 2 -->
-        <article class="grid-card image-card project-vestigio">
-          <img src="assets/lineal.png" alt="Display Retail 3" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Display 3</h3>
-              <h2 class="overlay-subtitle">Retail Exhibition</h2>
-              <p class="overlay-text">Estructura modular en punto de venta.</p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 180
-                  vistas</span
-                >
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="grid-card image-card project-indica">
-          <img src="assets/hamburguer.png" alt="Display Retail 4" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3 class="overlay-title">Display 4</h3>
-              <h2 class="overlay-subtitle">Retail Exhibition</h2>
-              <p class="overlay-text">Visual merchandising dinámico.</p>
-              <div class="overlay-footer">
-                <span class="overlay-year">2024</span>
-                <span class="overlay-views"
-                  ><i class="view-icon" aria-hidden="true">👁</i> 310
-                  vistas</span
-                >
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-    </main>
-
-    <!-- ========================================================================== -->
-    <!-- [03] SECCIÓN C: FOOTER                                                     -->
-    <!-- ========================================================================== -->
-    <footer class="main-footer">
-      <div class="footer-container">
-        <!-- Bloque Superior: Logo, Menús y Sello Circular -->
-        <div class="footer-top">
-          <!-- Lado Izquierdo: Marca y Columnas de Navegación -->
-          <div class="footer-brand-nav">
-            <img
-              class="footer-logo"
-              src="assets/footer/logohorizontal.svg"
-              alt="Non-State"
-            />
-
-            <div class="footer-links-grid">
-              <!-- Columna Categorías -->
-              <div class="footer-column">
-                <h3>Categorías</h3>
-                <ul>
-                  <li>
-                    <a href="#"><span>01</span> /inicio/</a>
-                  </li>
-                  <li>
-                    <a href="#"><span>02</span> /posts/</a>
-                  </li>
-                  <li>
-                    <a href="#"><span>03</span> /shoutbox/</a>
-                  </li>
-                  <li>
-                    <a href="#"><span>04</span> /contacto/</a>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Columna General -->
-              <div class="footer-column">
-                <h3>General</h3>
-                <ul>
-                  <li><a href="#">Sobre nosotros</a></li>
-                  <li><a href="#">Canal RSS</a></li>
-                  <li><a href="#">Anunciar</a></li>
-                  <li><a href="#">Condiciones de uso</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Lado Derecho: Sello de texto circular animado (Clase corregida para sincronizar con el Header) -->
-          <div class="circle-graphic">
-            <a href="#">
-              <img
-                src="assets/footer/selloblanco.svg"
-                alt="Sello - Diseñar con responsabilidad por Non-State"
-                class="sello"
-              />
-            </a>
           </div>
         </div>
+      </article>
 
-        <!-- Bloque Central: Iconos Redes Sociales -->
-        <div class="footer-socials">
-          <a href="#" class="social-icon" aria-label="Behance">
-            <img src="assets/footer/behance.svg" alt="" />
-          </a>
-          <a href="#" class="social-icon" aria-label="Instagram">
-            <img src="assets/footer/instagram.svg" alt="" />
-          </a>
-          <a href="#" class="social-icon" aria-label="Spotify">
-            <img src="assets/footer/spotify.svg" alt="" />
-          </a>
-          <a href="#" class="social-icon" aria-label="YouTube">
-            <img src="assets/footer/youtube.svg" alt="" />
-          </a>
+      <article class="grid-card image-card project-casagrande">
+        <img src="assets/destacados/casagrande_1.webp" alt="Display Retail 2" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Display 2</h3>
+            <h2 class="overlay-subtitle">Retail Exhibition</h2>
+            <p class="overlay-text">
+              Propuesta conceptual para stand comercial.
+            </p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 210
+                vistas</span>
+            </div>
+          </div>
         </div>
+      </article>
 
-        <!-- Bloque Inferior: Copyright & Legal -->
-        <div class="footer-bottom">
-          <p class="copyright">© 2027. All rights reserved.</p>
-          <p class="legal-text">
-            Ninguna parte de este contenido puede ser reproducida, en su
-            totalidad o en parte, por ningún medio sin el permiso previo por
-            escrito del titular de los derechos de autor.
-          </p>
+      <!-- FILA 2 -->
+      <article class="grid-card image-card project-vestigio">
+        <img src="assets/destacados/vestigio_1.webp" alt="Display Retail 3" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Display 3</h3>
+            <h2 class="overlay-subtitle">Retail Exhibition</h2>
+            <p class="overlay-text">Estructura modular en punto de venta.</p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 180
+                vistas</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid-card image-card project-indica">
+        <img src="assets/plaza.png" alt="Display Retail 4" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Display 4</h3>
+            <h2 class="overlay-subtitle">Retail Exhibition</h2>
+            <p class="overlay-text">Visual merchandising dinámico.</p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 310
+                vistas</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Divisor - Retail -->
+    <div class="section-title-container">
+      <h2 class="section-title-inline">
+        Proyectos - <span class="negrita">Retail</span>
+      </h2>
+      <hr class="section-divider-inline" />
+    </div>
+
+    <section class="retail-grid">
+      <!-- FILA 1 -->
+      <article class="grid-card image-card project-indica">
+        <img src="assets/5senses.png" alt="Display Retail 1" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Display 1</h3>
+            <h2 class="overlay-subtitle">Retail Exhibition</h2>
+            <p class="overlay-text">
+              Mobiliario comercial para punto de venta.
+            </p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 120
+                vistas</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid-card image-card project-casagrande">
+        <img src="assets/monkey.png" alt="Display Retail 2" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Display 2</h3>
+            <h2 class="overlay-subtitle">Retail Exhibition</h2>
+            <p class="overlay-text">
+              Propuesta conceptual para stand comercial.
+            </p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 210
+                vistas</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- FILA 2 -->
+      <article class="grid-card image-card project-vestigio">
+        <img src="assets/lineal.png" alt="Display Retail 3" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Display 3</h3>
+            <h2 class="overlay-subtitle">Retail Exhibition</h2>
+            <p class="overlay-text">Estructura modular en punto de venta.</p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 180
+                vistas</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid-card image-card project-indica">
+        <img src="assets/coca.png" alt="Display Retail 4" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Display 4</h3>
+            <h2 class="overlay-subtitle">Retail Exhibition</h2>
+            <p class="overlay-text">Visual merchandising dinámico.</p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 310
+                vistas</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- FILA 3 -->
+      <article class="grid-card image-card project-vestigio">
+        <img src="assets/chivas.png" alt="Display Retail 3" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Display 3</h3>
+            <h2 class="overlay-subtitle">Retail Exhibition</h2>
+            <p class="overlay-text">Estructura modular en punto de venta.</p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 180
+                vistas</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid-card image-card project-indica">
+        <img src="assets/aero.png" alt="Display Retail 4" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Display 4</h3>
+            <h2 class="overlay-subtitle">Retail Exhibition</h2>
+            <p class="overlay-text">Visual merchandising dinámico.</p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 310
+                vistas</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Divisor - 3D -->
+    <div class="section-title-container">
+      <h2 class="section-title-inline">
+        Proyectos - <span class="negrita">3D</span>
+      </h2>
+      <hr class="section-divider-inline" />
+    </div>
+
+    <section class="retail-grid">
+      <!-- FILA 1 -->
+      <article class="grid-card image-card project-indica">
+        <img src="assets/tiahuanaco.jpg" alt="Display Retail 1" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Display 1</h3>
+            <h2 class="overlay-subtitle">Retail Exhibition</h2>
+            <p class="overlay-text">
+              Mobiliario comercial para punto de venta.
+            </p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 120
+                vistas</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid-card image-card project-casagrande">
+        <img src="assets/distrito.png" alt="Display Retail 2" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Display 2</h3>
+            <h2 class="overlay-subtitle">Retail Exhibition</h2>
+            <p class="overlay-text">
+              Propuesta conceptual para stand comercial.
+            </p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 210
+                vistas</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- FILA 2 -->
+      <article class="grid-card image-card project-vestigio">
+        <img src="assets/lineal.png" alt="Display Retail 3" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Display 3</h3>
+            <h2 class="overlay-subtitle">Retail Exhibition</h2>
+            <p class="overlay-text">Estructura modular en punto de venta.</p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 180
+                vistas</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="grid-card image-card project-indica">
+        <img src="assets/hamburguer.png" alt="Display Retail 4" />
+        <div class="project-overlay">
+          <div class="overlay-content">
+            <h3 class="overlay-title">Display 4</h3>
+            <h2 class="overlay-subtitle">Retail Exhibition</h2>
+            <p class="overlay-text">Visual merchandising dinámico.</p>
+            <div class="overlay-footer">
+              <span class="overlay-year">2024</span>
+              <span class="overlay-views"><i class="view-icon" aria-hidden="true">👁</i> 310
+                vistas</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- ========================================================================== -->
+  <!-- [03] FOOTER & COMPLEMENTOS (ESTÁNDAR UNIFICADO)                            -->
+  <!-- ========================================================================== -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-left">
+          <img class="footer-logo" src="assets/footer/logohorizontal.svg" alt="Non-State" loading="lazy" />
+          <div class="footer-links-grid">
+            <div class="footer-column">
+              <h3>Categorías</h3>
+              <ul>
+                <li><a href="#"><span>01</span> /inicio/</a></li>
+                <li><a href="#"><span>02</span> /posts/</a></li>
+                <li><a href="#"><span>03</span> /shoutbox/</a></li>
+                <li><a href="#"><span>04</span> /contacto/</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>General</h3>
+              <ul>
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">Canal RSS</a></li>
+                <li><a href="#">Anunciar</a></li>
+                <li><a href="#">Condiciones de uso</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-socials">
+            <a href="https://www.behance.net/nonstate" class="social-icon" aria-label="Behance"><img
+                src="assets/footer/behance.svg" alt="" loading="lazy" /></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><img src="assets/footer/instagram.svg" alt=""
+                loading="lazy" /></a>
+            <a href="#" class="social-icon" aria-label="Spotify"><img src="assets/footer/spotify.svg" alt=""
+                loading="lazy" /></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><img src="assets/footer/youtube.svg" alt=""
+                loading="lazy" /></a>
+          </div>
+        </div>
+        <div class="footer-seal-wrapper">
+          <a href="#">
+            <img src="assets/footer/selloblanco.svg" alt="Sello - Diseñar con responsabilidad por Non-State"
+              class="sello" loading="lazy" />
+          </a>
         </div>
       </div>
-    </footer>
-  </body>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2027. All rights reserved.</p>
+        <p class="legal-text">Ninguna parte de este contenido puede ser reproducida, en su totalidad o en parte, por
+          ningún medio sin el permiso previo por escrito del titular de los derechos de autor.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- COMPLEMENTOS FLOTANTES Y SCRIPTS -->
+  <button id="scrollTopBtn" title="Volver arriba" aria-label="Volver arriba"></button>
+
+  <div id="fullscreen-menu" class="fullscreen-menu">
+    <div class="menu-content-wrapper">
+      <div class="menu-left-pane">
+        <div class="menu-header-top">
+          <button id="close-btn" class="close-btn">CERRAR</button>
+        </div>
+        <nav class="menu-nav-links">
+          <a href="index.html">INICIO</a>
+          <a href="category.html">PROYECTOS</a>
+          <a href="index.html#posts">POSTS</a>
+          <a href="#">ACERCA DE</a>
+          <a href="#">CONTACTO</a>
+        </nav>
+        <div class="menu-footer-info">
+          <div class="menu-socials">
+            <a href="https://www.behance.net/nonstate" target="_blank">BEHANCE ↗</a>
+            <a href="#" target="_blank">INSTAGRAM ↗</a>
+            <a href="#" target="_blank">LINKEDIN ↗</a>
+          </div>
+          <div class="menu-contact-details">
+            <p>+57 3123453445</p>
+            <p><a href="mailto:info@nonstate.co">conctact@nonstate.co</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="menu-right-pane">
+        <div class="menu-image-container">
+          <img src="assets/destacados/indica_1.webp" alt="Vista previa de proyectos Non-State" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de progreso de lectura -->
+  <div class="reading-progress-container">
+    <div class="reading-progress-bar" id="readingProgressBar"></div>
+  </div>
+
+  <!-- Barra Flotante -->
+  <div class="scroll-floating-bar" id="floatingBar">
+    <a href="index.html" class="floating-logo-link">
+      <img src="assets/footer/logohorizontal.svg" alt="Non State Logo" class="floating-logo">
+    </a>
+
+    <nav class="floating-nav-links">
+      <a href="index.html#destacados">Destacados</a>
+      <a href="category.html">Proyectos</a>
+      <a href="index.html#posts">Posts</a>
+      <a href="careers.html">Acerca de</a>
+    </nav>
+
+    <a href="#fullscreen-menu" class="floating-btn">Contacto</a>
+  </div>
+</body>
+
 </html>
