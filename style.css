@@ -178,7 +178,7 @@ header.main-header {
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: scrollMarquee 20s linear infinite;
+  animation: scrollMarquee 50s linear infinite;
 }
 
 .marquee-content {
@@ -647,6 +647,18 @@ header.main-header {
 }
 .project-vestigio .project-overlay {
   background-color: rgba(184, 61, 57, 0.95);
+}
+.project-manantial .project-overlay {
+  background-color: rgba(62, 87, 199, 0.95);
+}
+.project-glenlivet .project-overlay {
+  background-color: rgba(53, 168, 143, 0.95);
+}
+.project-plazamexico .project-overlay {
+  background-color: rgba(168, 97, 147, 0.95);
+}
+.project-corona .project-overlay {
+  background-color: rgba(40, 45, 121, 0.95);
 }
 
 .overlay-content {
@@ -1307,7 +1319,8 @@ header.main-header {
   margin: 2.5rem auto; /* 40px */
 }
 
-@media (max-width: 60.5rem) { /* 968px */
+@media (max-width: 60.5rem) {
+  /* 968px */
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -1470,7 +1483,8 @@ header.main-header {
   transform: translateY(-0.0625rem); /* -1px */
 }
 
-@media (max-width: 48rem) { /* 768px */
+@media (max-width: 48rem) {
+  /* 768px */
   .scroll-floating-bar {
     padding: 0.75rem 1.25rem; /* 12px 20px */
   }
@@ -1934,7 +1948,6 @@ header.main-header {
    12. REFORZAMIENTO CORPORATIVO & FILTRO DE CLIENTES GRANDES
    ========================================================================== */
 .contact-hero .contact-header-content p::after {
-  content: " Trabajamos bajo modelos de consultoría, igualas y fees de diseño estructurados para grandes cuentas y marcas consolidadas.";
   display: block;
   margin-top: 0.625rem; /* 10px */
   font-size: 1.1rem;
@@ -2151,7 +2164,8 @@ header.main-header {
    ========================================================================== */
 
 /* 1. MEDIA QUERY PARA PANTALLAS (Desktop / Tablets horizontales) */
-@media screen and (min-width: 48.0625rem) { /* 769px en adelante */
+@media screen and (min-width: 48.0625rem) {
+  /* 769px en adelante */
   .services-grid {
     grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
   }
@@ -2164,10 +2178,16 @@ header.main-header {
 }
 
 /* 2. MEDIA QUERY PARA MÓVIL (Consolidación de <1024px, <768px y <480px) */
-@media screen and (max-width: 48rem) { /* 768px hacia abajo */
+@media screen and (max-width: 48rem) {
+  /* 768px hacia abajo */
   /* Contenedores y Márgenes */
-  header.main-header, .hero-banner, .featured-grid, .section-title-container,
-  .recent-section-grid, .footer-container, .spotify-grid {
+  header.main-header,
+  .hero-banner,
+  .featured-grid,
+  .section-title-container,
+  .recent-section-grid,
+  .footer-container,
+  .spotify-grid {
     max-width: 100%;
     padding-left: 1rem; /* 16px */
     padding-right: 1rem; /* 16px */
@@ -2204,14 +2224,19 @@ header.main-header {
     flex-wrap: wrap;
     gap: 0.625rem; /* 10px */
   }
-  .menu-btn, .language-selector {
+  .menu-btn,
+  .language-selector {
     font-size: 1.4rem;
     padding: 0.5rem 1.25rem; /* 8px 20px */
   }
 
   /* Grillas Estructurales */
-  .featured-grid, .recent-section-grid, .shoutbox-list, 
-  .spotify-grid, .contact-grid, .service-chips-grid {
+  .featured-grid,
+  .recent-section-grid,
+  .shoutbox-list,
+  .spotify-grid,
+  .contact-grid,
+  .service-chips-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem; /* 40px */
   }
@@ -2237,39 +2262,96 @@ header.main-header {
   }
 
   /* Tipografía Adaptativa */
-  .hero-content h2 { font-size: 3rem; text-align: center; margin: 0 auto; }
-  .hero-content p { text-align: center; margin: 0 auto; padding-left: 0; }
-  .hero-btn { margin: 0 auto; }
-  .post-principaltitle { font-size: 5rem; }
-  .post-title { font-size: 2.4rem; }
-  .overlay-title { font-size: 2.8rem; }
-  .post-titleblack { font-size: 4rem; }
-  .wide-banner h2 { font-size: 3.4rem; }
-  .wide-banner p { font-size: 1.2rem; padding-right: 0; }
-  .featured-recent .featured-recent-title, .featured-recent-title { font-size: 1.8rem; }
-  
+  .hero-content h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .hero-content p {
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+  .hero-btn {
+    margin: 0 auto;
+  }
+  .post-principaltitle {
+    font-size: 5rem;
+  }
+  .post-title {
+    font-size: 2.4rem;
+  }
+  .overlay-title {
+    font-size: 2.8rem;
+  }
+  .post-titleblack {
+    font-size: 4rem;
+  }
+  .wide-banner h2 {
+    font-size: 3.4rem;
+  }
+  .wide-banner p {
+    font-size: 1.2rem;
+    padding-right: 0;
+  }
+  .featured-recent .featured-recent-title,
+  .featured-recent-title {
+    font-size: 1.8rem;
+  }
+
   /* Detalles Visuales */
-  .circle-graphic .sello { width: 7.5rem; height: 7.5rem; /* 120px */ }
-  .project-overlay { padding: 1.875rem; /* 30px */ }
-  .grid-card.text-card.visual-hover-card .overlay-text, .grid-card .overlay-text,
-  .text-card .overlay-text, .visual-hover-card .overlay-text { display: block; }
-  .featured-recent-body { padding: 1.5625rem 1.25rem; /* 25px 20px */ }
+  .circle-graphic .sello {
+    width: 7.5rem;
+    height: 7.5rem; /* 120px */
+  }
+  .project-overlay {
+    padding: 1.875rem; /* 30px */
+  }
+  .grid-card.text-card.visual-hover-card .overlay-text,
+  .grid-card .overlay-text,
+  .text-card .overlay-text,
+  .visual-hover-card .overlay-text {
+    display: block;
+  }
+  .featured-recent-body {
+    padding: 1.5625rem 1.25rem; /* 25px 20px */
+  }
 
   /* Menú Fullscreen */
   .menu-content-wrapper {
     grid-template-columns: 1fr;
     padding: 2.5rem 1.5rem 3.75rem 1.5rem; /* 40px 24px 60px 24px */
   }
-  .menu-right-pane { display: none; }
-  .menu-left-pane { min-height: auto; gap: 2.5rem; /* 40px */ }
-  .menu-nav-links a { font-size: 3.5rem; }
+  .menu-right-pane {
+    display: none;
+  }
+  .menu-left-pane {
+    min-height: auto;
+    gap: 2.5rem; /* 40px */
+  }
+  .menu-nav-links a {
+    font-size: 3.5rem;
+  }
 
   /* Elementos de Interfaz / Flotantes */
-  .search-input { width: 100%; font-size: 1.4rem; padding: 0.5rem 0.625rem; /* 8px 10px */ }
-  .scroll-floating-bar { padding: 0.75rem 1.25rem; /* 12px 20px */ }
-  .floating-nav-links { display: none; }
-  .contact-hero { padding: 2.5rem 1.25rem; /* 40px 20px */ }
-  .contact-info-side, .contact-form-side { padding: 2.1875rem; /* 35px */ }
+  .search-input {
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 0.5rem 0.625rem; /* 8px 10px */
+  }
+  .scroll-floating-bar {
+    padding: 0.75rem 1.25rem; /* 12px 20px */
+  }
+  .floating-nav-links {
+    display: none;
+  }
+  .contact-hero {
+    padding: 2.5rem 1.25rem; /* 40px 20px */
+  }
+  .contact-info-side,
+  .contact-form-side {
+    padding: 2.1875rem; /* 35px */
+  }
 
   /* Footer */
   .footer-top {
@@ -2278,13 +2360,21 @@ header.main-header {
     text-align: center;
     gap: 2.5rem; /* 40px */
   }
-  .footer-brand-nav { align-items: center; }
+  .footer-brand-nav {
+    align-items: center;
+  }
   .footer-links-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem; /* 40px */
     justify-items: center;
   }
-  .footer-column ul { align-items: center; }
-  .footer-socials { justify-content: center; }
-  .footer-bottom { text-align: center; }
+  .footer-column ul {
+    align-items: center;
+  }
+  .footer-socials {
+    justify-content: center;
+  }
+  .footer-bottom {
+    text-align: center;
+  }
 }

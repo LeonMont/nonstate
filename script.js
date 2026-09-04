@@ -264,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (selectedValue === "email") {
         channelDetailInput.type = "email";
-        channelDetailInput.placeholder = "ej. maria.gomez@unilever.com";
+        channelDetailInput.placeholder = "ej. maria.gomez@empresa.com";
         channelDetailInput.required = true;
       } else if (selectedValue === "whatsapp") {
         channelDetailInput.type = "tel";
