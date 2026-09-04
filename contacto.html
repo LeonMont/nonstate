@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Non-State: Construir, diseñar y mejorar. Proyectos de arquitectura interior, mobiliario comercial y diseño." />
+  <title>Non-State — Contacto</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet" />
+
+  <!-- Estilos del Proyecto -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Banda -->
+  <div class="marquee-container">
+    <a href="index.html">
+      <div class="marquee-track">
+        <!-- Bloque 1 -->
+        <div class="marquee-content">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+        <!-- Bloque 2 (Duplicado para continuidad) -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+        <!-- Bloque 3 -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+        <!-- Bloque 4 -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+        <!-- Bloque 5 -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ========================================================================== -->
+  <!-- [01] HEADER & NAVEGACIÓN                                                   -->
+  <!-- ========================================================================== -->
+  <header class="main-header">
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="assets/header/logo.svg" alt="Non-State Logo" class="logo" />
+      </a>
+    </div>
+
+    <div class="circle-graphic">
+      <a href="index.html" class="sello-link">
+        <img src="assets/header/sello.svg" alt="Sello - Diseñar con responsabilidad por Non-State" class="sello" />
+      </a>
+    </div>
+
+    <nav class="main-nav">
+      <a href="category.html">Proyectos</a>
+      <a href="#posts">Posts</a>
+      <a href="careers.html">Contacto</a>
+      <button class="menu-btn">Menú</button>
+    </nav>
+  </header>
+
+  <!-- ========================================================================== -->
+  <!-- [02] INSERTE PÁGINA DE CONTACTO AQUÍ                                       -->
+  <!-- ========================================================================== -->
+  <main class="contact-main">
+    <section class="contact-hero">
+      <div class="contact-container">
+        <div class="contact-header-content">
+          <h1>Construyamos algo<br><span>Extraordinario.</span></h1>
+          <p>Cuéntanos sobre tu visión, espacio o marca. Estamos listos para materializar ideas complejas en realidades de alto impacto estético y funcional.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Columna Izquierda: Información Directa y Canales -->
+          <div class="contact-info-side">
+            <div class="info-block">
+              <h3>Oficina Principal</h3>
+              <p>Bogotá, Colombia<br>Disponibles para proyectos locales e internacionales.</p>
+            </div>
+            
+            <div class="info-block">
+              <h3>Conexión Directa</h3>
+              <p><a href="mailto:contact@nonstate.co">contact@nonstate.co</a></p>
+              <p><a href="tel:+573123453445">+57 312 345 3445</a></p>
+            </div>
+
+            <div class="info-block">
+              <h3>Canales Digitales</h3>
+              <div class="contact-social-links">
+                <a href="https://www.behance.net/nonstate" target="_blank">Behance ↗</a>
+                <a href="#" target="_blank">Instagram ↗</a>
+                <a href="#" target="_blank">LinkedIn ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Formulario con Filtro y Canal de Contacto -->
+          <div class="contact-form-side">
+            <form id="contactForm" class="cool-contact-form" action="https://formspree.io/f/mzebvbyo" method="POST">
+              
+              <div class="form-step-title">
+                <span>01</span>
+                <label>Marca, Empresa o Categoria Comercial</label>
+              </div>
+              <div class="input-group">
+                <input type="text" id="company" name="company" placeholder="Ej. Unilever / División Beauty / Marca Propia" required />
+              </div>
+
+              <div class="form-step-title">
+                <span>02</span>
+                <label>Persona de Contacto & Cargo</label>
+              </div>
+              <div class="input-group">
+                <input type="text" id="fullname" name="fullname" placeholder="Ej. Mariana Gómez, Brand Manager" required />
+              </div>
+
+              <!-- NUEVO CAMPO: Canal de Contacto Preferido -->
+              <div class="form-step-title">
+                <span>03</span>
+                <label>¿Por dónde prefieres que te contactemos?</label>
+              </div>
+              <div class="input-group">
+                <select id="preferredChannel" name="preferred_channel" required>
+                  <option value="" disabled selected>Selecciona un canal de contacto</option>
+                  <option value="email">Correo Electrónico Corporativo</option>
+                  <option value="whatsapp">WhatsApp / Teléfono</option>
+                  <option value="linkedin">Mensaje Directo por LinkedIn</option>
+                </select>
+              </div>
+
+              <!-- Campo dinámico que cambia según la selección anterior -->
+              <div class="input-group" id="channelInputGroup" style="display: none;">
+                <input type="text" id="channelDetail" name="contact_detail" placeholder="" />
+              </div>
+
+              <div class="form-step-title">
+                <span>04</span>
+                <label>Selecciona el tipo de programa o fee requerido</label>
+              </div>
+              <div class="service-chips-grid">
+                <label class="chip-card">
+                  <input type="checkbox" name="services[]" value="fee-retail-pop" />
+                  <span>Fee Integral / Retail & POP</span>
+                </label>
+                <label class="chip-card">
+                  <input type="checkbox" name="services[]" value="arquitectura-comercial" />
+                  <span>Arquitectura Comercial (Rollout)</span>
+                </label>
+                <label class="chip-card">
+                  <input type="checkbox" name="services[]" value="desarrollo-portafolio-3d" />
+                  <span>Desarrollo de Portafolio 3D / Masivo</span>
+                </label>
+                <label class="chip-card">
+                  <input type="checkbox" name="services[]" value="consultoria-estrategica" />
+                  <span>Consultoría de Diseño & Estructuración</span>
+                </label>
+              </div>
+
+              <!-- FILTRO CLAVE DE PRESUPUESTO / TIER DE INVERSIÓN -->
+              <div class="form-step-title">
+                <span>05</span>
+                <label>Rango de Inversión / Fee Estimado por Fase</label>
+              </div>
+              <div class="input-group">
+                <select name="investment_tier" required>
+                  <option value="" disabled selected>Selecciona el rango estimado de inversión</option>
+                  <option value="tier-1">Proyectos menores (Filtrado automático - No aplica)</option>
+                  <option value="tier-2">Fee de diseño estándar (Corporativo)</option>
+                  <option value="tier-3">Grandes cuentas / Rollout multitienda / Anual</option>
+                </select>
+              </div>
+
+              <div class="form-step-title">
+                <span>06</span>
+                <label>Breve contexto del alcance o requerimiento</label>
+              </div>
+              <div class="input-group">
+                <textarea id="message" name="message" rows="4" placeholder="Tiempos estimados, entregables esperados o necesidades de la marca..." required></textarea>
+              </div>
+
+              <button type="submit" class="submit-project-btn">
+                <span>Iniciar Proceso de Evaluación</span>
+                <span class="btn-arrow">→</span>
+              </button>
+            </form>
+
+            <!-- Contenedor sutil para el mensaje de éxito (Oculto inicialmente) -->
+            <div id="formSuccessMsg" class="form-success-message" style="display: none;">
+              <h3>PROCESO RECIBIDO.</h3>
+              <p>Hemos registrado los requerimientos de tu marca. Nuestro equipo estratégico evaluará el alcance y se pondrá en contacto contigo a la brevedad.</p>
+            </div>
+          </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================== -->
+  <!-- [03] FOOTER & BOTÓN FLOTANTE                                               -->
+  <!-- ========================================================================== -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-left">
+          <img class="footer-logo" src="assets/footer/logohorizontal.svg" alt="Non-State" loading="lazy" />
+          <div class="footer-links-grid">
+            <div class="footer-column">
+              <h3>Categorías</h3>
+              <ul>
+                <li><a href="#"><span>01</span> /inicio/</a></li>
+                <li><a href="#"><span>02</span> /servicios/</a></li>
+                <li><a href="#"><span>03</span> /proyectos/</a></li>
+                <li><a href="#"><span>04</span> /contacto/</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>General</h3>
+              <ul>
+                <li><a href="#">posts</a></li>
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">anunciar</a></li>
+                <li><a href="#">condiciones de uso</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-socials">
+            <a href="https://www.behance.net/nonstate" class="social-icon" aria-label="Behance"><img
+                src="assets/footer/behance.svg" alt="" loading="lazy" /></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><img src="assets/footer/instagram.svg" alt=""
+                loading="lazy" /></a>
+            <a href="#" class="social-icon" aria-label="Spotify"><img src="assets/footer/spotify.svg" alt=""
+                loading="lazy" /></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><img src="assets/footer/youtube.svg" alt=""
+                loading="lazy" /></a>
+          </div>
+        </div>
+        <div class="footer-seal-wrapper">
+          <a href="#">
+            <img src="assets/footer/selloblanco.svg" alt="Sello - Diseñar con responsabilidad por Non-State"
+              class="sello" loading="lazy" />
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2027. All rights reserved.</p>
+        <p class="legal-text">Ninguna parte de este contenido puede ser reproducida, en su totalidad o en parte, por
+          ningún medio sin el permiso previo por escrito del titular de los derechos de autor.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" title="Volver arriba" aria-label="Volver arriba"></button>
+
+  <div id="fullscreen-menu" class="fullscreen-menu">
+    <div class="menu-content-wrapper">
+      <div class="menu-left-pane">
+        <div class="menu-header-top">
+          <button id="close-btn" class="close-btn">CERRAR</button>
+        </div>
+        <nav class="menu-nav-links">
+          <a href="index.html">INICIO</a>
+          <a href="#posts">PROYECTOS</a>
+          <a href="#">POSTS</a>
+          <a href="#">CONTACTO</a>
+        </nav>
+        <div class="menu-footer-info">
+          <div class="menu-socials">
+            <a href="https://www.behance.net/nonstate" target="_blank">BEHANCE ↗</a>
+            <a href="#" target="_blank">INSTAGRAM ↗</a>
+            <a href="#" target="_blank">LINKEDIN ↗</a>
+          </div>
+          <div class="menu-contact-details">
+            <p>+57 3123453445</p>
+            <p><a href="mailto:info@nonstate.co">contact@nonstate.co</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="menu-right-pane">
+        <div class="menu-image-container">
+          <img src="assets/destacados/indica_1.webp" alt="Vista previa de proyectos Non-State" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de progreso de lectura -->
+  <div class="reading-progress-container">
+    <div class="reading-progress-bar" id="readingProgressBar"></div>
+  </div>
+
+  <!-- Menú flotante -->
+  <div class="scroll-floating-bar" id="floatingBar">
+    <a href="#" class="floating-logo-link">
+      <img src="assets/footer/logohorizontal.svg" alt="Non State Logo" class="floating-logo">
+    </a>
+    <nav class="floating-nav-links">
+      <a href="#destacados">Proyectos</a>
+      <a href="#posts">Posts</a>
+      <a href="#blog">Sobre nosotros</a>
+    </nav>
+    <a href="#fullscreen-menu" class="floating-btn">Contacto</a>
+  </div>
+
+  <!-- Script específico para procesar el envío del formulario sin recargar -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("contactForm");
+      const successMsg = document.getElementById("formSuccessMsg");
+
+      if (form) {
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+
+          const submitBtnSpan = form.querySelector(".submit-project-btn span:first-child");
+          const originalText = submitBtnSpan.textContent;
+          submitBtnSpan.textContent = "Evaluando requerimiento...";
+
+          try {
+            const response = await fetch(form.action, {
+              method: "POST",
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            });
+
+            if (response.ok) {
+              form.style.display = "none";
+              successMsg.style.display = "block";
+            } else {
+              alert("Hubo un error al procesar la solicitud. Por favor intenta directamente en contact@nonstate.co");
+              submitBtnSpan.textContent = originalText;
+            }
+          } catch (error) {
+            alert("Error de conexión. Escríbenos directamente a contact@nonstate.co");
+            submitBtnSpan.textContent = originalText;
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>

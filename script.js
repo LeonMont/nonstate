@@ -29,9 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // JavaScript para duplicar el contenido y asegurar el bucle perfecto
   window.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('marqueeTrack');
-    const content = track.innerHTML;
-    // Duplicamos el contenido para rellenar la pista
-    track.innerHTML = content + content;
+    if (track) {
+      const content = track.innerHTML;
+      // Duplicamos el contenido para rellenar la pista
+      track.innerHTML = content + content;
+    }
   });
 
   // ==========================================
@@ -208,7 +210,79 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 6. INICIALIZACIÓN GENERAL
+  // 6. MANEJO ASÍNCRONO DEL FORMULARIO DE CONTACTO
+  // ==========================================
+  const contactForm = document.getElementById("contactForm");
+  const successMsg = document.getElementById("formSuccessMsg");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+
+      const submitBtnSpan = contactForm.querySelector(".submit-project-btn span:first-child");
+      const originalText = submitBtnSpan ? submitBtnSpan.textContent : "";
+      
+      if (submitBtnSpan) {
+        submitBtnSpan.textContent = "Evaluando requerimiento...";
+      }
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          contactForm.style.display = "none";
+          if (successMsg) {
+            successMsg.style.display = "block";
+          }
+        } else {
+          alert("Hubo un error al procesar la solicitud. Por favor intenta directamente en contact@nonstate.co");
+          if (submitBtnSpan) submitBtnSpan.textContent = originalText;
+        }
+      } catch (error) {
+        alert("Error de conexión. Escríbenos directamente a contact@nonstate.co");
+        if (submitBtnSpan) submitBtnSpan.textContent = originalText;
+      }
+    });
+  }
+
+  // ==========================================
+  // 7. INICIALIZACIÓN GENERAL
   // ==========================================
   startAutoSlide();
 });
+
+// ==========================================
+  // 8. CONTROLADOR DINÁMICO DE CANAL DE CONTACTO
+  // ==========================================
+  const preferredChannelSelect = document.getElementById("preferredChannel");
+  const channelInputGroup = document.getElementById("channelInputGroup");
+  const channelDetailInput = document.getElementById("channelDetail");
+
+  if (preferredChannelSelect && channelInputGroup && channelDetailInput) {
+    preferredChannelSelect.addEventListener("change", function () {
+      const selectedValue = this.value;
+      channelInputGroup.style.display = "block";
+
+      if (selectedValue === "email") {
+        channelDetailInput.type = "email";
+        channelDetailInput.placeholder = "ej. maria.gomez@unilever.com";
+        channelDetailInput.required = true;
+      } else if (selectedValue === "whatsapp") {
+        channelDetailInput.type = "tel";
+        channelDetailInput.placeholder = "ej. +57 300 123 4567";
+        channelDetailInput.required = true;
+      } else if (selectedValue === "linkedin") {
+        channelDetailInput.type = "text";
+        channelDetailInput.placeholder = "URL de tu perfil o nombre de usuario en LinkedIn";
+        channelDetailInput.required = true;
+      }
+    });
+  }
+
