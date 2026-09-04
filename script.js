@@ -26,15 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // JavaScript para duplicar el contenido y asegurar el bucle perfecto
-  window.addEventListener('DOMContentLoaded', () => {
-    const track = document.getElementById('marqueeTrack');
-    if (track) {
-      const content = track.innerHTML;
-      // Duplicamos el contenido para rellenar la pista
-      track.innerHTML = content + content;
-    }
-  });
+  // JavaScript para duplicar el contenido y asegurar el bucle perfecto (Optimizado)
+  const track = document.getElementById('marqueeTrack');
+  if (track) {
+    const content = track.innerHTML;
+    // Duplicamos el contenido para rellenar la pista
+    track.innerHTML = content + content;
+  }
 
   // ==========================================
   // 2. CONTROLADOR UNIFICADO DE SCROLL (Rendimiento optimizado)
@@ -253,13 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 7. INICIALIZACIÓN GENERAL
-  // ==========================================
-  startAutoSlide();
-});
-
-// ==========================================
-  // 8. CONTROLADOR DINÁMICO DE CANAL DE CONTACTO
+  // 7. CONTROLADOR DINÁMICO DE CANAL DE CONTACTO
   // ==========================================
   const preferredChannelSelect = document.getElementById("preferredChannel");
   const channelInputGroup = document.getElementById("channelInputGroup");
@@ -286,3 +278,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ==========================================
+  // 8. INICIALIZACIÓN GENERAL
+  // ==========================================
+  startAutoSlide();
+});

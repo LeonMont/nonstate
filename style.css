@@ -93,337 +93,6 @@ img {
 }
 
 /* ==========================================================================
-   15. ESTADO DE ÉXITO DE CONTACTO CORPORATIVO
-   ========================================================================== */
-.form-success-message {
-  background-color: #ffffff;
-  padding: 60px;
-  border-radius: 12px;
-  text-align: center;
-  border: 1px solid var(--text-primary);
-  animation: fadeInSuccess 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-
-  h3 {
-    font-size: 2.4rem;
-    font-weight: 600;
-    letter-spacing: -0.5px;
-    margin-bottom: 15px;
-    color: var(--text-primary);
-  }
-
-  p {
-    font-size: 1.3rem;
-    line-height: 1.5;
-    color: var(--text-secondary);
-    max-width: 500px;
-    margin: 0 auto;
-  }
-}
-
-@keyframes fadeInSuccess {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ==========================================================================
-   13. SECCIÓN DE CONTACTO & FORMULARIO FEE DE DISEÑO
-   ========================================================================== */
-.contact-main {
-  max-width: var(--max-width);
-  margin: 40px auto 80px;
-  padding: 0 20px;
-}
-
-.contact-hero {
-  background-color: var(--bg-secondary);
-  border-radius: var(--border-radius);
-  padding: 80px 60px;
-  box-sizing: border-box;
-}
-
-.contact-container {
-  width: 100%;
-}
-
-.contact-header-content {
-  max-width: 800px;
-  margin-bottom: 60px;
-
-  .contact-tag {
-    display: inline-block;
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-    margin-bottom: 20px;
-  }
-
-  h1 {
-    font-size: clamp(3.2rem, 5vw, 5.6rem);
-    font-weight: 600;
-    line-height: 0.95;
-    letter-spacing: -1.5px;
-    margin-bottom: 25px;
-    color: var(--text-primary);
-
-    span {
-      font-weight: 300;
-      color: #555555;
-    }
-  }
-
-  p {
-    font-size: 1.4rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    max-width: 650px;
-  }
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 60px;
-  align-items: flex-start;
-}
-
-/* Columna Izquierda: Información de la Empresa */
-.contact-info-side {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  background-color: #ffffff;
-  padding: 50px;
-  border-radius: 12px;
-  height: 100%;
-}
-
-.info-block {
-  h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--text-primary);
-  }
-
-  p, a {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    text-decoration: none;
-    line-height: 1.5;
-    transition: color 0.2s ease;
-  }
-
-  a:hover {
-    color: var(--text-primary);
-    text-decoration: underline;
-  }
-}
-
-.contact-social-links {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-
-  a {
-    font-weight: 600;
-    color: var(--text-primary);
-    border-bottom: 1px solid var(--text-primary);
-    padding-bottom: 2px;
-  }
-}
-
-/* Columna Derecha: Formulario Cool */
-.contact-form-side {
-  background-color: #ffffff;
-  padding: 50px;
-  border-radius: 12px;
-}
-
-.cool-contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.form-step-title {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: -15px;
-
-  span {
-    background-color: var(--bg-dark);
-    color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: 700;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-  }
-
-  label {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--text-primary);
-  }
-}
-
-.input-group {
-  width: 100%;
-
-  input, textarea, select {
-    width: 100%;
-    padding: 18px 20px;
-    background-color: var(--bg-secondary);
-    border: 1px solid transparent;
-    border-radius: 8px;
-    font-family: var(--font-titles);
-    font-size: 1.25rem;
-    color: var(--text-primary);
-    outline: none;
-    transition: all 0.3s ease;
-
-    &::placeholder {
-      color: #999999;
-    }
-
-    &:focus {
-      background-color: #ffffff;
-      border-color: var(--text-primary);
-      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
-    }
-  }
-
-  textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-}
-
-/* Grid para selección visual de servicios tipo Chips */
-.service-chips-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.chip-card {
-  position: relative;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  background-color: var(--bg-secondary);
-  border: 1px solid transparent;
-  border-radius: 8px;
-  text-align: center;
-  transition: all 0.25s ease;
-
-  input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-  }
-
-  span {
-    font-size: 1.15rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    user-select: none;
-  }
-
-  &:hover {
-    background-color: #e4e4e4;
-  }
-
-  /* Estado seleccionado mediante etiqueta o script visual */
-  input[type="checkbox"]:checked + span {
-    font-weight: 700;
-  }
-}
-
-/* Cambia el estilo de la tarjeta si el checkbox está activo */
-.chip-card:has(input[type="checkbox"]:checked) {
-  background-color: var(--text-primary);
-  border-color: var(--text-primary);
-
-  span {
-    color: #ffffff;
-  }
-}
-
-/* Botón de Enviar de Alto Impacto */
-.submit-project-btn {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--bg-dark);
-  color: #ffffff;
-  border: none;
-  width: 100%;
-  padding: 22px 30px;
-  border-radius: 8px;
-  font-family: var(--font-titles);
-  font-size: 1.4rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 10px;
-
-  .btn-arrow {
-    font-size: 1.6rem;
-    transition: transform 0.3s ease;
-  }
-
-  &:hover {
-    background-color: #292929;
-
-    .btn-arrow {
-      transform: translateX(6px);
-    }
-  }
-}
-
-/* Responsive para la sección de Contacto */
-@media (max-width: 1024px) {
-  .contact-hero {
-    padding: 50px 30px;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .contact-info-side, 
-  .contact-form-side {
-    padding: 35px;
-  }
-}
-
-@media (max-width: 768px) {
-  .service-chips-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .contact-hero {
-    padding: 40px 20px;
-  }
-}
-
-/* ==========================================================================
    2. ENCABEZADO (HEADER)
    ========================================================================== */
 header.main-header {
@@ -500,7 +169,6 @@ header.main-header {
   padding: 12px 0;
   font-family: "open sans", sans-serif;
   font-size: 14px;
-  letter-spacing: 1px;
   box-sizing: border-box;
   position: relative;
   letter-spacing: 0.1px;
@@ -531,121 +199,6 @@ header.main-header {
   100% {
     transform: translateX(-33.333%);
   }
-}
-
-/* ==========================================================================
-   SERVICIOS
-   ========================================================================== */
-/* Contenedor del Grid */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: var(--max-width);
-  margin: 40px auto;
-}
-
-@media (max-width: 968px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Tarjeta individual */
-.service-card {
-  background: linear-gradient(135deg, #f0f0f0, #e4e4e4, #f5f5f5, #f0f0f0);
-  border-radius: 24px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-}
-
-/* Contenedor superior con efecto visual y brillo */
-.card-image-box {
-  height: 300px;
-  border-radius: 16px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 24px;
-}
-
-/* Fondos específicos y degradados de las tarjetas superiores */
-.card-1 .card-image-box {
-  background-image: url("assets/plano1.png");
-  background-size: cover;
-  background-position: center;
-}
-
-.card-2 .card-image-box {
-  background-image: url("assets/plano1.png");
-  background-size: cover;
-  background-position: center;
-}
-
-.card-3 .card-image-box {
-  background-image: url("assets/plano1.png");
-  background-size: cover;
-  background-position: center;
-}
-
-/* Efecto de luz diagonal (brillo superior) */
-.card-image-box::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 0.1) 30%,
-    transparent 60%
-  );
-  pointer-events: none;
-}
-
-/* Textos de la tarjeta */
-.service-content h3 {
-  font-size: 40px;
-  font-weight: 500;
-  line-height: 1.1;
-  margin-bottom: 16px;
-  letter-spacing: -0.5px;
-}
-
-.service-content ul {
-  font-size: 18px;
-  line-height: 1.4;
-  font-weight: 400;
-  color: var(--text-primary);
-  margin-bottom: 28px;
-}
-
-/* Botón inferior */
-.btn-learn-more {
-  background: var(--text-primary);
-  color: var(--bg-primary);
-  padding: 10px 20px;
-  border-radius: 50px;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  width: fit-content;
-  transition: all 0.2s ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.btn-learn-more:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ==========================================================================
@@ -903,9 +456,7 @@ header.main-header {
   }
 }
 
-/* ==========================================================================
-   VARIANTE: TARJETA CON DOS IMÁGENES Y TEXTO FIJO
-   ========================================================================== */
+/* VARIANTE: TARJETA CON DOS IMÁGENES Y TEXTO FIJO */
 .double-image-card {
   padding: 0;
   cursor: pointer;
@@ -1745,6 +1296,104 @@ header.main-header {
 }
 
 /* ==========================================================================
+   7. SERVICIOS
+   ========================================================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: var(--max-width);
+  margin: 40px auto;
+}
+
+@media (max-width: 968px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card {
+  background: linear-gradient(135deg, #f0f0f0, #e4e4e4, #f5f5f5, #f0f0f0);
+  border-radius: 24px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.card-image-box {
+  height: 300px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.card-1 .card-image-box,
+.card-2 .card-image-box,
+.card-3 .card-image-box {
+  background-image: url("assets/plano1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.card-image-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 30%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.service-content h3 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.service-content ul {
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+}
+
+.btn-learn-more {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.btn-learn-more:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
    8. BARRA FLOTANTE
    ========================================================================== */
 .scroll-floating-bar {
@@ -1760,7 +1409,6 @@ header.main-header {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-
   transform: translateY(-100%);
   opacity: 0;
   transition:
@@ -2018,10 +1666,272 @@ header.main-header {
 }
 
 /* ==========================================================================
-   14. REFORZAMIENTO CORPORATIVO & FILTRO DE CLIENTES GRANDES
+   11. SECCIÓN DE CONTACTO & FORMULARIO FEE DE DISEÑO
    ========================================================================== */
+.contact-main {
+  max-width: var(--max-width);
+  margin: 40px auto 80px;
+  padding: 0 20px;
+}
 
-/* Añadir un aviso de exclusividad sutil en la cabecera del formulario */
+.contact-hero {
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  padding: 80px 60px;
+  box-sizing: border-box;
+}
+
+.contact-container {
+  width: 100%;
+}
+
+.contact-header-content {
+  max-width: 800px;
+  margin-bottom: 60px;
+
+  .contact-tag {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: clamp(3.2rem, 5vw, 5.6rem);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -1.5px;
+    margin-bottom: 25px;
+    color: var(--text-primary);
+
+    span {
+      font-weight: 300;
+      color: #555555;
+    }
+  }
+
+  p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 650px;
+  }
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.contact-info-side {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 12px;
+  height: 100%;
+}
+
+.info-block {
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+  }
+
+  p,
+  a {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    line-height: 1.5;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+  }
+}
+
+.contact-social-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  a {
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--text-primary);
+    padding-bottom: 2px;
+  }
+}
+
+.contact-form-side {
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 12px;
+}
+
+.cool-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-step-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: -15px;
+
+  span {
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  label {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+}
+
+.input-group {
+  width: 100%;
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 18px 20px;
+    background-color: var(--bg-secondary);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-family: var(--font-titles);
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: #999999;
+    }
+
+    &:focus {
+      background-color: #ffffff;
+      border-color: var(--text-primary);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.service-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.chip-card {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: var(--bg-secondary);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.25s ease;
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  span {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    user-select: none;
+  }
+
+  &:hover {
+    background-color: #e4e4e4;
+  }
+
+  input[type="checkbox"]:checked + span {
+    font-weight: 700;
+  }
+}
+
+.chip-card:has(input[type="checkbox"]:checked) {
+  background-color: var(--text-primary);
+  border-color: var(--text-primary);
+
+  span {
+    color: #ffffff;
+  }
+}
+
+.submit-project-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-dark);
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 22px 30px;
+  border-radius: 8px;
+  font-family: var(--font-titles);
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  margin-top: 10px;
+
+  .btn-arrow {
+    font-size: 1.6rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background-color: #292929;
+
+    .btn-arrow {
+      transform: translateX(6px);
+    }
+  }
+}
+
+/* ==========================================================================
+   12. REFORZAMIENTO CORPORATIVO & FILTRO DE CLIENTES GRANDES
+   ========================================================================== */
 .contact-hero .contact-header-content p::after {
   content: " Trabajamos bajo modelos de consultoría, igualas y fees de diseño estructurados para grandes cuentas y marcas consolidadas.";
   display: block;
@@ -2032,7 +1942,6 @@ header.main-header {
   opacity: 0.9;
 }
 
-/* Estilo formal para el selector de presupuestos / tiers */
 .input-group select {
   appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
@@ -2042,7 +1951,6 @@ header.main-header {
   cursor: pointer;
 }
 
-/* Destacar la seriedad de los botones de envío */
 .submit-project-btn {
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -2050,237 +1958,46 @@ header.main-header {
 }
 
 /* ==========================================================================
-   11. MEDIA QUERIES (RESPONSIVE)
+   13. ESTADO DE ÉXITO DE CONTACTO CORPORATIVO
    ========================================================================== */
-@media (max-width: 1024px) {
-  header.main-header,
-  .hero-banner,
-  .featured-grid,
-  .section-title-container,
-  .recent-section-grid,
-  .footer-container,
-  .spotify-grid {
-    max-width: 100%;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
+.form-success-message {
+  background-color: #ffffff;
+  padding: 60px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid var(--text-primary);
+  animation: fadeInSuccess 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 
-  .wide-banner {
-    max-width: 100%;
-    margin-left: 24px;
-    margin-right: 24px;
-    width: auto;
-  }
-  .featured-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
-  }
-  .recent-section-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .shoutbox-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .spotify-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  header.main-header {
-    margin: 30px auto;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-  }
-  .logo-container {
-    justify-content: center;
-    width: 100%;
-  }
-  .logo-container .logo {
-    content: url("assets/header/logoquery.svg");
-    margin: 0 auto;
-  }
-  nav.main-nav {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .hero-banner {
-    flex-direction: column-reverse;
-    text-align: center;
-    gap: 30px;
-    padding: 40px 24px;
-  }
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-left: 0;
-    text-align: center;
-    width: 100%;
-  }
-  .hero-content h2 {
-    font-size: 3.8rem;
-    text-align: center;
-    margin: 0 auto;
-  }
-  .hero-content p {
-    padding-left: 0;
-    text-align: center;
-    margin: 0 auto;
-  }
-  .hero-btn {
-    margin: 0 auto;
-  }
-  .circle-graphic .sello {
-    width: 120px;
-    height: 120px;
-  }
-  .featured-grid {
-    grid-template-columns: 1fr;
-  }
-  .grid-card {
-    padding: 40px;
-    min-height: 320px;
-  }
-  .grid-card.text-card.visual-hover-card .overlay-text,
-  .grid-card .overlay-text,
-  .text-card .overlay-text,
-  .visual-hover-card .overlay-text {
-    display: block;
-  }
-  .project-overlay {
-    padding: 30px;
-  }
-  .overlay-title {
-    font-size: 3.2rem;
-  }
-  .post-titleblack {
-    font-size: 4rem;
-  }
-
-  .wide-banner {
-    height: auto;
-    min-height: 280px;
-    padding: 40px 24px;
-    h2 {
-      font-size: 3.4rem;
-    }
-    p {
-      padding-right: 0;
-      font-size: 1.2rem;
-    }
-  }
-
-  .featured-recent .featured-recent-title {
-    font-size: 2.2rem;
-  }
-
-  .post-item {
-    height: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding-bottom: 20px;
-    .post-item-image {
-      width: 100% !important;
-      height: 200px;
-    }
-    .post-item-content {
-      padding: 0 20px;
-    }
-    .post-item-title {
-      font-size: 2rem;
-    }
-  }
-
-  .shoutbox-list {
-    grid-template-columns: 1fr;
-  }
-  .footer-top {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 40px;
-  }
-  .footer-brand-nav {
-    align-items: center;
-  }
-  .footer-links-grid {
-    justify-items: center;
-    gap: 30px;
-  }
-  .footer-column ul {
-    align-items: center;
-  }
-  .footer-socials {
-    justify-content: center;
-  }
-  .footer-bottom {
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  header.main-header,
-  .hero-banner,
-  .footer-container,
-  .spotify-grid {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .wide-banner {
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-  .search-input {
-    width: 100%;
-    font-size: 1.4rem;
-    padding: 8px 10px;
-  }
-  nav.main-nav {
-    gap: 10px;
-  }
-  .menu-btn,
-  .language-selector {
-    font-size: 1.4rem;
-    padding: 8px 20px;
-  }
-  .hero-content h2 {
-    font-size: 3rem;
-  }
-  .post-principaltitle {
-    font-size: 5rem;
-  }
-  .post-title {
+  h3 {
     font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+    color: var(--text-primary);
   }
-  .overlay-title {
-    font-size: 2.8rem;
+
+  p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
   }
-  .featured-recent .featured-recent-title,
-  .featured-recent-title {
-    font-size: 1.8rem;
+}
+
+@keyframes fadeInSuccess {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  .featured-recent-body {
-    padding: 25px 20px;
-  }
-  .footer-links-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 /* ==========================================================================
-   12. FULLSCREEN MENU OVERLAY
+   14. FULLSCREEN MENU OVERLAY
    ========================================================================== */
 .fullscreen-menu {
   position: fixed;
@@ -2428,19 +2145,145 @@ header.main-header {
   object-fit: cover;
 }
 
-@media (max-width: 1024px) {
+/* ==========================================================================
+   15. MEDIA QUERIES (RESPONSIVE)
+   ========================================================================== */
+
+/* 1. MEDIA QUERY PARA PANTALLAS (Desktop / Tablets horizontales) */
+@media screen and (min-width: 769px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .scroll-floating-bar {
+    padding: 12px 40px;
+  }
+  .floating-nav-links {
+    display: flex;
+  }
+}
+
+/* 2. MEDIA QUERY PARA MÓVIL (Consolidación de <1024px, <768px y <480px) */
+@media screen and (max-width: 768px) {
+  /* Contenedores y Márgenes */
+  header.main-header, .hero-banner, .featured-grid, .section-title-container,
+  .recent-section-grid, .footer-container, .spotify-grid {
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .wide-banner {
+    max-width: 100%;
+    margin-left: 16px;
+    margin-right: 16px;
+    width: auto;
+    height: auto;
+    min-height: 280px;
+    padding: 40px 24px;
+  }
+
+  /* Header y Navegación */
+  header.main-header {
+    margin: 30px auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  .logo-container {
+    justify-content: center;
+    width: 100%;
+  }
+  .logo-container .logo {
+    content: url("assets/header/logoquery.svg");
+    margin: 0 auto;
+  }
+  nav.main-nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .menu-btn, .language-selector {
+    font-size: 1.4rem;
+    padding: 8px 20px;
+  }
+
+  /* Grillas Estructurales */
+  .featured-grid, .recent-section-grid, .shoutbox-list, 
+  .spotify-grid, .contact-grid, .service-chips-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .grid-card {
+    padding: 40px;
+    min-height: 320px;
+  }
+
+  /* Tarjetas de Posts */
+  .post-item {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 20px;
+  }
+  .post-item .post-item-image {
+    width: 100% !important;
+    height: 200px;
+  }
+  .post-item-content {
+    padding: 0 20px;
+  }
+
+  /* Tipografía Adaptativa */
+  .hero-content h2 { font-size: 3rem; text-align: center; margin: 0 auto; }
+  .hero-content p { text-align: center; margin: 0 auto; padding-left: 0; }
+  .hero-btn { margin: 0 auto; }
+  .post-principaltitle { font-size: 5rem; }
+  .post-title { font-size: 2.4rem; }
+  .overlay-title { font-size: 2.8rem; }
+  .post-titleblack { font-size: 4rem; }
+  .wide-banner h2 { font-size: 3.4rem; }
+  .wide-banner p { font-size: 1.2rem; padding-right: 0; }
+  .featured-recent .featured-recent-title, .featured-recent-title { font-size: 1.8rem; }
+  
+  /* Detalles Visuales */
+  .circle-graphic .sello { width: 120px; height: 120px; }
+  .project-overlay { padding: 30px; }
+  .grid-card.text-card.visual-hover-card .overlay-text, .grid-card .overlay-text,
+  .text-card .overlay-text, .visual-hover-card .overlay-text { display: block; }
+  .featured-recent-body { padding: 25px 20px; }
+
+  /* Menú Fullscreen */
   .menu-content-wrapper {
     grid-template-columns: 1fr;
     padding: 40px 24px 60px 24px;
   }
-  .menu-right-pane {
-    display: none;
-  }
-  .menu-left-pane {
-    min-height: auto;
+  .menu-right-pane { display: none; }
+  .menu-left-pane { min-height: auto; gap: 40px; }
+  .menu-nav-links a { font-size: 3.5rem; }
+
+  /* Elementos de Interfaz / Flotantes */
+  .search-input { width: 100%; font-size: 1.4rem; padding: 8px 10px; }
+  .scroll-floating-bar { padding: 12px 20px; }
+  .floating-nav-links { display: none; }
+  .contact-hero { padding: 40px 20px; }
+  .contact-info-side, .contact-form-side { padding: 35px; }
+
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 40px;
   }
-  .menu-nav-links a {
-    font-size: 3.5rem;
+  .footer-brand-nav { align-items: center; }
+  .footer-links-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    justify-items: center;
   }
+  .footer-column ul { align-items: center; }
+  .footer-socials { justify-content: center; }
+  .footer-bottom { text-align: center; }
 }
