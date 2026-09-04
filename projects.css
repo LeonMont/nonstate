@@ -59,7 +59,7 @@ ul {
 }
 
 /* ==========================================================================
-   2. ENCABEZADO (HEADER)
+   3. ENCABEZADO (HEADER)
    ========================================================================== */
 header.main-header {
   background-color: var(--bg-primary);
@@ -613,7 +613,7 @@ header.main-header {
 }
 
 /* ==========================================================================
-   6. BARRA FLOTANTE
+   8. BARRA FLOTANTE
    ========================================================================== */
 
 .scroll-floating-bar {
@@ -704,7 +704,7 @@ header.main-header {
 }
 
 /* ==========================================================================
-   7. BARRA DE PROGRESO DE LECTURA
+   9. BARRA DE PROGRESO DE LECTURA
    ========================================================================== */
 
 .reading-progress-container {
@@ -726,7 +726,7 @@ header.main-header {
 }
 
 /* ==========================================================================
-   8. MEDIA QUERIES (RESPONSIVE)
+   10. MEDIA QUERIES (RESPONSIVE)
    ========================================================================== */
 @media (max-width: 1024px) {
   header.main-header,
@@ -881,6 +881,10 @@ header.main-header {
   .double-grid {
     max-width: 90%;
   }
+
+  .six-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 480px) {
@@ -936,10 +940,15 @@ header.main-header {
   .project-view-image {
     max-width: 100%;
   }
+
+  .six-grid,
+  .two-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ==========================================================================
-   ARTÍCULOS RELACIONADOS (SECCIÓN FINAL)
+   11. ARTÍCULOS RELACIONADOS (SECCIÓN FINAL)
    ========================================================================== */
 .related-posts-section {
   max-width: var(--max-width);
@@ -1109,3 +1118,4 @@ header.main-header {
     grid-template-columns: 1fr;
   }
 }
+```[cite: 9]
