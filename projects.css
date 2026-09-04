@@ -1119,3 +1119,9 @@ header.main-header {
   }
 }
 ```[cite: 9]
+
+@media (max-width: 1750px) {
+  :root {
+    --max-width: 1350px; /* Reduces el ancho máximo de la retícula para que respire igual que en tu monitor de 1920px */
+  }
+}
