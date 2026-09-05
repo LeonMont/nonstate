@@ -1162,7 +1162,6 @@ header.main-header {
     grid-template-columns: 1fr;
   }
 }
-```[cite: 9]
 
 @media (max-width: 1750px) {
   :root {

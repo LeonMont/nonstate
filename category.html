@@ -2,29 +2,81 @@
 <html lang="es">
 
 <head>
+  <!-- Metadatos -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Non-State: Catálogo de proyectos y propuestas de diseño." />
-  <title>Proyectos - Non-State</title>
+  <meta name="description" content="Non-State. Proyectos de diseño retail, mobiliario comercial y marketing." />
+  <title>Non State</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet" />
 
-  <!-- Estilos Base (Header, Footer, Complementos y utilidades globales) -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Estilos Específicos de esta vista (Opcional, solo para contenido interno) -->
+  <!-- Estilo del Proyecto -->
   <link rel="stylesheet" href="category.css" />
 
-  <!-- JavaScript Unificado -->
+  <!-- JavaScript -->
   <script src="script.js" defer></script>
 </head>
 
 <body>
+
   <!-- ========================================================================== -->
-  <!-- [01] HEADER & NAVEGACIÓN (ESTÁNDAR UNIFICADO)                              -->
+  <!-- [01] BANDA                                                                 -->
+  <!-- ========================================================================== -->
+  <div class="marquee-container">
+    <a href="contacto.html" class="marquee-link">
+      <div class="marquee-track" id="marqueeTrack">
+
+        <!-- Bloque 1 -->
+        <div class="marquee-content">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+        <!-- Bloque 2 -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+        <!-- Bloque 3 -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+        <!-- Bloque 4 -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+        <!-- Bloque 5 -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+        <!-- Bloque 6 -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ========================================================================== -->
+  <!-- [02] HEADER & NAVEGACIÓN                                                   -->
   <!-- ========================================================================== -->
   <header class="main-header">
     <div class="logo-container">
@@ -40,36 +92,32 @@
     </div>
 
     <nav class="main-nav">
-      <a href="index.html#destacados">Destacados</a>
       <a href="category.html">Proyectos</a>
-      <a href="index.html#posts">Posts</a>
-      <a href="careers.html">Acerca de</a>
-      <button class="menu-btn">Contacto</button>
+      <a href="#posts">Posts</a>
+      <a href="contacto.html">Contacto</a>
+      <button class="menu-btn">Menú</button>
     </nav>
   </header>
 
-  <!-- ========================================================================== -->
-  <!-- [02] CONTENIDO PRINCIPAL DE LA CATEGORÍA                                   -->
-  <!-- ========================================================================== -->
   <main>
-    <div class="section-title-container">
-      <h2 class="section-title-inline">Todos los <span class="negrita">Proyectos</span></h2>
+
+    <!-- ========================================================================== -->
+    <!-- [02] CONTENIDO PRINCIPAL DE LA CATEGORÍA                                   -->
+    <!-- ========================================================================== -->
+    <div class="section-title-container" id="nuevos">
+      <h2 class="section-title-inline">Nuevos - <span class="negrita">Proyectos</span></h2>
       <hr class="section-divider-inline" />
     </div>
 
-    <!-- Ejemplo de contenedor para tus proyectos. 
-         Puedes reutilizar las clases de "featured-grid" de tu style.css -->
-    <section class="featured-grid" id="proyectos-lista">
-      <!-- Aquí van los <article class="grid-card..."> de tus proyectos -->
-    </section>
     <!-- ==========================================================================
        SECCIÓN: PROYECTOS - INTERIOR (WIDE BANNERS)
        ========================================================================== -->
 
     <section class="interior-grid">
-      <!-- BANNER 4 -->
+
+      <!-- BANNER -->
       <article class="grid-card image-card project-indica">
-        <img src="assets/posts/destacadoprincipalhover.webp" alt="Proyecto Cafe" />
+        <img src="assets/proyectos/iroka/1.png" alt="Proyecto Cafe" />
         <div class="project-overlay">
           <div class="overlay-content">
             <h3 class="overlay-title">Coffee Shop</h3>
@@ -91,7 +139,7 @@
     <!-- ==========================================================================
        SECCIÓN: PROYECTOS - RETAIL (2 COLUMNAS)
        ========================================================================== -->
-    <div class="section-title-container">
+    <div class="section-title-container" id="interior">
       <h2 class="section-title-inline">
         Proyectos - <span class="negrita">Interior</span>
       </h2>
@@ -99,9 +147,12 @@
     </div>
 
     <section class="retail-grid">
+
       <!-- FILA 1 -->
+
+      <!-- Indica -->
       <article class="grid-card image-card project-indica">
-        <a href="proyecto1.html"></a>
+        <a href="proyecto1.html">
         <img src="assets/destacados/indica_1.webp" alt="Display Retail 1" />
         <div class="project-overlay">
           <div class="overlay-content">
@@ -117,8 +168,10 @@
             </div>
           </div>
         </div>
+        </a>
       </article>
 
+      <!-- Casa Grande -->
       <article class="grid-card image-card project-casagrande">
         <img src="assets/destacados/casagrande_1.webp" alt="Display Retail 2" />
         <div class="project-overlay">
@@ -138,6 +191,8 @@
       </article>
 
       <!-- FILA 2 -->
+
+      <!-- Vestigio -->
       <article class="grid-card image-card project-vestigio">
         <img src="assets/destacados/vestigio_1.webp" alt="Display Retail 3" />
         <div class="project-overlay">
@@ -154,6 +209,7 @@
         </div>
       </article>
 
+      <!-- Indica -->
       <article class="grid-card image-card project-indica">
         <img src="assets/plaza.png" alt="Display Retail 4" />
         <div class="project-overlay">
@@ -172,7 +228,7 @@
     </section>
 
     <!-- Divisor - Retail -->
-    <div class="section-title-container">
+    <div class="section-title-container" id="retail">
       <h2 class="section-title-inline">
         Proyectos - <span class="negrita">Retail</span>
       </h2>
@@ -285,7 +341,7 @@
     </section>
 
     <!-- Divisor - 3D -->
-    <div class="section-title-container">
+    <div class="section-title-container" id="3d">
       <h2 class="section-title-inline">
         Proyectos - <span class="negrita">3D</span>
       </h2>
@@ -366,7 +422,7 @@
   </main>
 
   <!-- ========================================================================== -->
-  <!-- [03] FOOTER & COMPLEMENTOS (ESTÁNDAR UNIFICADO)                            -->
+  <!-- [03] FOOTER & BOTÓN FLOTANTE                                               -->
   <!-- ========================================================================== -->
   <footer class="main-footer">
     <div class="footer-container">
@@ -377,31 +433,23 @@
             <div class="footer-column">
               <h3>Categorías</h3>
               <ul>
-                <li><a href="#"><span>01</span> /inicio/</a></li>
-                <li><a href="#"><span>02</span> /posts/</a></li>
-                <li><a href="#"><span>03</span> /shoutbox/</a></li>
-                <li><a href="#"><span>04</span> /contacto/</a></li>
+                <li><a href="index.html"><span>01</span> /inicio/</a></li>
+                <li><a href="#destacados"><span>02</span> /proyectos/</a></li>
+                <li><a href="#posts"><span>03</span> /posts/</a></li>
+                <li><a href="contacto.html"><span>04</span> /contacto/</a></li>
               </ul>
             </div>
             <div class="footer-column">
               <h3>General</h3>
               <ul>
-                <li><a href="#">Sobre nosotros</a></li>
-                <li><a href="#">Canal RSS</a></li>
-                <li><a href="#">Anunciar</a></li>
-                <li><a href="#">Condiciones de uso</a></li>
+                <li><a href="#playlist"><span>05</span> /playlist/</a></li>
+                <li><a href="#posts"><span>06</span> /shoutbox/</a></li>
               </ul>
             </div>
           </div>
           <div class="footer-socials">
             <a href="https://www.behance.net/nonstate" class="social-icon" aria-label="Behance"><img
                 src="assets/footer/behance.svg" alt="" loading="lazy" /></a>
-            <a href="#" class="social-icon" aria-label="Instagram"><img src="assets/footer/instagram.svg" alt=""
-                loading="lazy" /></a>
-            <a href="#" class="social-icon" aria-label="Spotify"><img src="assets/footer/spotify.svg" alt=""
-                loading="lazy" /></a>
-            <a href="#" class="social-icon" aria-label="YouTube"><img src="assets/footer/youtube.svg" alt=""
-                loading="lazy" /></a>
           </div>
         </div>
         <div class="footer-seal-wrapper">
@@ -413,16 +461,17 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="copyright">© 2027. All rights reserved.</p>
+        <p class="copyright">© 2027. Todos los derechos reservados.</p>
         <p class="legal-text">Ninguna parte de este contenido puede ser reproducida, en su totalidad o en parte, por
           ningún medio sin el permiso previo por escrito del titular de los derechos de autor.</p>
       </div>
     </div>
   </footer>
 
-  <!-- COMPLEMENTOS FLOTANTES Y SCRIPTS -->
+  <!-- Hacia arriba -->
   <button id="scrollTopBtn" title="Volver arriba" aria-label="Volver arriba"></button>
 
+  <!-- Menú -->
   <div id="fullscreen-menu" class="fullscreen-menu">
     <div class="menu-content-wrapper">
       <div class="menu-left-pane">
@@ -432,19 +481,15 @@
         <nav class="menu-nav-links">
           <a href="index.html">INICIO</a>
           <a href="category.html">PROYECTOS</a>
-          <a href="index.html#posts">POSTS</a>
-          <a href="#">ACERCA DE</a>
-          <a href="#">CONTACTO</a>
+          <a href="contacto.html">CONTACTO</a>
         </nav>
         <div class="menu-footer-info">
           <div class="menu-socials">
             <a href="https://www.behance.net/nonstate" target="_blank">BEHANCE ↗</a>
-            <a href="#" target="_blank">INSTAGRAM ↗</a>
-            <a href="#" target="_blank">LINKEDIN ↗</a>
           </div>
           <div class="menu-contact-details">
             <p>+57 3123453445</p>
-            <p><a href="mailto:info@nonstate.co">conctact@nonstate.co</a></p>
+            <p><a href="contacto.html">contact@nonstate.co</a></p>
           </div>
         </div>
       </div>
@@ -461,21 +506,20 @@
     <div class="reading-progress-bar" id="readingProgressBar"></div>
   </div>
 
-  <!-- Barra Flotante -->
+  <!-- Menú flotante -->
   <div class="scroll-floating-bar" id="floatingBar">
-    <a href="index.html" class="floating-logo-link">
+    <a href="#" class="floating-logo-link">
       <img src="assets/footer/logohorizontal.svg" alt="Non State Logo" class="floating-logo">
     </a>
-
     <nav class="floating-nav-links">
-      <a href="index.html#destacados">Destacados</a>
-      <a href="category.html">Proyectos</a>
-      <a href="index.html#posts">Posts</a>
-      <a href="careers.html">Acerca de</a>
+      <a href="#nuevos">Nuevos</a>
+      <a href="#interior">Interior</a>
+      <a href="#retail">Retail</a>
+      <a href="#3d">3D</a>
     </nav>
-
-    <a href="#fullscreen-menu" class="floating-btn">Contacto</a>
+    <a href="contacto.html" class="floating-btn">Contacto</a>
   </div>
+
 </body>
 
 </html>

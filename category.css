@@ -65,6 +65,10 @@ img {
   display: block;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ==========================================================================
    2. ENCABEZADO (HEADER)
    ========================================================================== */
@@ -133,6 +137,46 @@ header.main-header {
   }
 }
 
+/* Banda */
+.marquee-container {
+  background-color: #000000;
+  color: #ffffff;
+  overflow: hidden;
+  width: 100%;
+  padding: 0.75rem 0; /* 12px */
+  font-family: "open sans", sans-serif;
+  font-size: 0.875rem; /* 14px */
+  box-sizing: border-box;
+  position: relative;
+  letter-spacing: 0.00625rem; /* 0.1px */
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scrollMarquee 50s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem; /* 40px */
+  padding-right: 2.5rem; /* 40px */
+  white-space: nowrap;
+}
+
+.dot {
+  font-size: 1.25rem; /* 20px */
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
 
 /* ==========================================================================
    3. GRILLAS INDEPENDIENTES (INTERIOR Y RETAIL)
@@ -673,6 +717,291 @@ header.main-header {
   }
 }
 
+/* ==========================================================================
+   14. FULLSCREEN MENU OVERLAY
+   ========================================================================== */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--bg-primary);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+  overflow-y: auto;
+}
+
+.fullscreen-menu.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-content-wrapper {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 3.125rem 2.5rem 5rem 2.5rem; /* 50px 40px 80px 40px */
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.75rem; /* 60px */
+  min-height: 100%;
+  align-items: center;
+}
+
+.menu-left-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 46.875rem; /* 750px */
+}
+.menu-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.close-btn {
+  background: var(--bg-primary);
+  color: var(--bg-dark);
+  border: none;
+  font-family: var(--font-titles);
+  font-weight: 700;
+  padding: 0.625rem 1.5rem 0.4375rem 1.5rem; /* 10px 24px 7px 24px */
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-radius: 3.125rem; /* 50px */
+  letter-spacing: 0.01875rem; /* 0.3px */
+  transition: background 0.2s;
+}
+
+.close-btn:hover {
+  background: #e0e0e0;
+}
+
+.menu-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* 12px */
+  margin: 1.875rem 0; /* 30px */
+}
+.menu-nav-links a {
+  color: var(--bg-primary);
+  text-decoration: none;
+  font-size: clamp(2.8rem, 5vw, 5.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.0625rem; /* -1px */
+  transition: opacity 0.2s;
+}
+
+.menu-nav-links a:hover {
+  opacity: 0.6;
+}
+
+.menu-footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* 20px */
+  border-top: 0.0625rem solid rgba(255, 255, 255, 0.15); /* 1px */
+  padding-top: 1.875rem; /* 30px */
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+.menu-tagline {
+  font-size: 1.4rem;
+  letter-spacing: 0.03125rem; /* 0.5px */
+}
+.menu-socials {
+  display: flex;
+  gap: 1.5625rem; /* 25px */
+  flex-wrap: wrap;
+}
+.menu-socials a,
+.menu-contact-details p,
+.menu-contact-details a {
+  color: var(--bg-primary);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.menu-socials a:hover,
+.menu-contact-details a:hover {
+  text-decoration: underline;
+}
+.menu-contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem; /* 5px */
+}
+.menu-right-pane {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-image-container {
+  width: 100%;
+  height: 80vh;
+  max-height: 43.75rem; /* 700px */
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.5); /* 20px 40px */
+}
+
+.menu-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 1.875rem; /* 30px */
+  right: 1.875rem; /* 30px */
+  display: none;
+  z-index: 99;
+  width: 4rem; /* 64px */
+  height: 4rem; /* 64px */
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #111111;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M18 15l-6-6-6 6'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.375rem 1.375rem; /* 22px */
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15); /* 4px 10px */
+  transition:
+    opacity 0.3s ease,
+    transform 0.2s ease,
+    background-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-0.1875rem); /* -3px */
+    background-color: #333333;
+  }
+}
+
+/* ==========================================================================
+   8. BARRA FLOTANTE
+   ========================================================================== */
+.scroll-floating-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(7, 7, 7, 0.95);
+  backdrop-filter: blur(0.625rem); /* 10px */
+  color: #ffffff;
+  padding: 0.75rem 2.5rem; /* 12px 40px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition:
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.4s ease;
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2); /* 4px 20px */
+}
+
+.scroll-floating-bar.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.floating-logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.scroll-floating-bar .floating-logo {
+  height: 1.625rem; /* 26px */
+  width: auto;
+  display: block;
+}
+
+.floating-nav-links {
+  display: flex;
+  gap: 2.1875rem; /* 35px */
+}
+
+.floating-nav-links a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.floating-nav-links a:hover {
+  color: #ffffff;
+}
+
+.scroll-floating-bar .floating-btn {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  padding: 0.5rem 1.25rem; /* 8px 20px */
+  border-radius: 0.375rem; /* 6px */
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.scroll-floating-bar .floating-btn:hover {
+  background-color: rgb(7, 7, 7, 0.95);
+  color: #ffffff;
+  transform: translateY(-0.0625rem); /* -1px */
+}
+
+@media (max-width: 48rem) {
+  /* 768px */
+  .scroll-floating-bar {
+    padding: 0.75rem 1.25rem; /* 12px 20px */
+  }
+  .floating-nav-links {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   9. BARRA DE PROGRESO DE LECTURA
+   ========================================================================== */
+.reading-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1875rem; /* 3px */
+  background: transparent;
+  z-index: 1002;
+  pointer-events: none;
+}
+
+.reading-progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #ffffff;
+  transition: width 0.05s ease-out;
+}
 
 /* ==========================================================================
    8. MEDIA QUERIES (RESPONSIVE)
