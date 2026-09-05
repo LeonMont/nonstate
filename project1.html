@@ -2,26 +2,81 @@
 <html lang="es">
 
 <head>
+  <!-- Metadatos -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Non-State: Catálogo de proyectos y propuestas de diseño." />
-  <title>Proyectos - Non-State</title>
+  <meta name="description" content="Non-State. Proyectos de diseño retail, mobiliario comercial y marketing." />
+  <title>Non State</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet" />
 
-  <!-- Estilos Base (Header, Footer, Complementos y utilidades globales) -->
+  <!-- Estilo del Proyecto -->
   <link rel="stylesheet" href="projects.css" />
 
-  <!-- JavaScript Unificado -->
+  <!-- JavaScript -->
   <script src="script.js" defer></script>
 </head>
 
 <body>
+
   <!-- ========================================================================== -->
-  <!-- [01] HEADER & NAVEGACIÓN (ESTÁNDAR UNIFICADO)                              -->
+  <!-- [01] BANDA                                                                 -->
+  <!-- ========================================================================== -->
+  <div class="marquee-container">
+    <a href="contacto.html" class="marquee-link">
+      <div class="marquee-track" id="marqueeTrack">
+
+        <!-- Bloque 1 -->
+        <div class="marquee-content">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+        <!-- Bloque 2 -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+        <!-- Bloque 3 -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+        <!-- Bloque 4 -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+        <!-- Bloque 5 -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+        <!-- Bloque 6 -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">🤑</span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ========================================================================== -->
+  <!-- [02] HEADER & NAVEGACIÓN                                                   -->
   <!-- ========================================================================== -->
   <header class="main-header">
     <div class="logo-container">
@@ -37,19 +92,19 @@
     </div>
 
     <nav class="main-nav">
-      <a href="index.html#destacados">Destacados</a>
+      <a href="index.html">Inicio</a>
       <a href="category.html">Proyectos</a>
-      <a href="index.html#posts">Posts</a>
-      <a href="careers.html">Acerca de</a>
-      <button class="menu-btn">Contacto</button>
+      <a href="contacto.html">Contacto</a>
+      <button class="menu-btn">Menú</button>
     </nav>
   </header>
 
   <main>
+
     <!-- ==========================================================================
-       SECCIÓN: PROYECTOS - INTERIOR (WIDE BANNERS)
+       [03] PROYECTOS - INTERIOR (WIDE BANNERS)
        ========================================================================== -->
-    <div class="section-title-container">
+    <div class="section-title-container" id="inicio">
       <h2 class="section-title-inline">
         Indica - <span class="negrita">Medical Cannabis Store</span>
       </h2>
@@ -58,6 +113,7 @@
 
     <section class="featured-grid">
       <img src="assets/proyectos/indica/indica_1.webp" alt="Proyecto 1" />
+
       <div class="project-description">
         <h2 class="project-title">Indica - Medical Cannabis Store</h2>
         <ul>
@@ -81,15 +137,12 @@
       <img src="assets/proyectos/indica/indica_4.webp" alt="Proyecto 1" />
       <img src="assets/proyectos/indica/maqueta1.webp" alt="Proyecto 1" />
       <img src="assets/proyectos/indica/Inspiracion2.webp" alt="Proyecto 1" class="inspiracion" />
-
       <div class="double-grid">
         <img src="assets/proyectos/indica/indica_6.webp" alt="Proyecto 1" />
         <img src="assets/proyectos/indica/indica_7.webp" alt="Proyecto 1" />
       </div>
-
       <img src="assets/proyectos/indica/indica_5.webp" alt="Proyecto 1" />
       <img src="assets/proyectos/indica/Inspiracion3.webp" alt="Proyecto 1" class="inspiracion" />
-
       <div class="project-description">
         <p>
           Concebido como un espacio comercial de cannabis medicinal, Indica fue desarrollado por <span
@@ -99,55 +152,43 @@
           vista, brindar asesoramiento experto y preparar formulaciones magistrales cuando sea necesario.
         </p>
       </div>
-
       <img src="assets/proyectos/indica/maqueta2.webp" alt="Proyecto 1" />
       <img src="assets/proyectos/indica/indica_10.webp" alt="Proyecto 1" />
       <img src="assets/proyectos/indica/indica_11.webp" alt="Proyecto 1" />
-
-      <!-- Clases CSS aplicadas, estilos en línea removidos -->
       <img src="assets/proyectos/indica/view.webp" class="project-view-image" alt="Proyecto 1" />
       <img src="assets/proyectos/indica/maqueta4.webp" class="project-rounded-image" alt="Proyecto 1" />
-
       <img src="assets/proyectos/indica/planos_1.webp" alt="Proyecto 1" class="planos" />
       <img src="assets/proyectos/indica/planos_2.webp" alt="Proyecto 1" class="planos" />
       <img src="assets/proyectos/indica/planos_3.webp" alt="Proyecto 1" class="planos" />
-
-      <!-- Clase CSS aplicada, estilos en línea removidos -->
       <img src="assets/proyectos/indica/proceso.gif" class="project-process-gif" alt="Proyecto 1" />
-
-      <div class="project-footer">
-        <p>
-          <span class="negrita">© 2026. Todos los derechos reservados.</span>
-          Queda prohibida la reproducción total o parcial de este contenido, por cualquier medio, sin la autorización
-          previa y por escrito del titular de los derechos.
-          <br><br>
-          <span class="negrita">© 2026. All rights reserved.</span>
-          No part of this content may be reproduced, in whole or in part, by any means without the prior written
-          permission of the copyright holder.
-        </p>
-      </div>
     </section>
+
     <!-- ==========================================================================
-       SECCIÓN: ARTÍCULOS RELACIONADOS
+       [04] ARTÍCULOS RELACIONADOS
        ========================================================================== -->
-    <section class="related-posts-section">
+    <section class="related-posts-section" id="articulos">
       <div class="related-header-wrapper">
         <h3 class="related-section-title">Artículos relacionados</h3>
         <div class="carousel-nav-buttons">
           <button class="carousel-btn" aria-label="Anterior">
-            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
           </button>
           <button class="carousel-btn" aria-label="Siguiente">
-            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            <svg viewBox="0 0 24 24">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
           </button>
         </div>
       </div>
 
       <div class="related-cards-track">
         <!-- Tarjeta 1: Estilo Destacado con Fondo e Imagen Flotante -->
-        <div class="related-card-featured" style="background-image: url('assets/posts/posts_section/post2/mpost2.webp');">
+        <div class="related-card-featured"
+          style="background-image: url('assets/posts/posts_section/post2/mpost2.webp');">
           <div class="related-card-floating-box">
-            <span class="card-tag">Desarrollo Web</span>
+            <span class="card-tag">Videojuegos</span>
             <span class="card-date">31 de jul de 2026</span>
             <a href="#" class="card-title">¿El hosting gratuito realmente funciona? Ventajas y desventajas</a>
             <a href="#" class="card-link-action">Obtén más información →</a>
@@ -180,7 +221,7 @@
   </main>
 
   <!-- ========================================================================== -->
-  <!-- [03] FOOTER & COMPLEMENTOS (ESTÁNDAR UNIFICADO)                            -->
+  <!-- [03] FOOTER & BOTÓN FLOTANTE                                               -->
   <!-- ========================================================================== -->
   <footer class="main-footer">
     <div class="footer-container">
@@ -191,31 +232,23 @@
             <div class="footer-column">
               <h3>Categorías</h3>
               <ul>
-                <li><a href="#"><span>01</span> /inicio/</a></li>
-                <li><a href="#"><span>02</span> /posts/</a></li>
-                <li><a href="#"><span>03</span> /shoutbox/</a></li>
-                <li><a href="#"><span>04</span> /contacto/</a></li>
+                <li><a href="index.html"><span>01</span> /inicio/</a></li>
+                <li><a href="#destacados"><span>02</span> /proyectos/</a></li>
+                <li><a href="#posts"><span>03</span> /posts/</a></li>
+                <li><a href="contacto.html"><span>04</span> /contacto/</a></li>
               </ul>
             </div>
             <div class="footer-column">
               <h3>General</h3>
               <ul>
-                <li><a href="#">Sobre nosotros</a></li>
-                <li><a href="#">Canal RSS</a></li>
-                <li><a href="#">Anunciar</a></li>
-                <li><a href="#">Condiciones de uso</a></li>
+                <li><a href="#playlist"><span>05</span> /playlist/</a></li>
+                <li><a href="#posts"><span>06</span> /shoutbox/</a></li>
               </ul>
             </div>
           </div>
           <div class="footer-socials">
             <a href="https://www.behance.net/nonstate" class="social-icon" aria-label="Behance"><img
                 src="assets/footer/behance.svg" alt="" loading="lazy" /></a>
-            <a href="#" class="social-icon" aria-label="Instagram"><img src="assets/footer/instagram.svg" alt=""
-                loading="lazy" /></a>
-            <a href="#" class="social-icon" aria-label="Spotify"><img src="assets/footer/spotify.svg" alt=""
-                loading="lazy" /></a>
-            <a href="#" class="social-icon" aria-label="YouTube"><img src="assets/footer/youtube.svg" alt=""
-                loading="lazy" /></a>
           </div>
         </div>
         <div class="footer-seal-wrapper">
@@ -227,16 +260,17 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="copyright">© 2027. All rights reserved.</p>
+        <p class="copyright">© 2027. Todos los derechos reservados.</p>
         <p class="legal-text">Ninguna parte de este contenido puede ser reproducida, en su totalidad o en parte, por
           ningún medio sin el permiso previo por escrito del titular de los derechos de autor.</p>
       </div>
     </div>
   </footer>
 
-  <!-- COMPLEMENTOS FLOTANTES Y SCRIPTS -->
+  <!-- Hacia arriba -->
   <button id="scrollTopBtn" title="Volver arriba" aria-label="Volver arriba"></button>
 
+  <!-- Menú -->
   <div id="fullscreen-menu" class="fullscreen-menu">
     <div class="menu-content-wrapper">
       <div class="menu-left-pane">
@@ -246,19 +280,15 @@
         <nav class="menu-nav-links">
           <a href="index.html">INICIO</a>
           <a href="category.html">PROYECTOS</a>
-          <a href="index.html#posts">POSTS</a>
-          <a href="#">ACERCA DE</a>
-          <a href="#">CONTACTO</a>
+          <a href="contacto.html">CONTACTO</a>
         </nav>
         <div class="menu-footer-info">
           <div class="menu-socials">
             <a href="https://www.behance.net/nonstate" target="_blank">BEHANCE ↗</a>
-            <a href="#" target="_blank">INSTAGRAM ↗</a>
-            <a href="#" target="_blank">LINKEDIN ↗</a>
           </div>
           <div class="menu-contact-details">
             <p>+57 3123453445</p>
-            <p><a href="mailto:info@nonstate.co">conctact@nonstate.co</a></p>
+            <p><a href="contacto.html">conctact@nonstate.co</a></p>
           </div>
         </div>
       </div>
@@ -275,21 +305,18 @@
     <div class="reading-progress-bar" id="readingProgressBar"></div>
   </div>
 
-  <!-- Barra Flotante -->
+  <!-- Menú flotante -->
   <div class="scroll-floating-bar" id="floatingBar">
-    <a href="index.html" class="floating-logo-link">
+    <a href="#" class="floating-logo-link">
       <img src="assets/footer/logohorizontal.svg" alt="Non State Logo" class="floating-logo">
     </a>
-
     <nav class="floating-nav-links">
-      <a href="index.html#destacados">Destacados</a>
-      <a href="category.html">Proyectos</a>
-      <a href="index.html#posts">Posts</a>
-      <a href="careers.html">Acerca de</a>
+      <a href="#inicio">Inicio</a>
+      <a href="#articulos">Artículos</a>
     </nav>
-
-    <a href="#fullscreen-menu" class="floating-btn">Contacto</a>
+    <a href="contacto.html" class="floating-btn">Contacto</a>
   </div>
+
 </body>
 
 </html>
