@@ -69,6 +69,44 @@ html {
   scroll-behavior: smooth;
 }
 
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3.125rem; /* 50px */
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 2;
+}
+
+.project-indica .project-overlay {
+  background-color: rgba(89, 138, 94, 0.95);
+}
+.project-casagrande .project-overlay {
+  background-color: rgba(214, 133, 75, 0.95);
+}
+.project-vestigio .project-overlay {
+  background-color: rgba(184, 61, 57, 0.95);
+}
+.project-manantial .project-overlay {
+  background-color: rgba(62, 87, 199, 0.95);
+}
+.project-glenlivet .project-overlay {
+  background-color: rgba(53, 168, 143, 0.95);
+}
+.project-plazamexico .project-overlay {
+  background-color: rgba(168, 97, 147, 0.95);
+}
+.project-corona .project-overlay {
+  background-color: rgba(40, 45, 121, 0.95);
+}
+
 /* ==========================================================================
    2. ENCABEZADO (HEADER)
    ========================================================================== */
