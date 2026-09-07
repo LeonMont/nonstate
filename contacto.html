@@ -2,18 +2,18 @@
 <html lang="es">
 
 <head>
+  <!-- Metadatos -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Non-State: Construir, diseñar y mejorar. Proyectos de arquitectura interior, mobiliario comercial y diseño." />
-  <title>Non-State — Contacto</title>
+  <meta name="description" content="Non-State. Proyectos de diseño retail, mobiliario comercial y marketing." />
+  <title>Non State</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet" />
 
-  <!-- Estilos del Proyecto -->
+  <!-- Estilo del Proyecto -->
   <link rel="stylesheet" href="style.css" />
 
   <!-- JavaScript -->
@@ -21,51 +21,62 @@
 </head>
 
 <body>
-  <!-- Banda -->
+
+  <!-- ========================================================================== -->
+  <!-- [01] BANDA                                                                 -->
+  <!-- ========================================================================== -->
   <div class="marquee-container">
-    <a href="index.html">
-      <div class="marquee-track">
+    <a href="contacto.html" class="marquee-link">
+      <div class="marquee-track" id="marqueeTrack">
+
         <!-- Bloque 1 -->
         <div class="marquee-content">
           <span><strong>¿Nuevo proyecto?</strong></span>
           <span class="dot">🫡</span>
           <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
-          <span class="dot">🤑</span>
+          <span class="dot">📈</span>
         </div>
-        <!-- Bloque 2 (Duplicado para continuidad) -->
+        <!-- Bloque 2 -->
         <div class="marquee-content" aria-hidden="true">
           <span><strong>¿Nuevo proyecto?</strong></span>
           <span class="dot">🫡</span>
           <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
-          <span class="dot">🤑</span>
+          <span class="dot">📈</span>
         </div>
         <!-- Bloque 3 -->
         <div class="marquee-content" aria-hidden="true">
           <span><strong>¿Nuevo proyecto?</strong></span>
           <span class="dot">🫡</span>
           <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
-          <span class="dot">🤑</span>
+          <span class="dot">📈</span>
         </div>
         <!-- Bloque 4 -->
         <div class="marquee-content" aria-hidden="true">
           <span><strong>¿Nuevo proyecto?</strong></span>
           <span class="dot">🫡</span>
           <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
-          <span class="dot">🤑</span>
+          <span class="dot">📈</span>
         </div>
         <!-- Bloque 5 -->
         <div class="marquee-content" aria-hidden="true">
           <span><strong>¿Nuevo proyecto?</strong></span>
           <span class="dot">🫡</span>
           <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
-          <span class="dot">🤑</span>
+          <span class="dot">📈</span>
+        </div>
+        <!-- Bloque 6 -->
+        <div class="marquee-content" aria-hidden="true">
+          <span><strong>¿Nuevo proyecto?</strong></span>
+          <span class="dot">🫡</span>
+          <span>Agenda tu asesoría. <strong>Es gratis.</strong></span>
+          <span class="dot">📈</span>
         </div>
       </div>
     </a>
   </div>
 
   <!-- ========================================================================== -->
-  <!-- [01] HEADER & NAVEGACIÓN                                                   -->
+  <!-- [02] HEADER & NAVEGACIÓN                                                   -->
   <!-- ========================================================================== -->
   <header class="main-header">
     <div class="logo-container">
@@ -82,8 +93,7 @@
 
     <nav class="main-nav">
       <a href="category.html">Proyectos</a>
-      <a href="#posts">Posts</a>
-      <a href="careers.html">Contacto</a>
+      <a href="contacto.html">Contacto</a>
       <button class="menu-btn">Menú</button>
     </nav>
   </header>
@@ -117,8 +127,6 @@
               <h3>Canales Digitales</h3>
               <div class="contact-social-links">
                 <a href="https://www.behance.net/nonstate" target="_blank">Behance ↗</a>
-                <a href="#" target="_blank">Instagram ↗</a>
-                <a href="#" target="_blank">LinkedIn ↗</a>
               </div>
             </div>
           </div>
@@ -129,18 +137,18 @@
               
               <div class="form-step-title">
                 <span>01</span>
-                <label>Marca, Empresa o Categoria Comercial</label>
+                <label>Marca o empresa</label>
               </div>
               <div class="input-group">
-                <input type="text" id="company" name="company" placeholder="Ej. Unilever / División Beauty / Marca Propia" required />
+                <input type="text" id="company" name="company" placeholder="Ej. Empresa / División / Marca Propia" required />
               </div>
 
               <div class="form-step-title">
                 <span>02</span>
-                <label>Persona de Contacto & Cargo</label>
+                <label>Persona de contacto</label>
               </div>
               <div class="input-group">
-                <input type="text" id="fullname" name="fullname" placeholder="Ej. Mariana Gómez, Brand Manager" required />
+                <input type="text" id="fullname" name="fullname" placeholder="Ej. Mariana Rodríguez, Brand Manager" required />
               </div>
 
               <!-- NUEVO CAMPO: Canal de Contacto Preferido -->
@@ -151,9 +159,9 @@
               <div class="input-group">
                 <select id="preferredChannel" name="preferred_channel" required>
                   <option value="" disabled selected>Selecciona un canal de contacto</option>
-                  <option value="email">Correo Electrónico Corporativo</option>
+                  <option value="email">Correo electrónico</option>
                   <option value="whatsapp">WhatsApp / Teléfono</option>
-                  <option value="linkedin">Mensaje Directo por LinkedIn</option>
+                  <option value="linkedin">Mensaje directo por LinkedIn</option>
                 </select>
               </div>
 
@@ -164,7 +172,7 @@
 
               <div class="form-step-title">
                 <span>04</span>
-                <label>Selecciona el tipo de programa o fee requerido</label>
+                <label>Selecciona el tipo de servicio requerido</label>
               </div>
               <div class="service-chips-grid">
                 <label class="chip-card">
@@ -173,34 +181,20 @@
                 </label>
                 <label class="chip-card">
                   <input type="checkbox" name="services[]" value="arquitectura-comercial" />
-                  <span>Arquitectura Comercial (Rollout)</span>
+                  <span>Arquitectura comercial</span>
                 </label>
                 <label class="chip-card">
                   <input type="checkbox" name="services[]" value="desarrollo-portafolio-3d" />
-                  <span>Desarrollo de Portafolio 3D / Masivo</span>
+                  <span>Desarrollo de portafolio 3D / Masivo</span>
                 </label>
                 <label class="chip-card">
                   <input type="checkbox" name="services[]" value="consultoria-estrategica" />
-                  <span>Consultoría de Diseño & Estructuración</span>
+                  <span>Consultoría de diseño</span>
                 </label>
               </div>
 
-              <!-- FILTRO CLAVE DE PRESUPUESTO / TIER DE INVERSIÓN -->
               <div class="form-step-title">
                 <span>05</span>
-                <label>Rango de Inversión / Fee Estimado por Fase</label>
-              </div>
-              <div class="input-group">
-                <select name="investment_tier" required>
-                  <option value="" disabled selected>Selecciona el rango estimado de inversión</option>
-                  <option value="tier-1">Proyectos menores (Filtrado automático - No aplica)</option>
-                  <option value="tier-2">Fee de diseño estándar (Corporativo)</option>
-                  <option value="tier-3">Grandes cuentas / Rollout multitienda / Anual</option>
-                </select>
-              </div>
-
-              <div class="form-step-title">
-                <span>06</span>
                 <label>Breve contexto del alcance o requerimiento</label>
               </div>
               <div class="input-group">
@@ -208,7 +202,7 @@
               </div>
 
               <button type="submit" class="submit-project-btn">
-                <span>Iniciar Proceso de Evaluación</span>
+                <span>Iniciar proceso de evaluación</span>
                 <span class="btn-arrow">→</span>
               </button>
             </form>
@@ -223,7 +217,7 @@
     </section>
   </main>
 
-  <!-- ========================================================================== -->
+    <!-- ========================================================================== -->
   <!-- [03] FOOTER & BOTÓN FLOTANTE                                               -->
   <!-- ========================================================================== -->
   <footer class="main-footer">
@@ -235,31 +229,23 @@
             <div class="footer-column">
               <h3>Categorías</h3>
               <ul>
-                <li><a href="#"><span>01</span> /inicio/</a></li>
-                <li><a href="#"><span>02</span> /servicios/</a></li>
-                <li><a href="#"><span>03</span> /proyectos/</a></li>
-                <li><a href="#"><span>04</span> /contacto/</a></li>
+                <li><a href="index.html"><span>01</span> /inicio/</a></li>
+                <li><a href="#destacados"><span>02</span> /proyectos/</a></li>
+                <li><a href="#posts"><span>03</span> /posts/</a></li>
+                <li><a href="contacto.html"><span>04</span> /contacto/</a></li>
               </ul>
             </div>
             <div class="footer-column">
               <h3>General</h3>
               <ul>
-                <li><a href="#">posts</a></li>
-                <li><a href="#">Sobre nosotros</a></li>
-                <li><a href="#">anunciar</a></li>
-                <li><a href="#">condiciones de uso</a></li>
+                <li><a href="#playlist"><span>05</span> /playlist/</a></li>
+                <li><a href="#posts"><span>06</span> /shoutbox/</a></li>
               </ul>
             </div>
           </div>
           <div class="footer-socials">
             <a href="https://www.behance.net/nonstate" class="social-icon" aria-label="Behance"><img
                 src="assets/footer/behance.svg" alt="" loading="lazy" /></a>
-            <a href="#" class="social-icon" aria-label="Instagram"><img src="assets/footer/instagram.svg" alt=""
-                loading="lazy" /></a>
-            <a href="#" class="social-icon" aria-label="Spotify"><img src="assets/footer/spotify.svg" alt=""
-                loading="lazy" /></a>
-            <a href="#" class="social-icon" aria-label="YouTube"><img src="assets/footer/youtube.svg" alt=""
-                loading="lazy" /></a>
           </div>
         </div>
         <div class="footer-seal-wrapper">
@@ -271,15 +257,17 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="copyright">© 2027. All rights reserved.</p>
+        <p class="copyright">© 2027. Todos los derechos reservados.</p>
         <p class="legal-text">Ninguna parte de este contenido puede ser reproducida, en su totalidad o en parte, por
           ningún medio sin el permiso previo por escrito del titular de los derechos de autor.</p>
       </div>
     </div>
   </footer>
 
+  <!-- Hacia arriba -->
   <button id="scrollTopBtn" title="Volver arriba" aria-label="Volver arriba"></button>
 
+  <!-- Menú -->
   <div id="fullscreen-menu" class="fullscreen-menu">
     <div class="menu-content-wrapper">
       <div class="menu-left-pane">
@@ -288,19 +276,16 @@
         </div>
         <nav class="menu-nav-links">
           <a href="index.html">INICIO</a>
-          <a href="#posts">PROYECTOS</a>
-          <a href="#">POSTS</a>
-          <a href="#">CONTACTO</a>
+          <a href="category.html">PROYECTOS</a>
+          <a href="contacto.html">CONTACTO</a>
         </nav>
         <div class="menu-footer-info">
           <div class="menu-socials">
             <a href="https://www.behance.net/nonstate" target="_blank">BEHANCE ↗</a>
-            <a href="#" target="_blank">INSTAGRAM ↗</a>
-            <a href="#" target="_blank">LINKEDIN ↗</a>
           </div>
           <div class="menu-contact-details">
             <p>+57 3123453445</p>
-            <p><a href="mailto:info@nonstate.co">contact@nonstate.co</a></p>
+            <p><a href="contacto.html">conctact@nonstate.co</a></p>
           </div>
         </div>
       </div>
@@ -323,11 +308,9 @@
       <img src="assets/footer/logohorizontal.svg" alt="Non State Logo" class="floating-logo">
     </a>
     <nav class="floating-nav-links">
-      <a href="#destacados">Proyectos</a>
-      <a href="#posts">Posts</a>
-      <a href="#blog">Sobre nosotros</a>
+      <a href="category.html">Proyectos</a>
     </nav>
-    <a href="#fullscreen-menu" class="floating-btn">Contacto</a>
+    <a href="contacto.html" class="floating-btn">Contacto</a>
   </div>
 
   <!-- Script específico para procesar el envío del formulario sin recargar -->

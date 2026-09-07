@@ -578,7 +578,8 @@ header.main-header {
     .overlay-text,
     .overlay-year,
     .overlay-views {
-      color: #111111;
+      color: #ffffff;
+      text-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
     }
 
     .overlay-title {
@@ -1109,7 +1110,7 @@ header.main-header {
     background-color: #e8e8e8;
 
     .post-item-image {
-      width: 22.5rem; /* 360px */
+      width: 25.5rem; /* 360px */
       img:first-child {
         opacity: 0;
       }
@@ -1818,6 +1819,8 @@ header.main-header {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    line-height: 0rem;
+    padding: 1.2rem 1.1rem 1rem 1.1rem ; /* 32px */
   }
 
   label {
@@ -1919,7 +1922,7 @@ header.main-header {
   color: #ffffff;
   border: none;
   width: 100%;
-  padding: 1.375rem 1.875rem; /* 22px 30px */
+  padding: 1.375rem 1.875rem 1rem 1rem; /* 22px 30px */
   border-radius: 0.5rem; /* 8px */
   font-family: var(--font-titles);
   font-size: 1.4rem;
