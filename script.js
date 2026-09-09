@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function startAutoSlide() {
     if (slides.length > 0) {
-      autoSlideInterval = setInterval(nextSlide, 5000);
+      autoSlideInterval = setInterval(nextSlide, 7000);
     }
   }
 
