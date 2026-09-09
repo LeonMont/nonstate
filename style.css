@@ -243,13 +243,13 @@ header.main-header {
   border-radius: 0.75rem; /* 12px */
 
   &.slide-1 {
-    background-image: url("assets/wide_cta/cta3.png");
+    background-image: url("assets/wide_cta/cta1.webp");
   }
   &.slide-2 {
-    background-image: url("assets/wide_cta/cta1.png");
+    background-image: url("assets/wide_cta/cta2.webp");
   }
   &.slide-3 {
-    background-image: url("assets/wide_cta/cta3.png");
+    background-image: url("assets/wide_cta/cta3.webp");
   }
   &.active {
     opacity: 1;
@@ -878,7 +878,6 @@ header.main-header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.7);
     will-change: transform, opacity, filter;
     transition:
       transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
@@ -925,13 +924,11 @@ header.main-header {
     .banner-img:first-of-type {
       opacity: 0;
       transform: scale(1.02);
-      filter: brightness(0.4);
     }
     .banner-img.hover-img {
       opacity: 1;
       z-index: 2;
       transform: scale(1.02);
-      filter: brightness(0.4);
     }
   }
 }
@@ -1820,7 +1817,7 @@ header.main-header {
     justify-content: center;
     border-radius: 50%;
     line-height: 0rem;
-    padding: 1.2rem 1.1rem 1rem 1.1rem ; /* 32px */
+    padding: 1.2rem 1.1rem 1rem 1.1rem; /* 32px */
   }
 
   label {
@@ -2165,20 +2162,6 @@ header.main-header {
 /* ==========================================================================
    15. MEDIA QUERIES (RESPONSIVE)
    ========================================================================== */
-
-/* 1. MEDIA QUERY PARA PANTALLAS (Desktop / Tablets horizontales) */
-@media screen and (min-width: 48.0625rem) {
-  /* 769px en adelante */
-  .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
-  }
-  .scroll-floating-bar {
-    padding: 0.75rem 2.5rem;
-  }
-  .floating-nav-links {
-    display: flex;
-  }
-}
 
 /* 2. MEDIA QUERY PARA MÓVIL (Consolidación de <1024px, <768px y <480px) */
 @media screen and (max-width: 48rem) {
