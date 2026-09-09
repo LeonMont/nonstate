@@ -1,6 +1,12 @@
 /* ==========================================================================
+   NON STATE · CATEGORY
+   CSS optimizado, ordenado y responsive
+   ========================================================================== */
+
+/* ==========================================================================
    1. VARIABLES Y CONFIGURACIÓN GENERAL
    ========================================================================== */
+
 :root {
   --bg-primary: #ffffff;
   --bg-secondary: #f0f0f0;
@@ -8,26 +14,42 @@
   --text-primary: #111111;
   --text-secondary: #666666;
   --accent-color: linear-gradient(45deg, #8f94fb, #4e54c8);
-  --border-radius: 14px;
-  --max-width: 1500px;
+
+  --border-radius: 0.875rem;
+  --max-width: 93.75rem;
+
+  --space-xs: 0.3125rem;
+  --space-sm: 0.625rem;
+  --space-md: 1.25rem;
+  --space-lg: 1.875rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 3.75rem;
+  --space-3xl: 5rem;
+
   --font-titles: "League Spartan", sans-serif;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: var(--font-titles);
   font-optical-sizing: auto;
   font-style: normal;
-  -webkit-font-smoothing: antialiased;
   font-weight: 400;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -55,138 +77,31 @@ h6,
 
 a {
   color: inherit;
-  text-decoration: none;
   display: inline-block;
+  text-decoration: none;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
   display: block;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 3.125rem; /* 50px */
-  box-sizing: border-box;
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-  z-index: 2;
-}
-
-.project-indica .project-overlay {
-  background-color: rgba(89, 138, 94, 0.95);
-}
-.project-casagrande .project-overlay {
-  background-color: rgba(214, 133, 75, 0.95);
-}
-.project-vestigio .project-overlay {
-  background-color: rgba(184, 61, 57, 0.95);
-}
-.project-manantial .project-overlay {
-  background-color: rgba(62, 87, 199, 0.95);
-}
-.project-glenlivet .project-overlay {
-  background-color: rgba(53, 168, 143, 0.95);
-}
-.project-plazamexico .project-overlay {
-  background-color: rgba(168, 97, 147, 0.95);
-}
-.project-corona .project-overlay {
-  background-color: rgba(40, 45, 121, 0.95);
+  height: auto;
+  max-width: 100%;
 }
 
 /* ==========================================================================
-   2. ENCABEZADO (HEADER)
+   2. BANDA SUPERIOR
    ========================================================================== */
-header.main-header {
-  background-color: var(--bg-primary);
-  max-width: var(--max-width);
-  margin: 40px auto 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 10px 0;
-}
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-
-  .logo {
-    width: 190px;
-  }
-
-  .eslogan {
-    margin-top: 25px;
-    width: 140px;
-  }
-}
-
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: 45px;
-
-  a {
-    font-weight: 500;
-    font-size: 1.4rem;
-    color: var(--text-primary);
-    text-decoration: none;
-    transition:
-      color 0.3s ease,
-      text-decoration 0.3s ease;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .menu-btn {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-    border: none;
-    padding: 10px 30px 8px;
-    font-family: inherit;
-    font-weight: 600;
-    border-radius: 0 6px 0 0;
-    font-size: 1.6rem;
-    cursor: pointer;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease;
-
-    &:hover {
-      background-color: #000000;
-      color: #ffffff;
-    }
-  }
-}
-
-/* Banda */
 .marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.75rem 0;
+  box-sizing: border-box;
   background-color: #000000;
   color: #ffffff;
-  overflow: hidden;
-  width: 100%;
-  padding: 0.75rem 0; /* 12px */
-  font-family: "open sans", sans-serif;
-  font-size: 0.875rem; /* 14px */
-  box-sizing: border-box;
-  position: relative;
-  letter-spacing: 0.00625rem; /* 0.1px */
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.00625rem;
 }
 
 .marquee-track {
@@ -198,47 +113,172 @@ header.main-header {
 .marquee-content {
   display: flex;
   align-items: center;
-  gap: 2.5rem; /* 40px */
-  padding-right: 2.5rem; /* 40px */
+  gap: 2.5rem;
+  padding-right: 2.5rem;
   white-space: nowrap;
 }
 
 .dot {
-  font-size: 1.25rem; /* 20px */
+  font-size: 1.25rem;
 }
 
 @keyframes scrollMarquee {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
+
+  to {
     transform: translateX(-33.333%);
   }
 }
 
 /* ==========================================================================
-   3. GRILLAS INDEPENDIENTES (INTERIOR Y RETAIL)
+   3. HEADER Y NAVEGACIÓN
    ========================================================================== */
 
-/* A. GRILLA INTERIOR (1 Columna / Wide Banners) */
+header.main-header {
+  width: min(var(--max-width), calc(100% - 3rem));
+  margin: 2.5rem auto 1.875rem;
+  padding: 0.625rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background-color: var(--bg-primary);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.logo-container .logo {
+  width: 11.875rem;
+}
+
+.logo-container .eslogan {
+  width: 8.75rem;
+  margin-top: 1.5625rem;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 2.8125rem;
+}
+
+.main-nav a {
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    text-decoration 0.3s ease;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.main-nav .menu-btn {
+  padding: 0.625rem 1.875rem 0.5rem;
+  border: 0;
+  border-radius: 0 0.375rem 0 0;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.main-nav .menu-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.circle-graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding-right: 15.625rem;
+}
+
+.circle-graphic .sello {
+  width: 8.125rem;
+  height: 8.125rem;
+  will-change: transform;
+  animation: rotarSello 20s linear infinite;
+}
+
+@keyframes rotarSello {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   4. TÍTULOS DE SECCIÓN
+   ========================================================================== */
+
+.section-title-container {
+  width: min(var(--max-width), calc(100% - 3rem));
+  margin: 3.125rem auto 1.875rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+}
+
+.section-title-inline {
+  color: var(--bg-dark);
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.negrita {
+  font-weight: 600;
+}
+
+.section-divider-inline {
+  flex-grow: 1;
+  height: 0.0625rem;
+  border: 0;
+  background-color: #0a0a0a;
+}
+
+/* ==========================================================================
+   5. GRILLA INTERIOR · BANNER ANCHO
+   ========================================================================== */
+
 .interior-grid {
-  max-width: var(--max-width);
-  margin: 0 auto 50px auto;
+  width: min(var(--max-width), calc(100% - 3rem));
+  margin: 0 auto 3.125rem;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .interior-grid .grid-card {
   position: relative;
   width: 100%;
-  height: 340px;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  color: #fff;
+  height: 21.25rem;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  color: #ffffff;
 }
 
 .video-container {
@@ -250,60 +290,68 @@ header.main-header {
 
 .card-video {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* B. GRILLA RETAIL (2 Columnas) */
+/* ==========================================================================
+   6. GRILLAS RETAIL Y 3D
+   ========================================================================== */
+
 .retail-grid {
-  max-width: var(--max-width);
-  margin: 0 auto 50px auto;
+  width: min(var(--max-width), calc(100% - 3rem));
+  margin: 0 auto 3.125rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
 .retail-grid .grid-card {
   position: relative;
   width: 100%;
-  height: 400px;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  color: #fff;
+  height: 25rem;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  color: #ffffff;
 }
 
-/* ==========================================================================
-   4. REGLAS COMUNES DE TARJETAS Y HOVERS
-   ========================================================================== */
 .grid-card.image-card,
 .grid-card.visual-hover-card {
   padding: 0;
   cursor: pointer;
 }
 
-.grid-card.image-card img {
+.grid-card.image-card .card-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-card.image-card > img,
+.grid-card.image-card .card-link > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+/* ==========================================================================
+   7. OVERLAYS DE PROYECTOS
+   ========================================================================== */
+
 .project-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
+  padding: 3.125rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 50px;
   box-sizing: border-box;
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
@@ -313,16 +361,34 @@ header.main-header {
 .project-indica .project-overlay {
   background-color: rgba(89, 138, 94, 0.9);
 }
+
 .project-casagrande .project-overlay {
   background-color: rgba(214, 133, 75, 0.9);
 }
+
 .project-vestigio .project-overlay {
   background-color: rgba(184, 61, 57, 0.9);
 }
 
+.project-manantial .project-overlay {
+  background-color: rgba(62, 87, 199, 0.9);
+}
+
+.project-glenlivet .project-overlay {
+  background-color: rgba(53, 168, 143, 0.9);
+}
+
+.project-plazamexico .project-overlay {
+  background-color: rgba(168, 97, 147, 0.9);
+}
+
+.project-corona .project-overlay {
+  background-color: rgba(40, 45, 121, 0.9);
+}
+
 .overlay-content {
   color: #ffffff;
-  transform: translateY(20px);
+  transform: translateY(1.25rem);
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -333,55 +399,64 @@ header.main-header {
 }
 
 .overlay-subtitle {
+  margin-bottom: 0.9375rem;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1.8rem;
   font-weight: 300;
-  margin-bottom: 15px;
-  color: rgba(255, 255, 255, 0.9);
 }
 
 .overlay-year {
   font-weight: 600;
 }
+
 .overlay-views {
   font-weight: 400;
 }
 
 .overlay-text {
-  font-size: 1.3rem;
-  line-height: 1.4;
-  font-weight: 300;
-  margin-bottom: 25px;
+  margin-bottom: 1.5625rem;
   color: rgba(255, 255, 255, 0.85);
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.4;
 }
 
 .overlay-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+  padding-top: 0.9375rem;
+  border-top: 0.0625rem solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1.1rem;
   font-weight: 300;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 15px;
-  color: rgba(255, 255, 255, 0.8);
 }
 
 .grid-card.image-card:hover .project-overlay {
   opacity: 1;
 }
+
 .grid-card.image-card:hover .overlay-content {
   transform: translateY(0);
 }
-.grid-card.image-card:hover img {
+
+.grid-card.image-card:hover > img,
+.grid-card.image-card:hover .card-link > img {
   transform: scale(1.03);
 }
+
+/* ==========================================================================
+   8. TARJETAS VISUALES ADICIONALES
+   ========================================================================== */
 
 .card-default-content {
   width: 100%;
   height: 100%;
+  padding: 3.75rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 60px;
   background: linear-gradient(135deg, #f0f0f0, #e4e4e4, #f5f5f5, #f0f0f0);
   background-size: 300% 300%;
   opacity: 1;
@@ -394,9 +469,11 @@ header.main-header {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -404,8 +481,7 @@ header.main-header {
 
 .card-hover-bg {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -419,67 +495,69 @@ header.main-header {
 
 .text-card-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
+  padding: 3.75rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 60px;
   box-sizing: border-box;
   opacity: 0;
-  z-index: 3;
   pointer-events: none;
   transition: opacity 0.4s ease-in-out;
+  z-index: 3;
 }
 
 .text-card-overlay .overlay-content {
   color: #ffffff;
-  transform: translateY(20px);
+  transform: translateY(1.25rem);
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .visual-hover-card:hover .card-default-content {
   opacity: 0;
 }
+
 .visual-hover-card:hover .card-hover-bg {
   opacity: 1;
   transform: scale(1.03);
 }
+
 .visual-hover-card:hover .text-card-overlay {
   opacity: 1;
 }
+
 .visual-hover-card:hover .text-card-overlay .overlay-content {
   transform: translateY(0);
 }
 
 .smart-hover-card {
   cursor: pointer;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 0.0625rem rgba(255, 255, 255, 0.1);
 }
 
 .black-card-content {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 100%;
-  width: 100%;
 }
 
 .smart-hover-card .badgeblack,
 .smart-hover-card .post-titleblack {
+  transform-origin: left center;
   transition:
     transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
     color 0.4s ease;
-  transform-origin: left center;
 }
 
 .smart-hover-card .card-divider {
-  border: 0;
-  height: 2px;
-  background-color: rgba(255, 255, 255, 0.15);
   width: 100%;
+  height: 0.125rem;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.15);
   transform: scaleX(0.4);
   transform-origin: left center;
   transition:
@@ -490,40 +568,40 @@ header.main-header {
 .smart-hover-card:hover {
   background-color: #080808;
   box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.25),
-    0 10px 30px rgba(0, 0, 0, 0.3);
+    inset 0 0 0 0.0625rem rgba(255, 255, 255, 0.25),
+    0 0.625rem 1.875rem rgba(0, 0, 0, 0.3);
 }
 
 .smart-hover-card:hover .post-titleblack {
-  transform: translateY(-5px) scale(1.02);
+  transform: translateY(-0.3125rem) scale(1.02);
 }
 
 .smart-hover-card:hover .card-divider {
-  transform: scaleX(1);
   background-color: rgba(255, 255, 255, 0.7);
+  transform: scaleX(1);
 }
 
 /* ==========================================================================
-   5. BANNER ANCHO (BOGOTÁ - 1900)
+   9. BANNER ANCHO
    ========================================================================== */
+
 .wide-banner {
-  max-width: var(--max-width);
-  margin: 0 auto 20px auto;
   position: relative;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  color: #fff;
-  height: 320px;
+  width: min(var(--max-width), calc(100% - 3rem));
+  height: 20rem;
+  margin: 0 auto 1.25rem;
+  padding: 3.75rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 60px;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  color: #ffffff;
 }
 
 .wide-banner .banner-link {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   z-index: 4;
@@ -531,8 +609,7 @@ header.main-header {
 
 .wide-banner .banner-img {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -561,18 +638,18 @@ header.main-header {
 }
 
 .wide-banner p {
-  padding-right: 60px;
+  max-width: 40.625rem;
+  padding-right: 3.75rem;
+  color: #dddddd;
   font-size: 1.3rem;
   line-height: 1.4;
-  max-width: 650px;
-  color: #dddddd;
 }
 
 .wide-banner h2 {
+  margin-bottom: 0.625rem;
   font-size: 4.6rem;
   font-weight: 300;
   line-height: 1;
-  margin-bottom: 10px;
 }
 
 .wide-banner h2 span {
@@ -593,48 +670,19 @@ header.main-header {
 }
 
 /* ==========================================================================
-   6. SECCIÓN DE RECIENTES Y SHOUTBOX
+   10. FOOTER
    ========================================================================== */
-.section-title-container {
-  max-width: var(--max-width);
-  margin: 50px auto 30px auto;
-  display: flex;
-  align-items: baseline;
-  gap: 20px;
-}
 
-.section-title-inline {
-  font-size: 2.4rem;
-  font-weight: 300;
-  color: var(--bg-dark);
-  white-space: nowrap;
-  line-height: 1;
-}
-
-.negrita {
-  font-weight: 600;
-}
-
-.section-divider-inline {
-  flex-grow: 1;
-  border: 0;
-  height: 1px;
-  background-color: #0a0a0a;
-}
-
-/* ==========================================================================
-   7. PIE DE PÁGINA (FOOTER) Y SELLO GIRATORIO UNIFICADO
-   ========================================================================== */
 .main-footer {
+  width: 100%;
+  padding: 5rem 0 2.5rem;
   background-color: #000000;
   color: #ffffff;
-  padding: 80px 0 40px 0;
-  width: 100%;
   font-family: inherit;
 }
 
 .footer-container {
-  max-width: var(--max-width);
+  width: min(var(--max-width), calc(100% - 3rem));
   margin: 0 auto;
 }
 
@@ -642,48 +690,49 @@ header.main-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 60px;
+  gap: 2.5rem;
+  margin-bottom: 3.75rem;
 }
 
 .footer-brand-nav {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 1.875rem;
 }
 
 .footer-logo {
+  margin-bottom: 1.25rem;
   color: #ffffff;
-  margin-bottom: 20px;
 }
 
 .footer-links-grid {
   display: grid;
-  grid-template-columns: minmax(180px, auto) minmax(180px, auto);
-  gap: 60px;
+  grid-template-columns: minmax(11.25rem, auto) minmax(11.25rem, auto);
+  gap: 3.75rem;
 }
 
 .footer-column h3 {
+  margin-bottom: 0.9375rem;
+  color: #ffffff;
   font-size: 1.8rem;
   font-weight: 600;
-  margin-bottom: 15px;
-  color: #ffffff;
 }
 
 .footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .footer-column ul li a {
+  display: inline-block;
   color: #e0e0e0;
-  text-decoration: none;
   font-size: 1.6rem;
   font-weight: 400;
+  text-decoration: none;
   transition: color 0.2s ease;
-  display: inline-block;
 }
 
 .footer-column ul li a:hover {
@@ -691,25 +740,25 @@ header.main-header {
 }
 
 .footer-column ul li a span {
-  font-weight: 400;
+  margin-right: 0.125rem;
   opacity: 0.7;
-  margin-right: 2px;
+  font-weight: 400;
 }
 
 .footer-socials {
   display: flex;
-  gap: 16px;
-  margin-bottom: 50px;
+  gap: 1rem;
+  margin-bottom: 3.125rem;
 }
 
 .social-icon {
-  width: 52px;
-  height: 52px;
-  background-color: #121212;
-  border-radius: 50%;
+  width: 3.25rem;
+  height: 3.25rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #121212;
   color: #ffffff;
   font-size: 2rem;
   text-decoration: none;
@@ -720,77 +769,67 @@ header.main-header {
 
 .social-icon:hover {
   background-color: #1a1a1a;
-  transform: translateY(-3px);
+  transform: translateY(-0.1875rem);
 }
 
-.footer-bottom {
-  border-top: 1px solid #1a1a1a;
-  padding-top: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.copyright {
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin: 0;
-  color: #ffffff;
-}
-
-.legal-text {
-  font-size: 1.1rem;
-  line-height: 1.3;
-  color: #888888;
-  max-width: 900px;
-  margin: 0;
-}
-
-.circle-graphic {
+.footer-seal-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding-right: 250px;
-
-  .sello {
-    width: 130px;
-    height: 130px;
-    will-change: transform;
-    animation: rotarSello 20s linear infinite;
-  }
 }
 
-@keyframes rotarSello {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer-seal-wrapper .sello {
+  width: 8.125rem;
+  height: 8.125rem;
+  will-change: transform;
+  animation: rotarSello 20s linear infinite;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding-top: 1.875rem;
+  border-top: 0.0625rem solid #1a1a1a;
+}
+
+.copyright {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.03125rem;
+}
+
+.legal-text {
+  max-width: 56.25rem;
+  margin: 0;
+  color: #888888;
+  font-size: 1.1rem;
+  line-height: 1.3;
 }
 
 /* ==========================================================================
-   14. FULLSCREEN MENU OVERLAY
+   11. MENÚ FULLSCREEN
    ========================================================================== */
+
 .fullscreen-menu {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100vw;
-  height: 100vh;
-  background-color: var(--bg-dark);
-  color: var(--bg-primary);
-  z-index: 9999;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  background-color: var(--bg-dark);
+  color: var(--bg-primary);
   opacity: 0;
   visibility: hidden;
+  z-index: 9999;
   transition:
     opacity 0.4s ease,
     visibility 0.4s ease;
-  overflow-y: auto;
 }
 
 .fullscreen-menu.is-active {
@@ -799,42 +838,43 @@ header.main-header {
 }
 
 .menu-content-wrapper {
-  max-width: var(--max-width);
   width: 100%;
+  max-width: var(--max-width);
+  min-height: 100%;
   margin: 0 auto;
-  padding: 3.125rem 2.5rem 5rem 2.5rem; /* 50px 40px 80px 40px */
+  padding: 3.125rem 2.5rem 5rem;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 3.75rem; /* 60px */
-  min-height: 100%;
+  gap: 3.75rem;
   align-items: center;
 }
 
 .menu-left-pane {
+  height: 100%;
+  min-height: 46.875rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  min-height: 46.875rem; /* 750px */
 }
+
 .menu-header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .close-btn {
+  padding: 0.625rem 1.5rem 0.4375rem;
+  border: 0;
+  border-radius: 3.125rem;
   background: var(--bg-primary);
   color: var(--bg-dark);
-  border: none;
   font-family: var(--font-titles);
-  font-weight: 700;
-  padding: 0.625rem 1.5rem 0.4375rem 1.5rem; /* 10px 24px 7px 24px */
   font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.01875rem;
   cursor: pointer;
-  border-radius: 3.125rem; /* 50px */
-  letter-spacing: 0.01875rem; /* 0.3px */
   transition: background 0.2s;
 }
 
@@ -845,16 +885,17 @@ header.main-header {
 .menu-nav-links {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem; /* 12px */
-  margin: 1.875rem 0; /* 30px */
+  gap: 0.75rem;
+  margin: 1.875rem 0;
 }
+
 .menu-nav-links a {
   color: var(--bg-primary);
-  text-decoration: none;
   font-size: clamp(2.8rem, 5vw, 5.2rem);
   font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.0625rem; /* -1px */
+  letter-spacing: -0.0625rem;
+  text-decoration: none;
   transition: opacity 0.2s;
 }
 
@@ -865,38 +906,43 @@ header.main-header {
 .menu-footer-info {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem; /* 20px */
-  border-top: 0.0625rem solid rgba(255, 255, 255, 0.15); /* 1px */
-  padding-top: 1.875rem; /* 30px */
-  margin-bottom: 1.25rem; /* 20px */
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding-top: 1.875rem;
+  border-top: 0.0625rem solid rgba(255, 255, 255, 0.15);
 }
 
 .menu-tagline {
   font-size: 1.4rem;
-  letter-spacing: 0.03125rem; /* 0.5px */
+  letter-spacing: 0.03125rem;
 }
+
 .menu-socials {
   display: flex;
-  gap: 1.5625rem; /* 25px */
+  gap: 1.5625rem;
   flex-wrap: wrap;
 }
+
 .menu-socials a,
 .menu-contact-details p,
 .menu-contact-details a {
   color: var(--bg-primary);
-  text-decoration: none;
   font-size: 1.2rem;
   font-weight: 500;
+  text-decoration: none;
 }
+
 .menu-socials a:hover,
 .menu-contact-details a:hover {
   text-decoration: underline;
 }
+
 .menu-contact-details {
   display: flex;
   flex-direction: column;
-  gap: 0.3125rem; /* 5px */
+  gap: 0.3125rem;
 }
+
 .menu-right-pane {
   width: 100%;
   height: 100%;
@@ -908,10 +954,10 @@ header.main-header {
 .menu-image-container {
   width: 100%;
   height: 80vh;
-  max-height: 43.75rem; /* 700px */
-  border-radius: var(--border-radius);
+  max-height: 43.75rem;
   overflow: hidden;
-  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.5); /* 20px 40px */
+  border-radius: var(--border-radius);
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.5);
 }
 
 .menu-image-container img {
@@ -920,58 +966,63 @@ header.main-header {
   object-fit: cover;
 }
 
+/* ==========================================================================
+   12. BOTÓN VOLVER ARRIBA
+   ========================================================================== */
+
 #scrollTopBtn {
   position: fixed;
-  bottom: 1.875rem; /* 30px */
-  right: 1.875rem; /* 30px */
+  right: 1.875rem;
+  bottom: 1.875rem;
   display: none;
-  z-index: 99;
-  width: 4rem; /* 64px */
-  height: 4rem; /* 64px */
+  width: 4rem;
+  height: 4rem;
   padding: 0;
+  border: 0;
   border-radius: 50%;
-  border: none;
   outline: none;
-  cursor: pointer;
   background-color: #111111;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M18 15l-6-6-6 6'/></svg>");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 1.375rem 1.375rem; /* 22px */
-  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15); /* 4px 10px */
+  background-size: 1.375rem 1.375rem;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 99;
   transition:
     opacity 0.3s ease,
     transform 0.2s ease,
     background-color 0.2s ease;
+}
 
-  &:hover {
-    transform: translateY(-0.1875rem); /* -3px */
-    background-color: #333333;
-  }
+#scrollTopBtn:hover {
+  background-color: #333333;
+  transform: translateY(-0.1875rem);
 }
 
 /* ==========================================================================
-   8. BARRA FLOTANTE
+   13. BARRA FLOTANTE
    ========================================================================== */
+
 .scroll-floating-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgb(7, 7, 7, 0.95);
-  backdrop-filter: blur(0.625rem); /* 10px */
-  color: #ffffff;
-  padding: 0.75rem 2.5rem; /* 12px 40px */
+  padding: 0.75rem 2.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  z-index: 1000;
+  justify-content: space-between;
+  background-color: rgba(7, 7, 7, 0.95);
+  backdrop-filter: blur(0.625rem);
+  color: #ffffff;
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
   transform: translateY(-100%);
   opacity: 0;
+  z-index: 1000;
   transition:
     transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
     opacity 0.4s ease;
-  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2); /* 4px 20px */
 }
 
 .scroll-floating-bar.visible {
@@ -985,21 +1036,21 @@ header.main-header {
 }
 
 .scroll-floating-bar .floating-logo {
-  height: 1.625rem; /* 26px */
   width: auto;
+  height: 1.625rem;
   display: block;
 }
 
 .floating-nav-links {
   display: flex;
-  gap: 2.1875rem; /* 35px */
+  gap: 2.1875rem;
 }
 
 .floating-nav-links a {
   color: #cccccc;
-  text-decoration: none;
   font-size: 1.3rem;
   font-weight: 600;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
@@ -1008,12 +1059,12 @@ header.main-header {
 }
 
 .scroll-floating-bar .floating-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.375rem;
   background-color: #ffffff;
   color: #1a1a1a;
-  padding: 0.5rem 1.25rem; /* 8px 20px */
-  border-radius: 0.375rem; /* 6px */
-  font-weight: 600;
   font-size: 1.4rem;
+  font-weight: 600;
   text-decoration: none;
   transition:
     background-color 0.2s ease,
@@ -1021,180 +1072,178 @@ header.main-header {
 }
 
 .scroll-floating-bar .floating-btn:hover {
-  background-color: rgb(7, 7, 7, 0.95);
+  background-color: rgba(7, 7, 7, 0.95);
   color: #ffffff;
-  transform: translateY(-0.0625rem); /* -1px */
-}
-
-@media (max-width: 48rem) {
-  /* 768px */
-  .scroll-floating-bar {
-    padding: 0.75rem 1.25rem; /* 12px 20px */
-  }
-  .floating-nav-links {
-    display: none;
-  }
+  transform: translateY(-0.0625rem);
 }
 
 /* ==========================================================================
-   9. BARRA DE PROGRESO DE LECTURA
+   14. BARRA DE PROGRESO
    ========================================================================== */
+
 .reading-progress-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 0.1875rem; /* 3px */
+  height: 0.1875rem;
   background: transparent;
-  z-index: 1002;
   pointer-events: none;
+  z-index: 1002;
 }
 
 .reading-progress-bar {
-  height: 100%;
   width: 0%;
+  height: 100%;
   background-color: #ffffff;
   transition: width 0.05s ease-out;
 }
 
 /* ==========================================================================
-   8. MEDIA QUERIES (RESPONSIVE)
+   15. RESPONSIVE · TABLET
    ========================================================================== */
-@media (max-width: 1024px) {
+
+@media (max-width: 64rem) {
   header.main-header,
-  .hero-banner,
-  .featured-grid,
-  .wide-banner,
   .section-title-container,
-  .recent-section-grid,
+  .interior-grid,
+  .retail-grid,
+  .wide-banner,
   .footer-container {
-    max-width: 100%;
-    padding-left: 24px;
-    padding-right: 24px;
+    width: min(100% - 3rem, var(--max-width));
   }
 
-  .featured-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: auto;
+  .circle-graphic {
+    padding-right: 5rem;
   }
 
-  .grid-card.project-vestigio {
-    height: auto !important;
-    max-height: none !important;
+  .main-nav {
+    gap: 1.875rem;
   }
 
-  .recent-section-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .menu-content-wrapper {
+    grid-template-columns: 1fr 0.85fr;
+    gap: 2.5rem;
   }
 
-  .shoutbox-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  .menu-image-container {
+    height: 70vh;
   }
 }
 
-@media (max-width: 768px) {
+/* ==========================================================================
+   16. RESPONSIVE · TABLET PEQUEÑA
+   ========================================================================== */
+
+@media (max-width: 48rem) {
   header.main-header {
-    margin: 30px auto;
+    width: calc(100% - 3rem);
+    margin: 1.875rem auto;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    gap: 1.5625rem;
+  }
+
+  .logo-container {
+    justify-content: center;
+  }
+
+  .logo-container img {
+    content: url("assets/header/logoquery.svg");
+  }
+
+  .circle-graphic {
+    padding-right: 0;
+  }
+
+  .circle-graphic .sello {
+    width: 7.5rem;
+    height: 7.5rem;
   }
 
   nav.main-nav {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 1rem;
   }
 
-  .hero-banner {
-    flex-direction: column-reverse;
-    text-align: center;
-    gap: 30px;
-    padding: 40px 24px;
+  .section-title-container {
+    width: calc(100% - 3rem);
+    margin-top: 2.5rem;
   }
 
-  .hero-content h2 {
-    font-size: 3.8rem;
-    padding-left: 0;
+  .section-title-inline {
+    font-size: 2rem;
   }
 
-  .hero-content p {
-    font-size: 1.3rem;
-    padding-left: 0;
+  .interior-grid,
+  .retail-grid {
+    width: calc(100% - 3rem);
   }
 
-  .circle-graphic .sello {
-    width: 120px;
-    height: 120px;
-  }
-
-  .featured-grid {
+  .retail-grid {
     grid-template-columns: 1fr;
   }
 
-  .grid-card {
-    padding: 40px;
-    min-height: 320px;
+  .interior-grid .grid-card {
+    height: 20rem;
+  }
+
+  .retail-grid .grid-card {
+    height: 25rem;
   }
 
   .project-overlay {
-    padding: 30px;
+    padding: 1.875rem;
   }
 
   .overlay-title {
     font-size: 3.2rem;
   }
-  .post-titleblack {
-    font-size: 4rem;
+
+  .overlay-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .overlay-text {
+    font-size: 1.15rem;
+  }
+
+  .overlay-footer {
+    font-size: 1rem;
   }
 
   .wide-banner {
+    width: calc(100% - 3rem);
     height: auto;
-    min-height: 280px;
-    padding: 40px 24px;
+    min-height: 17.5rem;
+    padding: 2.5rem 1.5rem;
   }
 
   .wide-banner h2 {
     font-size: 3.4rem;
   }
+
   .wide-banner p {
     padding-right: 0;
     font-size: 1.2rem;
   }
 
-  .post-item {
-    height: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding-bottom: 20px;
+  .card-default-content,
+  .text-card-overlay {
+    padding: 2.5rem;
   }
 
-  .post-item-image {
-    width: 100% !important;
-    height: 200px;
-  }
-
-  .post-item-content {
-    padding: 0 20px;
-  }
-
-  .post-item-title {
-    font-size: 2rem;
-  }
-
-  .shoutbox-list {
-    grid-template-columns: 1fr;
+  .footer-container {
+    width: calc(100% - 3rem);
   }
 
   .footer-top {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 40px;
+    gap: 2.5rem;
   }
 
   .footer-brand-nav {
@@ -1203,7 +1252,7 @@ header.main-header {
 
   .footer-links-grid {
     justify-items: center;
-    gap: 30px;
+    gap: 1.875rem;
   }
 
   .footer-column ul {
@@ -1217,52 +1266,233 @@ header.main-header {
   .footer-bottom {
     text-align: center;
   }
-}
 
-@media (max-width: 480px) {
-  header.main-header,
-  .hero-banner,
-  .wide-banner,
-  .footer-container {
-    padding-left: 16px;
-    padding-right: 16px;
+  .menu-content-wrapper {
+    min-height: auto;
+    padding: 1.875rem 1.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2.5rem;
   }
 
-  .search-input {
-    width: 100%;
-    font-size: 1.4rem;
-    padding: 8px 10px;
+  .menu-left-pane {
+    min-height: auto;
+    height: auto;
+    gap: 1.5rem;
+  }
+
+  .menu-nav-links {
+    margin: 1.25rem 0;
+  }
+
+  .menu-nav-links a {
+    font-size: clamp(2.8rem, 11vw, 4.5rem);
+  }
+
+  .menu-right-pane {
+    height: auto;
+  }
+
+  .menu-image-container {
+    height: 50vh;
+    max-height: 31.25rem;
+  }
+
+  .scroll-floating-bar {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .floating-nav-links {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   17. RESPONSIVE · MÓVIL
+   ========================================================================== */
+
+@media (max-width: 30rem) {
+  header.main-header,
+  .section-title-container,
+  .interior-grid,
+  .retail-grid,
+  .wide-banner,
+  .footer-container {
+    width: calc(100% - 2rem);
+  }
+
+  header.main-header {
+    margin: 1.5rem auto;
+  }
+
+  .logo-container .logo {
+    width: 10rem;
   }
 
   nav.main-nav {
-    gap: 10px;
+    gap: 0.625rem;
   }
 
-  .menu-btn,
-  .language-selector {
+  .main-nav a {
+    font-size: 1.2rem;
+  }
+
+  .main-nav .menu-btn {
+    padding: 0.5rem 1.25rem;
     font-size: 1.4rem;
-    padding: 8px 20px;
   }
 
-  .hero-content h2 {
-    font-size: 3rem;
+  .section-title-container {
+    gap: 0.75rem;
+    margin-top: 2rem;
   }
-  .post-title {
-    font-size: 2.4rem;
+
+  .section-title-inline {
+    font-size: 1.7rem;
   }
+
+  .interior-grid .grid-card {
+    height: 16rem;
+  }
+
+  .retail-grid .grid-card {
+    height: 22rem;
+  }
+
+  .project-overlay {
+    padding: 1.25rem;
+  }
+
   .overlay-title {
+    font-size: clamp(2.4rem, 11vw, 2.8rem);
+  }
+
+  .overlay-subtitle {
+    margin-bottom: 0.625rem;
+    font-size: 1.25rem;
+  }
+
+  .overlay-text {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .overlay-footer {
+    flex-wrap: wrap;
+    font-size: 0.875rem;
+  }
+
+  .wide-banner {
+    min-height: 15rem;
+    padding: 2rem 1.25rem;
+  }
+
+  .wide-banner h2 {
     font-size: 2.8rem;
   }
-  .featured-recent-title {
-    font-size: 2.4rem;
+
+  .wide-banner p {
+    font-size: 1.05rem;
   }
 
-  .featured-recent-body {
-    padding: 25px 20px;
+  .card-default-content,
+  .text-card-overlay {
+    padding: 1.5rem;
   }
 
   .footer-links-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 2.5rem;
+  }
+
+  .footer-column ul li a {
+    font-size: 1.4rem;
+  }
+
+  .footer-seal-wrapper .sello {
+    width: 6.875rem;
+    height: 6.875rem;
+  }
+
+  #scrollTopBtn {
+    right: 1rem;
+    bottom: 1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .menu-content-wrapper {
+    padding: 1.25rem 1rem 2rem;
+    gap: 1.5rem;
+  }
+
+  .close-btn {
+    font-size: 1.2rem;
+  }
+
+  .menu-footer-info {
+    gap: 1rem;
+  }
+
+  .menu-socials {
+    gap: 1rem;
+  }
+
+  .menu-socials a,
+  .menu-contact-details p,
+  .menu-contact-details a {
+    font-size: 1rem;
+  }
+
+  .menu-image-container {
+    height: 38vh;
+  }
+}
+
+/* ==========================================================================
+   18. DISPOSITIVOS TÁCTILES
+   Mantiene visible la información de las tarjetas cuando no existe hover.
+   ========================================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .grid-card.image-card .project-overlay {
+    opacity: 1;
+  }
+
+  .grid-card.image-card .overlay-content {
+    transform: translateY(0);
+  }
+
+  .visual-hover-card .card-default-content {
+    opacity: 0;
+  }
+
+  .visual-hover-card .card-hover-bg,
+  .visual-hover-card .text-card-overlay {
+    opacity: 1;
+  }
+
+  .visual-hover-card .text-card-overlay .overlay-content {
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   19. REDUCCIÓN DE MOVIMIENTO
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
