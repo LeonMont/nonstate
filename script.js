@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.querySelector(".menu-btn");
   const closeBtn = document.getElementById("close-btn");
   const fullscreenMenu = document.getElementById("fullscreen-menu");
-  const progressBar = document.getElementById('readingProgressBar');
-  const floatingBar = document.getElementById('floatingBar');
+  const progressBar = document.getElementById("readingProgressBar");
+  const floatingBar = document.getElementById("floatingBar");
   const scrollTopBtn = document.getElementById("scrollTopBtn");
 
   // ==========================================
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // JavaScript para duplicar el contenido y asegurar el bucle perfecto (Optimizado)
-  const track = document.getElementById('marqueeTrack');
+  const track = document.getElementById("marqueeTrack");
   if (track) {
     const content = track.innerHTML;
     // Duplicamos el contenido para rellenar la pista
@@ -39,24 +39,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
   let isScrolling = false;
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     if (!isScrolling) {
       window.requestAnimationFrame(() => {
-        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const winScroll =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
 
         // A. Barra de progreso de lectura
         if (progressBar) {
           const scrolled = (winScroll / height) * 100;
-          progressBar.style.width = scrolled + '%';
+          progressBar.style.width = scrolled + "%";
         }
 
         // B. Barra flotante
         if (floatingBar) {
           if (winScroll > 300) {
-            floatingBar.classList.add('visible');
+            floatingBar.classList.add("visible");
           } else {
-            floatingBar.classList.remove('visible');
+            floatingBar.classList.remove("visible");
           }
         }
 
@@ -80,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-  
+
   // ==========================================
   // 3. CARROUSEL / SLIDER
   // ==========================================
@@ -93,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let autoSlideInterval;
 
   function showSlide(index) {
-    if (slides.length === 0) return; 
+    if (slides.length === 0) return;
 
     if (index >= slides.length) currentIndex = 0;
     else if (index < 0) currentIndex = slides.length - 1;
@@ -151,15 +154,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
   // 4. COPIAR ENLACE DE GIF (SHOUTBOX)
   // ==========================================
-  const copyButtons = document.querySelectorAll('.btn-copy');
+  const copyButtons = document.querySelectorAll(".btn-copy");
 
   if (copyButtons.length > 0) {
     copyButtons.forEach((btn) => {
-      btn.addEventListener('click', async () => {
-        const card = btn.closest('.shoutbox-card');
-        if (!card) return; 
+      btn.addEventListener("click", async () => {
+        const card = btn.closest(".shoutbox-card");
+        if (!card) return;
 
-        const gifImg = card.querySelector('.shoutbox-gif');
+        const gifImg = card.querySelector(".shoutbox-gif");
         if (!gifImg) return;
 
         const gifUrl = gifImg.src;
@@ -167,21 +170,21 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
           await navigator.clipboard.writeText(gifUrl);
 
-          const statusSpan = btn.querySelector('.copy-status');
-          
+          const statusSpan = btn.querySelector(".copy-status");
+
           if (statusSpan) {
             const originalText = statusSpan.textContent;
-            
-            btn.classList.add('copied');
-            statusSpan.textContent = 'Copiado';
+
+            btn.classList.add("copied");
+            statusSpan.textContent = "Copiado";
 
             setTimeout(() => {
-              btn.classList.remove('copied');
+              btn.classList.remove("copied");
               statusSpan.textContent = originalText;
             }, 2000);
           }
         } catch (err) {
-          console.error('Error al copiar el enlace: ', err);
+          console.error("Error al copiar el enlace: ", err);
         }
       });
     });
@@ -204,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, observerOptions);
 
-    serviceCards.forEach(card => observer.observe(card));
+    serviceCards.forEach((card) => observer.observe(card));
   }
 
   // ==========================================
@@ -218,9 +221,11 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const formData = new FormData(contactForm);
 
-      const submitBtnSpan = contactForm.querySelector(".submit-project-btn span:first-child");
+      const submitBtnSpan = contactForm.querySelector(
+        ".submit-project-btn span:first-child",
+      );
       const originalText = submitBtnSpan ? submitBtnSpan.textContent : "";
-      
+
       if (submitBtnSpan) {
         submitBtnSpan.textContent = "Evaluando requerimiento...";
       }
@@ -230,8 +235,8 @@ document.addEventListener("DOMContentLoaded", () => {
           method: "POST",
           body: formData,
           headers: {
-            'Accept': 'application/json'
-          }
+            Accept: "application/json",
+          },
         });
 
         if (response.ok) {
@@ -240,11 +245,15 @@ document.addEventListener("DOMContentLoaded", () => {
             successMsg.style.display = "block";
           }
         } else {
-          alert("Hubo un error al procesar la solicitud. Por favor intenta directamente en contact@nonstate.co");
+          alert(
+            "Hubo un error al procesar la solicitud. Por favor intenta directamente en contact@nonstate.co",
+          );
           if (submitBtnSpan) submitBtnSpan.textContent = originalText;
         }
       } catch (error) {
-        alert("Error de conexión. Escríbenos directamente a contact@nonstate.co");
+        alert(
+          "Error de conexión. Escríbenos directamente a contact@nonstate.co",
+        );
         if (submitBtnSpan) submitBtnSpan.textContent = originalText;
       }
     });
@@ -272,11 +281,24 @@ document.addEventListener("DOMContentLoaded", () => {
         channelDetailInput.required = true;
       } else if (selectedValue === "linkedin") {
         channelDetailInput.type = "text";
-        channelDetailInput.placeholder = "URL de tu perfil o nombre de usuario en LinkedIn";
+        channelDetailInput.placeholder =
+          "URL de tu perfil o nombre de usuario en LinkedIn";
         channelDetailInput.required = true;
       }
     });
   }
+
+  window.addEventListener("load", function () {
+    const loader = document.getElementById("loader-wrapper");
+
+    // Desvanece la opacidad
+    loader.style.opacity = "0";
+
+    // Remueve el elemento del flujo una vez termina la transición (0.5s)
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 500);
+  });
 
   // ==========================================
   // 8. INICIALIZACIÓN GENERAL
