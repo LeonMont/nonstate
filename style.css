@@ -1537,10 +1537,6 @@ header.main-header {
   transform: translateY(-0.0625rem); /* -1px */
 }
 
-/* Nota: el ajuste responsivo de .scroll-floating-bar y .floating-nav-links
-   se consolidó en la media query general de la sección 15 (evita reglas
-   @media (max-width: 48rem) duplicadas). */
-
 /* ==========================================================================
    9. BARRA DE PROGRESO DE LECTURA
    ========================================================================== */
@@ -2274,9 +2270,6 @@ header.main-header {
     align-items: center;
   }
   .footer-links-grid {
-    /* grid-template-columns:1fr además de justify-items:center, ya que
-       el footer de esta página usa 2 columnas de enlaces (Categorías/General)
-       que en category.css no existen — se mantiene el ajuste propio. */
     grid-template-columns: 1fr;
     justify-items: center;
     gap: 1.875rem; /* 30px */
@@ -2332,29 +2325,23 @@ header.main-header {
    16. MEDIA QUERIES (RESPONSIVE) · RESTO DE SECCIONES
    ========================================================================== */
 
-/* 2. MEDIA QUERY PARA MÓVIL (Consolidación de <1024px, <768px y <480px) */
 @media screen and (max-width: 48rem) {
-  /* 768px hacia abajo */
-  /* Contenedores y Márgenes (header y footer se resuelven en su propio
-     bloque de breakpoints, alineado con category.css — ver sección 15) */
+  /* Contenedores y Márgenes */
   .hero-banner,
   .featured-grid,
   .section-title-container,
   .recent-section-grid,
   .spotify-grid {
     max-width: 100%;
-    padding-left: 1rem; /* 16px */
-    padding-right: 1rem; /* 16px */
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .wide-banner {
-    /* Ancho explícito (igual criterio que category.css) en vez de
-       margin-left/right + width:auto, que dejaba el banner con un
-       hueco lateral inconsistente frente al resto de secciones. */
     width: calc(100% - 2rem);
     height: auto;
-    min-height: 17.5rem; /* 280px */
-    padding: 2.5rem 1.5rem; /* 40px 24px */
+    min-height: 17.5rem;
+    padding: 2.5rem 1.5rem;
   }
 
   /* Grillas Estructurales */
@@ -2365,31 +2352,74 @@ header.main-header {
   .contact-grid,
   .service-chips-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem; /* 40px */
-  }
-  .grid-card {
-    padding: 2.5rem; /* 40px */
-    min-height: 20rem; /* 320px */
+    gap: 2.5rem;
   }
 
-  /* Tarjetas de Posts */
-  .post-item {
-    /* Sin align-items: flex-start. Al pasar a flex-direction:column el eje
-       cruzado pasa a ser horizontal; flex-start impedía que .post-item-content
-       (que depende de flex-grow:1, pensado para el layout en fila) se
-       estirara a todo el ancho de la tarjeta. Con el stretch por defecto,
-       el bloque de texto vuelve a ocupar el 100% del ancho, igual que la imagen. */
-    height: auto;
-    flex-direction: column;
-    gap: 0.9375rem; /* 15px */
-    padding-bottom: 1.25rem; /* 20px */
+  .grid-card {
+    padding: 2.5rem;
+    min-height: 20rem;
   }
+
+  /* ------------------------------------------------------------------------
+     TARJETAS DE POSTS SECUNDARIOS (Formato idéntico al destacado)
+     ------------------------------------------------------------------------ */
+  .posts-list {
+    gap: 1.5rem;
+  }
+
+  .post-item {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .post-item-link-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    height: auto;
+    gap: 0;
+  }
+
   .post-item .post-item-image {
     width: 100% !important;
-    height: 12.5rem; /* 200px */
+    height: 13.5rem; /* Ocupa el marco superior completo */
+    position: relative;
+    flex-shrink: 0;
   }
+
+  .post-item .post-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .post-item-content {
-    padding: 0 1.25rem; /* 20px */
+    padding: 1.5rem 1.25rem 1.25rem;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .post-item-title {
+    font-size: 1.8rem;
+    line-height: 1.15;
+    margin-bottom: 0;
+  }
+
+  .post-item-meta {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* Desactivar la expansión horizontal hover de escritorio en pantallas móviles */
+  .post-item:hover .post-item-image {
+    width: 100% !important;
   }
 
   /* Tipografía Adaptativa */
@@ -2398,33 +2428,42 @@ header.main-header {
     text-align: center;
     margin: 0 auto;
   }
+
   .hero-content p {
     text-align: center;
     margin: 0 auto;
     padding-left: 0;
   }
+
   .hero-btn {
     margin: 0 auto;
   }
+
   .post-principaltitle {
     font-size: 5rem;
   }
+
   .post-title {
     font-size: 2.4rem;
   }
+
   .overlay-title {
     font-size: 2.8rem;
   }
+
   .post-titleblack {
     font-size: 4rem;
   }
+
   .wide-banner h2 {
     font-size: 3.4rem;
   }
+
   .wide-banner p {
     font-size: 1.2rem;
     padding-right: 0;
   }
+
   .featured-recent .featured-recent-title,
   .featured-recent-title {
     font-size: 1.8rem;
@@ -2433,33 +2472,39 @@ header.main-header {
   /* Detalles Visuales */
   .circle-graphic .sello {
     width: 7.5rem;
-    height: 7.5rem; /* 120px */
+    height: 7.5rem;
   }
+
   .project-overlay {
-    padding: 1.875rem; /* 30px */
+    padding: 1.875rem;
   }
+
   .grid-card.text-card.visual-hover-card .overlay-text,
   .grid-card .overlay-text,
   .text-card .overlay-text,
   .visual-hover-card .overlay-text {
     display: block;
   }
+
   .featured-recent-body {
-    padding: 1.5625rem 1.25rem; /* 25px 20px */
+    padding: 1.5625rem 1.25rem;
   }
 
   /* Menú Fullscreen */
   .menu-content-wrapper {
     grid-template-columns: 1fr;
-    padding: 2.5rem 1.5rem 3.75rem 1.5rem; /* 40px 24px 60px 24px */
+    padding: 2.5rem 1.5rem 3.75rem 1.5rem;
   }
+
   .menu-right-pane {
     display: none;
   }
+
   .menu-left-pane {
     min-height: auto;
-    gap: 2.5rem; /* 40px */
+    gap: 2.5rem;
   }
+
   .menu-nav-links a {
     font-size: 3.5rem;
   }
@@ -2468,21 +2513,182 @@ header.main-header {
   .search-input {
     width: 100%;
     font-size: 1.4rem;
-    padding: 0.5rem 0.625rem; /* 8px 10px */
+    padding: 0.5rem 0.625rem;
   }
+
   .scroll-floating-bar {
-    padding: 0.75rem 1.25rem; /* 12px 20px */
+    padding: 0.75rem 1.25rem;
   }
+
   .floating-nav-links {
     display: none;
   }
+
   .contact-hero {
-    padding: 2.5rem 1.25rem; /* 40px 20px */
+    padding: 2.5rem 1.25rem;
   }
+
   .contact-info-side,
   .contact-form-side {
-    padding: 2.1875rem; /* 35px */
+    padding: 2.1875rem;
   }
-  /* El bloque de Footer se resolvió en la sección 15, junto con Header,
-     alineado a los breakpoints de category.css. */
+}
+
+/* ==========================================================================
+   17. CORRECCIONES RESPONSIVE · POSTS Y GIFBOX
+   Se conservan las reglas y el contenido originales. Este bloque ajusta
+   únicamente la presentación de las tarjetas y los GIF en pantallas pequeñas.
+   ========================================================================== */
+
+@media screen and (max-width: 48rem) {
+  /* El enlace del post contiene la imagen; el contenido textual es su hermano
+     en el HTML. display: contents permite que ambos ocupen el ancho de la
+     tarjeta sin modificar la estructura ni duplicar contenido. */
+  .post-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .post-item-link-wrapper {
+    display: contents;
+  }
+
+  .post-item .post-item-image {
+    display: block;
+    position: relative;
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    min-width: 0;
+    flex: 0 0 auto;
+    overflow: hidden;
+  }
+
+  .post-item .post-item-image img {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .post-item .post-item-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 1.25rem;
+    gap: 0.75rem;
+    overflow-wrap: anywhere;
+  }
+
+  .post-item .post-item-title {
+    width: 100%;
+    min-width: 0;
+    font-size: 1.8rem;
+    line-height: 1.15;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .post-item .post-item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 0;
+    gap: 0.5rem 0.75rem;
+    font-size: 1rem;
+  }
+
+  /* Evita que el efecto hover de escritorio fuerce el ancho de la imagen. */
+  .post-item:hover .post-item-image {
+    width: 100% !important;
+  }
+
+  /* GIFBOX: se convierte en una grilla real en móvil.
+     La lista original usa flex, por lo que grid-template-columns no tenía efecto. */
+  .shoutbox-container {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .shoutbox-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    gap: 1rem;
+  }
+
+  .shoutbox-card {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    flex: initial;
+  }
+
+  .shoutbox-gif-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+
+  .shoutbox-gif-wrapper .shoutbox-gif {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 30rem) {
+  .post-item .post-item-content {
+    padding: 1rem;
+  }
+
+  .post-item .post-item-title {
+    font-size: 1.6rem;
+  }
+
+  .shoutbox-container {
+    padding: 1.125rem;
+  }
+
+  .shoutbox-list {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  .shoutbox-card {
+    aspect-ratio: 16 / 9;
+  }
+
+  .shoutbox-gif-wrapper {
+    aspect-ratio: 16 / 9;
+  }
 }
